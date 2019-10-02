@@ -1,0 +1,28 @@
+{
+  "name": "nutn-csie-exhib-109",
+  "version": "1.0.0",
+  "description": "南大資工109級專題展網頁",
+  "main": "index.js",
+  "dependencies": {
+    "core-js": "^3.2.1",
+    "parcel": "^1.12.3",
+    "regenerator-runtime": "^0.13.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "parcel index.html -p 8080 --open",
+    "build": "parcel build --no-content-hash index.html --out-dir build --public-url=./ "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CSP-GD/nutn-csie-exhib-109.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CSP-GD/nutn-csie-exhib-109/issues"
+  },
+  "homepage": "https://github.com/CSP-GD/nutn-csie-exhib-109#readme"
+}
