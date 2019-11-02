@@ -5,8 +5,9 @@
   "main": "index.js",
   "dependencies": {
     "core-js": "^3.2.1",
-    "parcel": "^1.12.3",
-    "regenerator-runtime": "^0.13.3"
+    "parcel": "^1.12.4",
+    "regenerator-runtime": "^0.13.3",
+    "vue": "^2.6.10"
   },
   "devDependencies": {},
   "scripts": {
