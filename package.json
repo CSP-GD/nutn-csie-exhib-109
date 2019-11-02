@@ -7,9 +7,13 @@
     "core-js": "^3.2.1",
     "parcel": "^1.12.4",
     "regenerator-runtime": "^0.13.3",
-    "vue": "^2.6.10"
+    "vue": "^2.6.10",
+    "vue-hot-reload-api": "^2.3.4"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@vue/component-compiler-utils": "^3.0.0",
+    "vue-template-compiler": "^2.6.10"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "parcel index.html -p 8080 --open",
