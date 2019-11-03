@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<img src="../../img/nutn_1.jpg" class="a" />
+		<img src="../../img/nutn_1_.jpg" class="a" />
 		<div id="group" @mouseover="groupButtonUp=true" @mouseout="groupButtonUp=false" class="b">專題組別</div>
 	</div>
 </template>
