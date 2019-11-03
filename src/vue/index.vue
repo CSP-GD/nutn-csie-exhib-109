@@ -84,7 +84,7 @@ body {
 	margin: 0px;
 	display: flex;
 	flex-direction: column;
-	background-color: rgb(66, 66, 66);
+	background-color: rgb(44, 44, 44);
 }
 :root {
 	--screen-height: 100px;
@@ -114,7 +114,7 @@ body {
 	letter-spacing: calc(var(--screen-height) * 0.05);
 	text-align: center;
 	margin-left: auto;
-	background-color: rgb(66, 66, 66);
+	background-color: rgb(44, 44, 44);
 	color: white;
 	width: var(--group-button-width);
 	height: var(--screen-height);
