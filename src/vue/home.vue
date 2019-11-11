@@ -19,6 +19,7 @@
 <script defer>
 export default {
 	props: {
+		nowPage: Number,
 		page: Number,
 		changePage: Function,
 		width: Number,
@@ -77,7 +78,7 @@ export default {
 				"letter-spacing": `${this.height * 0.05}px`,
 				"text-align": "center",
 				"margin-left": "auto",
-				"background-color": "rgb(211, 211, 211)",
+				"background-color": "rgb(255, 255, 255)",
 				color: "rgb(44, 44, 44)",
 				width: `${this.infoButtonWidth}px`,
 				height: `${this.height}px`,
@@ -104,7 +105,7 @@ export default {
 				"text-align": "center",
 				"margin-left": "auto",
 				"background-color": "rgb(44, 44, 44)",
-				color: "rgb(211, 211, 211)",
+				color: "rgb(255, 255, 255)",
 				width: `${this.groupButtonWidth}px`,
 				height: `${this.height}px`,
 				"line-height": `${this.groupButtonWidth}px`,
@@ -131,7 +132,7 @@ export default {
 			requestAnimationFrame(this.mainLoop);
 			{
 				let targetWidth;
-				if (this.groupButtonUp) {
+				if (this.groupButtonUp || this.page != this.nowPage) {
 					targetWidth = this.width * 0.1 + 200;
 				} else {
 					targetWidth = this.width * 0.05 + 100;
@@ -141,7 +142,7 @@ export default {
 			}
 			{
 				let targetWidth;
-				if (this.infoButtonUp) {
+				if (this.infoButtonUp || this.page != this.nowPage) {
 					targetWidth = this.width * 0.1 + 200;
 				} else {
 					targetWidth = this.width * 0.05 + 100;

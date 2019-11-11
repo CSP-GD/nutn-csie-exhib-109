@@ -15,7 +15,7 @@ export default {
 			// page: 2,
 			// width: 100,
 			// height: 100,
-			// color: { left: "rgb(44,44,44)", right: "rgb(211,211,211)" }
+			// color: { left: "rgb(44,44,44)", right: "rgb(255,255,255)" }
 		};
 	},
 	computed: {

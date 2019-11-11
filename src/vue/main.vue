@@ -1,20 +1,20 @@
 <template>
 	<div :style="mainContainer">
-		<info :page="1" :changePage="changePage" :width="width" :height="height"></info>
+		<info :nowPage="nowPage" :page="1" :changePage="changePage" :width="width" :height="height"></info>
 		<gradient
 			:page="2"
-			:color="{left:'rgb(44,44,44)',right:'rgb(211,211,211)'}"
+			:color="{left:'rgb(44,44,44)',right:'rgb(255,255,255)'}"
 			:width="width"
 			:height="height"
 		></gradient>
-		<home :page="3" :changePage="changePage" :width="width" :height="height"></home>
+		<home :nowPage="nowPage" :page="3" :changePage="changePage" :width="width" :height="height"></home>
 		<gradient
 			:page="4"
-			:color="{left:'rgb(44,44,44)',right:'rgb(211,211,211)'}"
+			:color="{left:'rgb(44,44,44)',right:'rgb(255,255,255)'}"
 			:width="width"
 			:height="height"
 		></gradient>
-		<group :page="5" :changePage="changePage" :width="width" :height="height"></group>
+		<group :nowPage="nowPage" :page="5" :changePage="changePage" :width="width" :height="height"></group>
 	</div>
 </template>
 
@@ -73,12 +73,12 @@ export default {
 			{
 				if (this.nowPage > this.targetPage) {
 					this.nowPage = Math.max(
-						this.nowPage - 0.0333,
+						this.nowPage - 0.04,
 						this.targetPage
 					);
 				} else if (this.nowPage < this.targetPage) {
 					this.nowPage = Math.min(
-						this.nowPage + 0.0333,
+						this.nowPage + 0.0425,
 						this.targetPage
 					);
 				}
