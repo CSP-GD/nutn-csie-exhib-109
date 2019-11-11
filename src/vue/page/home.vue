@@ -6,7 +6,7 @@
 			@mouseout="infoButtonUp=false"
 			@click="changePage(1)"
 		>展覽資訊</div>
-		<img src="../../img/nutn_1_.jpg" :style="titleImage" />
+		<img src="../../../img/nutn_1_.jpg" :style="titleImage" />
 		<div
 			:style="groupButton"
 			@mouseover="groupButtonUp=true,infoButtonUp=false"

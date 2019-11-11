@@ -19,10 +19,10 @@
 </template>
 
 <script defer>
-import info from "./info.vue";
-import home from "./home.vue";
-import group from "./group.vue";
-import gradient from "./gradient.vue";
+import info from "./page/info.vue";
+import home from "./page/home.vue";
+import group from "./page/group.vue";
+import gradient from "./page/gradient.vue";
 
 export default {
 	components: {
