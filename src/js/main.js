@@ -2,6 +2,9 @@ import "core-js/stable"
 import "regenerator-runtime/runtime"
 import Vue from "vue"
 
-import index from "../vue/index.vue"
+import home from "../vue/home.vue"
+import info from "../vue/info.vue";
+import gradient from "../vue/gradient.vue";
+import main from "../vue/main.vue"
 
-new Vue(index).$mount('#main')
+new Vue(main).$mount('#main')

@@ -4,14 +4,14 @@
   "description": "南大資工109級專題展網頁",
   "main": "index.js",
   "dependencies": {
-    "core-js": "^3.2.1",
+    "core-js": "^3.4.0",
     "parcel": "^1.12.4",
     "regenerator-runtime": "^0.13.3",
     "vue": "^2.6.10",
     "vue-hot-reload-api": "^2.3.4"
   },
   "devDependencies": {
-    "@vue/component-compiler-utils": "^3.0.0",
+    "@vue/component-compiler-utils": "^3.0.2",
     "vue-template-compiler": "^2.6.10"
   },
   "scripts": {

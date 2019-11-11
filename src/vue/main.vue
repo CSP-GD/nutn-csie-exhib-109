@@ -1,0 +1,120 @@
+<template>
+	<div :style="mainContainer">
+		<info :page="1" :changePage="changePage" :width="width" :height="height"></info>
+		<gradient
+			:page="2"
+			:color="{left:'rgb(44,44,44)',right:'rgb(211,211,211)'}"
+			:width="width"
+			:height="height"
+		></gradient>
+		<home :page="3" :changePage="changePage" :width="width" :height="height"></home>
+		<gradient
+			:page="4"
+			:color="{left:'rgb(44,44,44)',right:'rgb(211,211,211)'}"
+			:width="width"
+			:height="height"
+		></gradient>
+		<group :page="5" :changePage="changePage" :width="width" :height="height"></group>
+	</div>
+</template>
+
+<script defer>
+import info from "./info.vue";
+import home from "./home.vue";
+import group from "./group.vue";
+import gradient from "./gradient.vue";
+
+export default {
+	components: {
+		info: info,
+		home: home,
+		group: group,
+		gradient: gradient
+	},
+	data() {
+		return {
+			nowPage: 3,
+			targetPage: 3,
+			mouse: { clientX: null, clientY: null },
+			width: 100,
+			height: 100
+		};
+	},
+	computed: {
+		mainContainer() {
+			return {
+				position: "fixed",
+				width: `${this.width}px`,
+				height: `${this.height}px`,
+				top: "0px",
+				right: `${-1 * this.width * (1 - this.nowPage)}px`
+			};
+		}
+	},
+	created() {
+		this.height = document.body.offsetHeight;
+		this.width = document.body.offsetWidth;
+		window.onresize = () => {
+			this.height = document.body.offsetHeight;
+			this.width = document.body.offsetWidth;
+		};
+		window.onmousemove = event => {
+			this.mouse.clientX = event.clientX;
+			this.mouse.clientY = event.clientY;
+		};
+		this.mainLoop();
+	},
+	update() {
+		console.log("update");
+	},
+	methods: {
+		mainLoop() {
+			requestAnimationFrame(this.mainLoop);
+			{
+				if (this.nowPage > this.targetPage) {
+					this.nowPage = Math.max(
+						this.nowPage - 0.0333,
+						this.targetPage
+					);
+				} else if (this.nowPage < this.targetPage) {
+					this.nowPage = Math.min(
+						this.nowPage + 0.0333,
+						this.targetPage
+					);
+				}
+			}
+		},
+		changePage(targetPage) {
+			console.log(targetPage);
+			this.targetPage = targetPage;
+		}
+	}
+};
+</script>
+
+<style>
+@font-face {
+	font-family: custom-serif;
+	src: local(Microsoft JhengHei), local("DFKai-sb");
+	unicode-range: U+4E00-9FFF;
+}
+
+@font-face {
+	font-family: custom-serif;
+	src: local(Source Code Pro), local(Arial);
+	unicode-range: U+00-024F;
+}
+
+html {
+	height: 100%;
+	font-family: custom-serif;
+}
+
+body {
+	height: 100%;
+	margin: 0px;
+	display: flex;
+	flex-direction: column;
+	overflow-x: hidden;
+}
+</style>
