@@ -6,10 +6,20 @@
 			@mouseout="titleButtonUp=false"
 			@click="changePage(3)"
 		>首頁</div>
+		<tag
+			:studentGroup="studentGroupJson.filter(data => data.GroupID == 20)[0]"
+			:width="150"
+			:height="200"
+			:top="0"
+			:right="0"
+		></tag>
 	</div>
 </template>
 
 <script defer>
+import { StudentGroupJson } from "../../js/studentgroup";
+import tag from "../components/tag.vue";
+
 export default {
 	props: {
 		nowPage: Number,
@@ -18,10 +28,14 @@ export default {
 		width: Number,
 		height: Number
 	},
+	components: {
+		tag: tag
+	},
 	data() {
 		return {
 			titleButtonWidth: 100,
-			titleButtonUp: false
+			titleButtonUp: false,
+			studentGroupJson: StudentGroupJson
 		};
 	},
 	computed: {

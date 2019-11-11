@@ -1,13 +1,11 @@
 <template>
-	<div :style="tagContainer">
-		<div :style="groupImage"></div>
-		<div :style="titleFont">智慧型行動載物機器人</div>
+	<div id="tag" :style="tagContainer">
+		<div id="groupImage" :style="groupImage"></div>
+		<div id="titleFont" :style="titleFont">{{studentGroup.ProjectName}}</div>
 	</div>
 </template>
 
 <script defer>
-import { StudentGroupJson } from "../../js/studentgroup";
-
 export default {
 	props: {
 		studentGroup: {
@@ -18,39 +16,44 @@ export default {
 			FileSrc: String, //檔案連結
 			FromLab: String, //所屬實驗室
 			GroupStudent: [{ StudentID: String, StudentName: String }]
-		}
+		},
+		width: Number,
+		height: Number,
+		top: Number,
+		right: Number
 	},
 	data() {
 		return {
-			width: 100,
-			height: 100,
+			// width: 150,
+			// height: 200,
 			scale: 0.5,
-			s: StudentGroupJson.filter(data => data.GroupID == 26)[0],
 			image: {
 				width: 0,
 				height: 0
-			}
+			},
+			titleFontOffser: 0
 		};
 	},
 	computed: {
 		tagContainer() {
 			return {
 				position: "absolute",
-				width: `${150}px`,
-				height: `${200}px`
-				// right: "100px"
+				width: `${this.width}px`,
+				height: `${this.height}px`,
+				top: `${this.top}px`,
+				right: `${this.right}px`
 			};
 		},
 		groupImage() {
 			return {
 				position: "absolute",
-				width: `${150}px`,
-				height: `${200}px`,
+				width: `${this.width}px`,
+				height: `${this.height}px`,
 
 				"clip-path": "polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%)",
-				"background-image": `url(${this.s.ImgSrc})`,
+				"background-image": `url(${this.studentGroup.ImgSrc})`,
 				"background-size": `${(this.image.width / this.image.height) *
-					200}px ${200}px`,
+					this.height}px ${this.height}px`,
 				"background-position": "center center"
 				// filter: `grayscale(${this.scale}) blur(${5 * this.scale}px)`
 			};
@@ -58,10 +61,10 @@ export default {
 		titleFont() {
 			return {
 				position: "absolute",
-				margin: `${10}px ${10}px`,
+				margin: `${10}px ${0}px`,
 				color: "rgb(255,255,255)",
-				right: "25%",
-				"font-size": "120%",
+				right: `${this.titleFontOffser}px`,
+				"font-size": "18px",
 				"letter-spacing": `${5}px`,
 				"text-align": "center",
 				"line-height": `${30}px`,
@@ -82,17 +85,10 @@ export default {
 	},
 	created() {
 		let img = new Image();
-		img.src = this.s.ImgSrc;
-
+		img.src = this.studentGroup.ImgSrc;
 		img.onload = () => {
 			this.image.width = img.width;
 			this.image.height = img.height;
-		};
-		this.height = document.body.offsetHeight;
-		this.width = document.body.offsetWidth;
-		window.onresize = () => {
-			this.height = document.body.offsetHeight;
-			this.width = document.body.offsetWidth;
 		};
 		this.mainLoop();
 	},
@@ -103,6 +99,11 @@ export default {
 		mainLoop() {
 			requestAnimationFrame(this.mainLoop);
 			{
+				let elem = document.getElementById("titleFont");
+				if (elem) {
+					let rect = elem.getBoundingClientRect();
+					this.titleFontOffser = this.width - rect.width;
+				}
 			}
 		}
 	}

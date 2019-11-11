@@ -244,7 +244,7 @@ export let StudentGroupJson = [
     /* 第二十組 */
     {
         GroupID: 20, //專題編號
-        ProjectName: "基於強化學習之格鬥遊戲即時反應操作 AI 設計", //專題名稱
+        ProjectName: "基於強化學習之格鬥遊戲即時反應操作AI設計", //專題名稱
         ImgSrc: require("../../img/studentgroup/20/專題照.png"), //專題截圖
         VideoSrc: "", //專題影片
         FileSrc: "", //檔案連結
