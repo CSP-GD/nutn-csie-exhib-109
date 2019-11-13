@@ -40,7 +40,7 @@ export let studentGroupJson = [
     /* 第四組 */
     {
         groupID: 4, //專題編號
-        projectName: "", //專題名稱
+        projectName: "基於openpose視力自動檢測", //專題名稱
         imgSrc: "", //專題截圖
         videoSrc: "", //專題影片
         fileSrc: "", //檔案連結
@@ -79,8 +79,8 @@ export let studentGroupJson = [
     /* 第七組 */
     {
         groupID: 7, //專題編號
-        projectName: "", //專題名稱
-        imgSrc: "", //專題截圖
+        projectName: "鋁結構受到動態拉伸載荷影響時估計鋁結構不同週期的裂縫長度", //專題名稱
+        imgSrc: require("../../img/studentgroup/07/1573182602502.jpg"), //專題截圖
         videoSrc: "", //專題影片
         fileSrc: "", //檔案連結
         fromLab: "資料系統實驗室", //所屬實驗室
