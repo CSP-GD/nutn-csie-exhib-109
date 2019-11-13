@@ -27,7 +27,7 @@
 			}"
 		></tag>
 		<tag
-			:studentGroup="studentGroupJson.filter(data => data.groupID == 7)[0]"
+			:studentGroup="studentGroupJson.filter(data => data.groupID == 17)[0]"
 			:init="{
 				width:250,
 				height:100,

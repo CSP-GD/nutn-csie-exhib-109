@@ -1,7 +1,7 @@
 <template>
-	<div id="tag" :style="tagContainer" @click="click">
-		<div id="groupImage" :style="groupImage"></div>
-		<div id="titleFont" :style="titleFont">{{studentGroup.projectName}}</div>
+	<div :id="`tag-${studentGroup.groupID}`" :style="tagContainer" @click="click">
+		<div :id="`groupImage-${studentGroup.groupID}`" :style="groupImage"></div>
+		<div :id="`titleFont-${studentGroup.groupID}`" :style="titleFont">{{studentGroup.projectName}}</div>
 	</div>
 </template>
 
@@ -78,9 +78,9 @@ export default {
 					this.image.width) *
 					this.init.width}px`,
 				"background-position": "center center",
-				"background-repeat": "no-repeat"
+				"background-repeat": "no-repeat",
 
-				// filter: `blur(${5 * this.scale}px)`
+				filter: `blur(${5 * this.scale}px)`
 			};
 		},
 		titleFont() {
@@ -94,7 +94,10 @@ export default {
 				"letter-spacing": `${5}px`,
 				"text-align": "center",
 
-				filter: `blur(${5 * (1 - this.scale)}px)`,
+				filter: `blur(${5 *
+					(1 -
+						this
+							.scale)}px) drop-shadow(0px 0px 2px rgba(0, 0, 0, 1))`,
 
 				"-webkit-touch-callout": "none",
 				"-webkit-user-select": "none",
@@ -121,7 +124,9 @@ export default {
 		mainLoop() {
 			requestAnimationFrame(this.mainLoop);
 			{
-				let elem = document.getElementById("titleFont");
+				let elem = document.getElementById(
+					`titleFont-${this.studentGroup.groupID}`
+				);
 				if (elem) {
 					let rect = elem.getBoundingClientRect();
 					this.titleFontOffser = (this.init.height - rect.height) / 2;
@@ -130,7 +135,7 @@ export default {
 		},
 		click() {
 			console.log("tag");
-			expand = !expand;
+			this.expand = !this.expand;
 		}
 	}
 };

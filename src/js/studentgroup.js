@@ -131,8 +131,8 @@ export let studentGroupJson = [
     /* 第十一組 */
     {
         groupID: 11, //專題編號
-        projectName: "", //專題名稱
-        imgSrc: "", //專題截圖
+        projectName: "基於影像辨識的即時路邊停車格資訊網路", //專題名稱
+        imgSrc: require("../../img/studentgroup/11/S__63496199.jpg"), //專題截圖
         videoSrc: "", //專題影片
         fileSrc: "", //檔案連結
         fromLab: "多媒體與醫學影像實驗室", //所屬實驗室
@@ -207,8 +207,8 @@ export let studentGroupJson = [
     /* 第十七組 */
     {
         groupID: 17, //專題編號
-        projectName: "", //專題名稱
-        imgSrc: "", //專題截圖
+        projectName: "硬體模糊位元控制設計方法", //專題名稱
+        imgSrc: require("../../img/studentgroup/17/專題照片.png"), //專題截圖
         videoSrc: "", //專題影片
         fileSrc: "", //檔案連結
         fromLab: "電腦輔助系統設計實驗室", //所屬實驗室
