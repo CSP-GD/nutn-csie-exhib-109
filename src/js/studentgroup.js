@@ -293,7 +293,7 @@ export let studentGroupJson = [
     /* 第二十四組 */
     {
         groupID: 24, //專題編號
-        projectName: "", //專題名稱
+        projectName: "基於深度學習進行人體姿態估計", //專題名稱
         imgSrc: "", //專題截圖
         videoSrc: "", //專題影片
         fileSrc: "", //檔案連結
