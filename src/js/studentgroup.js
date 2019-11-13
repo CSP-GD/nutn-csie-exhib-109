@@ -1,342 +1,342 @@
-export let StudentGroupJson = [
+export let studentGroupJson = [
     /* 第一組 */
     {
-        GroupID: 1, //專題編號
-        ProjectName: "", //專題名稱
-        ImgSrc: "", //專題截圖
-        VideoSrc: "", //專題影片
-        FileSrc: "", //檔案連結
-        FromLab: "知識本體應用暨軟體工程實驗室", //所屬實驗室
-        GroupStudent: [
-            { StudentID: "S10459044", StudentName: "洪誠安" }
+        groupID: 1, //專題編號
+        projectName: "", //專題名稱
+        imgSrc: "", //專題截圖
+        videoSrc: "", //專題影片
+        fileSrc: "", //檔案連結
+        fromLab: "知識本體應用暨軟體工程實驗室", //所屬實驗室
+        groupStudent: [
+            { studentID: "S10459044", studentName: "洪誠安" }
         ]
     },
     /* 第二組 */
     {
-        GroupID: 2, //專題編號
-        ProjectName: "", //專題名稱
-        ImgSrc: "", //專題截圖
-        VideoSrc: "", //專題影片
-        FileSrc: "", //檔案連結
-        FromLab: "智慧型機器人實驗室", //所屬實驗室
-        GroupStudent: [
-            { StudentID: "S10559001", StudentName: "徐偉倫" },
-            { StudentID: "S10559044", StudentName: "洪于婕" }
+        groupID: 2, //專題編號
+        projectName: "", //專題名稱
+        imgSrc: "", //專題截圖
+        videoSrc: "", //專題影片
+        fileSrc: "", //檔案連結
+        fromLab: "智慧型機器人實驗室", //所屬實驗室
+        groupStudent: [
+            { studentID: "S10559001", studentName: "徐偉倫" },
+            { studentID: "S10559044", studentName: "洪于婕" }
         ]
     },
     /* 第三組 */
     {
-        GroupID: 3, //專題編號
-        ProjectName: "", //專題名稱
-        ImgSrc: "", //專題截圖
-        VideoSrc: "", //專題影片
-        FileSrc: "", //檔案連結
-        FromLab: "多媒體網路實驗室", //所屬實驗室
-        GroupStudent: [
-            { StudentID: "S10559002", StudentName: "蘇政穎" },
-            { StudentID: "S10559004", StudentName: "陳銘濡" }
+        groupID: 3, //專題編號
+        projectName: "", //專題名稱
+        imgSrc: "", //專題截圖
+        videoSrc: "", //專題影片
+        fileSrc: "", //檔案連結
+        fromLab: "多媒體網路實驗室", //所屬實驗室
+        groupStudent: [
+            { studentID: "S10559002", studentName: "蘇政穎" },
+            { studentID: "S10559004", studentName: "陳銘濡" }
         ]
     },
     /* 第四組 */
     {
-        GroupID: 4, //專題編號
-        ProjectName: "", //專題名稱
-        ImgSrc: "", //專題截圖
-        VideoSrc: "", //專題影片
-        FileSrc: "", //檔案連結
-        FromLab: "資料系統實驗室", //所屬實驗室
-        GroupStudent: [
-            { StudentID: "S10559003", StudentName: "林迺航" },
-            { StudentID: "S10559022", StudentName: "廖毅軒" }
+        groupID: 4, //專題編號
+        projectName: "", //專題名稱
+        imgSrc: "", //專題截圖
+        videoSrc: "", //專題影片
+        fileSrc: "", //檔案連結
+        fromLab: "資料系統實驗室", //所屬實驗室
+        groupStudent: [
+            { studentID: "S10559003", studentName: "林迺航" },
+            { studentID: "S10559022", studentName: "廖毅軒" }
         ]
     },
     /* 第五組 */
     {
-        GroupID: 5, //專題編號
-        ProjectName: "", //專題名稱
-        ImgSrc: "", //專題截圖
-        VideoSrc: "", //專題影片
-        FileSrc: "", //檔案連結
-        FromLab: "資料庫與資訊知識系統實驗室", //所屬實驗室
-        GroupStudent: [
-            { StudentID: "S10559005", StudentName: "高嘉謙" },
-            { StudentID: "S10559006", StudentName: "郭峻霖" }
+        groupID: 5, //專題編號
+        projectName: "", //專題名稱
+        imgSrc: "", //專題截圖
+        videoSrc: "", //專題影片
+        fileSrc: "", //檔案連結
+        fromLab: "資料庫與資訊知識系統實驗室", //所屬實驗室
+        groupStudent: [
+            { studentID: "S10559005", studentName: "高嘉謙" },
+            { studentID: "S10559006", studentName: "郭峻霖" }
         ]
     },
     /* 第六組 */
     {
-        GroupID: 6, //專題編號
-        ProjectName: "", //專題名稱
-        ImgSrc: "", //專題截圖
-        VideoSrc: "", //專題影片
-        FileSrc: "", //檔案連結
-        FromLab: "多媒體網路實驗室", //所屬實驗室
-        GroupStudent: [
-            { StudentID: "S10559007", StudentName: "丁吾心" },
-            { StudentID: "S10559026", StudentName: "羅宇宸" }
+        groupID: 6, //專題編號
+        projectName: "", //專題名稱
+        imgSrc: "", //專題截圖
+        videoSrc: "", //專題影片
+        fileSrc: "", //檔案連結
+        fromLab: "多媒體網路實驗室", //所屬實驗室
+        groupStudent: [
+            { studentID: "S10559007", studentName: "丁吾心" },
+            { studentID: "S10559026", studentName: "羅宇宸" }
         ]
     },
     /* 第七組 */
     {
-        GroupID: 7, //專題編號
-        ProjectName: "", //專題名稱
-        ImgSrc: "", //專題截圖
-        VideoSrc: "", //專題影片
-        FileSrc: "", //檔案連結
-        FromLab: "資料系統實驗室", //所屬實驗室
-        GroupStudent: [
-            { StudentID: "S10559008", StudentName: "游士玄" }
+        groupID: 7, //專題編號
+        projectName: "", //專題名稱
+        imgSrc: "", //專題截圖
+        videoSrc: "", //專題影片
+        fileSrc: "", //檔案連結
+        fromLab: "資料系統實驗室", //所屬實驗室
+        groupStudent: [
+            { studentID: "S10559008", studentName: "游士玄" }
         ]
     },
     /* 第八組 */
     {
-        GroupID: 8, //專題編號
-        ProjectName: "", //專題名稱
-        ImgSrc: "", //專題截圖
-        VideoSrc: "", //專題影片
-        FileSrc: "", //檔案連結
-        FromLab: "知識本體應用暨軟體工程實驗室", //所屬實驗室
-        GroupStudent: [
-            { StudentID: "S10559009", StudentName: "李原鋌" },
-            { StudentID: "S10559024", StudentName: "李誌軒" },
-            { StudentID: "S10559030", StudentName: "黃勝揮" }
+        groupID: 8, //專題編號
+        projectName: "", //專題名稱
+        imgSrc: "", //專題截圖
+        videoSrc: "", //專題影片
+        fileSrc: "", //檔案連結
+        fromLab: "知識本體應用暨軟體工程實驗室", //所屬實驗室
+        groupStudent: [
+            { studentID: "S10559009", studentName: "李原鋌" },
+            { studentID: "S10559024", studentName: "李誌軒" },
+            { studentID: "S10559030", studentName: "黃勝揮" }
         ]
     },
     /* 第九組 */
     {
-        GroupID: 9, //專題編號
-        ProjectName: "", //專題名稱
-        ImgSrc: "", //專題截圖
-        VideoSrc: "", //專題影片
-        FileSrc: "", //檔案連結
-        FromLab: "行動計算與網路實驗室", //所屬實驗室
-        GroupStudent: [
-            { StudentID: "S10559010", StudentName: "郭憲儒" },
-            { StudentID: "S10559021", StudentName: "吳柏賢" }
+        groupID: 9, //專題編號
+        projectName: "", //專題名稱
+        imgSrc: "", //專題截圖
+        videoSrc: "", //專題影片
+        fileSrc: "", //檔案連結
+        fromLab: "行動計算與網路實驗室", //所屬實驗室
+        groupStudent: [
+            { studentID: "S10559010", studentName: "郭憲儒" },
+            { studentID: "S10559021", studentName: "吳柏賢" }
         ]
     },
     /* 第十組 */
     {
-        GroupID: 10, //專題編號
-        ProjectName: "", //專題名稱
-        ImgSrc: "", //專題截圖
-        VideoSrc: "", //專題影片
-        FileSrc: "", //檔案連結
-        FromLab: "電腦輔助系統設計實驗室", //所屬實驗室
-        GroupStudent: [
-            { StudentID: "S10559012", StudentName: "劉鎮維" },
-            { StudentID: "S10559045", StudentName: "胡君愷" }
+        groupID: 10, //專題編號
+        projectName: "", //專題名稱
+        imgSrc: "", //專題截圖
+        videoSrc: "", //專題影片
+        fileSrc: "", //檔案連結
+        fromLab: "電腦輔助系統設計實驗室", //所屬實驗室
+        groupStudent: [
+            { studentID: "S10559012", studentName: "劉鎮維" },
+            { studentID: "S10559045", studentName: "胡君愷" }
         ]
     },
     /* 第十一組 */
     {
-        GroupID: 11, //專題編號
-        ProjectName: "", //專題名稱
-        ImgSrc: "", //專題截圖
-        VideoSrc: "", //專題影片
-        FileSrc: "", //檔案連結
-        FromLab: "多媒體與醫學影像實驗室", //所屬實驗室
-        GroupStudent: [
-            { StudentID: "S10559013", StudentName: "佘宜道" }
+        groupID: 11, //專題編號
+        projectName: "", //專題名稱
+        imgSrc: "", //專題截圖
+        videoSrc: "", //專題影片
+        fileSrc: "", //檔案連結
+        fromLab: "多媒體與醫學影像實驗室", //所屬實驗室
+        groupStudent: [
+            { studentID: "S10559013", studentName: "佘宜道" }
         ]
     },
     /* 第十二組 */
     {
-        GroupID: 12, //專題編號
-        ProjectName: "", //專題名稱
-        ImgSrc: "", //專題截圖
-        VideoSrc: "", //專題影片
-        FileSrc: "", //檔案連結
-        FromLab: "電腦輔助系統設計實驗室", //所屬實驗室
-        GroupStudent: [
-            { StudentID: "S10559014", StudentName: "廖御閎" },
-            { StudentID: "S10559027", StudentName: "陳巍中" }
+        groupID: 12, //專題編號
+        projectName: "", //專題名稱
+        imgSrc: "", //專題截圖
+        videoSrc: "", //專題影片
+        fileSrc: "", //檔案連結
+        fromLab: "電腦輔助系統設計實驗室", //所屬實驗室
+        groupStudent: [
+            { studentID: "S10559014", studentName: "廖御閎" },
+            { studentID: "S10559027", studentName: "陳巍中" }
         ]
     },
     /* 第十三組 */
     {
-        GroupID: 13, //專題編號
-        ProjectName: "", //專題名稱
-        ImgSrc: "", //專題截圖
-        VideoSrc: "", //專題影片
-        FileSrc: "", //檔案連結
-        FromLab: "行動計算與網路實驗室", //所屬實驗室
-        GroupStudent: [
-            { StudentID: "S10559015", StudentName: "周欣玄" },
-            { StudentID: "S10559018", StudentName: "葉瓊斯" }
+        groupID: 13, //專題編號
+        projectName: "", //專題名稱
+        imgSrc: "", //專題截圖
+        videoSrc: "", //專題影片
+        fileSrc: "", //檔案連結
+        fromLab: "行動計算與網路實驗室", //所屬實驗室
+        groupStudent: [
+            { studentID: "S10559015", studentName: "周欣玄" },
+            { studentID: "S10559018", studentName: "葉瓊斯" }
         ]
     },
     /* 第十四組 */
     {
-        GroupID: 14, //專題編號
-        ProjectName: "", //專題名稱
-        ImgSrc: "", //專題截圖
-        VideoSrc: "", //專題影片
-        FileSrc: "", //檔案連結
-        FromLab: "知識本體應用暨軟體工程實驗室", //所屬實驗室
-        GroupStudent: [
-            { StudentID: "S10559016", StudentName: "張維珊" },
-            { StudentID: "S10559036", StudentName: "周晨瑋" }
+        groupID: 14, //專題編號
+        projectName: "", //專題名稱
+        imgSrc: "", //專題截圖
+        videoSrc: "", //專題影片
+        fileSrc: "", //檔案連結
+        fromLab: "知識本體應用暨軟體工程實驗室", //所屬實驗室
+        groupStudent: [
+            { studentID: "S10559016", studentName: "張維珊" },
+            { studentID: "S10559036", studentName: "周晨瑋" }
         ]
     },
     /* 第十五組 */
     {
-        GroupID: 15, //專題編號
-        ProjectName: "", //專題名稱
-        ImgSrc: "", //專題截圖
-        VideoSrc: "", //專題影片
-        FileSrc: "", //檔案連結
-        FromLab: "多媒體與醫學影像實驗室", //所屬實驗室
-        GroupStudent: [
-            { StudentID: "S10559017", StudentName: "趙云珮" }
+        groupID: 15, //專題編號
+        projectName: "運用生成對抗網路發展適用於提升養殖池水下影像品質之研究", //專題名稱
+        imgSrc: require("../../img/studentgroup/15/圖片1.png"), //專題截圖
+        videoSrc: "", //專題影片
+        fileSrc: "", //檔案連結
+        fromLab: "多媒體與醫學影像實驗室", //所屬實驗室
+        groupStudent: [
+            { studentID: "S10559017", studentName: "趙云珮" }
         ]
     },
     /* 第十六組 */
     {
-        GroupID: 16, //專題編號
-        ProjectName: "", //專題名稱
-        ImgSrc: "", //專題截圖
-        VideoSrc: "", //專題影片
-        FileSrc: "", //檔案連結
-        FromLab: "多媒體與醫學影像實驗室", //所屬實驗室
-        GroupStudent: [
-            { StudentID: "S10559019", StudentName: "林萱" },
-            { StudentID: "S10559031", StudentName: "蔡亞倫" }
+        groupID: 16, //專題編號
+        projectName: "植基於深度學習之咖啡原豆瑕疵檢測系統", //專題名稱
+        imgSrc: require("../../img/studentgroup/16/187878.jpg"), //專題截圖
+        videoSrc: "", //專題影片
+        fileSrc: "", //檔案連結
+        fromLab: "多媒體與醫學影像實驗室", //所屬實驗室
+        groupStudent: [
+            { studentID: "S10559019", studentName: "林萱" },
+            { studentID: "S10559031", studentName: "蔡亞倫" }
         ]
     },
     /* 第十七組 */
     {
-        GroupID: 17, //專題編號
-        ProjectName: "", //專題名稱
-        ImgSrc: "", //專題截圖
-        VideoSrc: "", //專題影片
-        FileSrc: "", //檔案連結
-        FromLab: "電腦輔助系統設計實驗室", //所屬實驗室
-        GroupStudent: [
-            { StudentID: "S10559020", StudentName: "連永立" }
+        groupID: 17, //專題編號
+        projectName: "", //專題名稱
+        imgSrc: "", //專題截圖
+        videoSrc: "", //專題影片
+        fileSrc: "", //檔案連結
+        fromLab: "電腦輔助系統設計實驗室", //所屬實驗室
+        groupStudent: [
+            { studentID: "S10559020", studentName: "連永立" }
         ]
     },
     /* 第十八組 */
     {
-        GroupID: 18, //專題編號
-        ProjectName: "", //專題名稱
-        ImgSrc: "", //專題截圖
-        VideoSrc: "", //專題影片
-        FileSrc: "", //檔案連結
-        FromLab: "資料庫與資訊知識系統實驗室", //所屬實驗室
-        GroupStudent: [
-            { StudentID: "S10559023", StudentName: "鄭聖玄" },
-            { StudentID: "S10559043", StudentName: "金鑒修" }
+        groupID: 18, //專題編號
+        projectName: "旅遊美食掃瞄器", //專題名稱
+        imgSrc: "", //專題截圖
+        videoSrc: "", //專題影片
+        fileSrc: "", //檔案連結
+        fromLab: "資料庫與資訊知識系統實驗室", //所屬實驗室
+        groupStudent: [
+            { studentID: "S10559023", studentName: "鄭聖玄" },
+            { studentID: "S10559043", studentName: "金鑒修" }
         ]
     },
     /* 第十九組 */
     {
-        GroupID: 19, //專題編號
-        ProjectName: "", //專題名稱
-        ImgSrc: "", //專題截圖
-        VideoSrc: "", //專題影片
-        FileSrc: "", //檔案連結
-        FromLab: "多媒體網路實驗室", //所屬實驗室
-        GroupStudent: [
-            { StudentID: "S10559025", StudentName: "黃祈緯" },
+        groupID: 19, //專題編號
+        projectName: "", //專題名稱
+        imgSrc: "", //專題截圖
+        videoSrc: "", //專題影片
+        fileSrc: "", //檔案連結
+        fromLab: "多媒體網路實驗室", //所屬實驗室
+        groupStudent: [
+            { studentID: "S10559025", studentName: "黃祈緯" },
         ]
     },
     /* 第二十組 */
     {
-        GroupID: 20, //專題編號
-        ProjectName: "基於強化學習之格鬥遊戲即時反應操作AI設計", //專題名稱
-        ImgSrc: require("../../img/studentgroup/20/專題照.png"), //專題截圖
-        VideoSrc: "", //專題影片
-        FileSrc: "", //檔案連結
-        FromLab: "生物資訊實驗室", //所屬實驗室
-        GroupStudent: [
-            { StudentID: "S10559028", StudentName: "黃仁鴻" },
+        groupID: 20, //專題編號
+        projectName: "基於強化學習之格鬥遊戲即時反應操作AI設計", //專題名稱
+        imgSrc: require("../../img/studentgroup/20/專題照.png"), //專題截圖
+        videoSrc: "", //專題影片
+        fileSrc: "", //檔案連結
+        fromLab: "生物資訊實驗室", //所屬實驗室
+        groupStudent: [
+            { studentID: "S10559028", studentName: "黃仁鴻" },
         ]
     },
     /* 第二十一組 */
     {
-        GroupID: 21, //專題編號
-        ProjectName: "", //專題名稱
-        ImgSrc: "", //專題截圖
-        VideoSrc: "", //專題影片
-        FileSrc: "", //檔案連結
-        FromLab: "電腦輔助系統設計實驗室", //所屬實驗室
-        GroupStudent: [
-            { StudentID: "S10559032", StudentName: "吳孟霖" }
+        groupID: 21, //專題編號
+        projectName: "", //專題名稱
+        imgSrc: "", //專題截圖
+        videoSrc: "", //專題影片
+        fileSrc: "", //檔案連結
+        fromLab: "電腦輔助系統設計實驗室", //所屬實驗室
+        groupStudent: [
+            { studentID: "S10559032", studentName: "吳孟霖" }
         ]
     },
     /* 第二十二組 */
     {
-        GroupID: 22, //專題編號
-        ProjectName: "", //專題名稱
-        ImgSrc: "", //專題截圖
-        VideoSrc: "", //專題影片
-        FileSrc: "", //檔案連結
-        FromLab: "多媒體與醫學影像實驗室", //所屬實驗室
-        GroupStudent: [
-            { StudentID: "S10559034", StudentName: "楊明諺" }
+        groupID: 22, //專題編號
+        projectName: "", //專題名稱
+        imgSrc: "", //專題截圖
+        videoSrc: "", //專題影片
+        fileSrc: "", //檔案連結
+        fromLab: "多媒體與醫學影像實驗室", //所屬實驗室
+        groupStudent: [
+            { studentID: "S10559034", studentName: "楊明諺" }
         ]
     },
     /* 第二十三組 */
     {
-        GroupID: 23, //專題編號
-        ProjectName: "", //專題名稱
-        ImgSrc: "", //專題截圖
-        VideoSrc: "", //專題影片
-        FileSrc: "", //檔案連結
-        FromLab: "資料系統實驗室", //所屬實驗室
-        GroupStudent: [
-            { StudentID: "S10559035", StudentName: "楊政碩" },
-            { StudentID: "S10559039", StudentName: "隋昊璟" }
+        groupID: 23, //專題編號
+        projectName: "", //專題名稱
+        imgSrc: "", //專題截圖
+        videoSrc: "", //專題影片
+        fileSrc: "", //檔案連結
+        fromLab: "資料系統實驗室", //所屬實驗室
+        groupStudent: [
+            { studentID: "S10559035", studentName: "楊政碩" },
+            { studentID: "S10559039", studentName: "隋昊璟" }
         ]
     },
     /* 第二十四組 */
     {
-        GroupID: 24, //專題編號
-        ProjectName: "", //專題名稱
-        ImgSrc: "", //專題截圖
-        VideoSrc: "", //專題影片
-        FileSrc: "", //檔案連結
-        FromLab: "智慧型機器人實驗室", //所屬實驗室
-        GroupStudent: [
-            { StudentID: "S10559037", StudentName: "張俞方" },
-            { StudentID: "S10559040", StudentName: "施宣妤" }
+        groupID: 24, //專題編號
+        projectName: "", //專題名稱
+        imgSrc: "", //專題截圖
+        videoSrc: "", //專題影片
+        fileSrc: "", //檔案連結
+        fromLab: "智慧型機器人實驗室", //所屬實驗室
+        groupStudent: [
+            { studentID: "S10559037", studentName: "張俞方" },
+            { studentID: "S10559040", studentName: "施宣妤" }
         ]
     },
     /* 第二十五組 */
     {
-        GroupID: 25, //專題編號
-        ProjectName: "", //專題名稱
-        ImgSrc: "", //專題截圖
-        VideoSrc: "", //專題影片
-        FileSrc: "", //檔案連結
-        FromLab: "行動計算與網路實驗室", //所屬實驗室
-        GroupStudent: [
-            { StudentID: "S10559041", StudentName: "呂玉嫻" }
+        groupID: 25, //專題編號
+        projectName: "", //專題名稱
+        imgSrc: "", //專題截圖
+        videoSrc: "", //專題影片
+        fileSrc: "", //檔案連結
+        fromLab: "行動計算與網路實驗室", //所屬實驗室
+        groupStudent: [
+            { studentID: "S10559041", studentName: "呂玉嫻" }
         ]
     },
     /* 第二十六組 */
     {
-        GroupID: 26, //專題編號
-        ProjectName: "智慧型行動載物機器人", //專題名稱
-        ImgSrc: require("../../img/studentgroup/26/photo_2019-11-11_19-02-18.jpg"), //專題截圖
-        VideoSrc: "", //專題影片
-        FileSrc: "", //檔案連結
-        FromLab: "智慧型機器人實驗室", //所屬實驗室
-        GroupStudent: [
-            { StudentID: "S10559042", StudentName: "于鶴瑤" }
+        groupID: 26, //專題編號
+        projectName: "智慧型行動載物機器人", //專題名稱
+        imgSrc: require("../../img/studentgroup/26/photo_2019-11-11_19-02-18.jpg"), //專題截圖
+        videoSrc: "", //專題影片
+        fileSrc: "", //檔案連結
+        fromLab: "智慧型機器人實驗室", //所屬實驗室
+        groupStudent: [
+            { studentID: "S10559042", studentName: "于鶴瑤" }
         ]
     },
     /* 第二十七組 */
     {
-        GroupID: 27, //專題編號
-        ProjectName: "", //專題名稱
-        ImgSrc: "", //專題截圖
-        VideoSrc: "", //專題影片
-        FileSrc: "", //檔案連結
-        FromLab: "多媒體與醫學影像實驗室", //所屬實驗室
-        GroupStudent: [
-            { StudentID: "S10559046", StudentName: "顏婷玉" }
+        groupID: 27, //專題編號
+        projectName: "", //專題名稱
+        imgSrc: "", //專題截圖
+        videoSrc: "", //專題影片
+        fileSrc: "", //檔案連結
+        fromLab: "多媒體與醫學影像實驗室", //所屬實驗室
+        groupStudent: [
+            { studentID: "S10559046", studentName: "顏婷玉" }
         ]
     },
 ];

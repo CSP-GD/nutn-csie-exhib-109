@@ -3,7 +3,8 @@ import "regenerator-runtime/runtime"
 import Vue from "vue"
 
 import main from "../vue/main.vue"
-import tag from "../vue/components/tag.vue"
+import test from "../vue/test/test.vue"
 
-// new Vue(tag).$mount('#main')
+
+// new Vue(test).$mount('#main')
 new Vue(main).$mount('#main')

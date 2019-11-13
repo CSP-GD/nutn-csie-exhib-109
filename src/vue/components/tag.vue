@@ -1,37 +1,54 @@
 <template>
-	<div id="tag" :style="tagContainer">
+	<div id="tag" :style="tagContainer" @click="click">
 		<div id="groupImage" :style="groupImage"></div>
-		<div id="titleFont" :style="titleFont">{{studentGroup.ProjectName}}</div>
+		<div id="titleFont" :style="titleFont">{{studentGroup.projectName}}</div>
 	</div>
 </template>
 
 <script defer>
+import { studentGroupJson } from "../../js/studentgroup";
+
 export default {
 	props: {
 		studentGroup: {
-			GroupID: Number, //專題編號
-			ProjectName: String, //專題名稱
-			ImgSrc: String, //專題截圖
-			VideoSrc: String, //專題影片
-			FileSrc: String, //檔案連結
-			FromLab: String, //所屬實驗室
-			GroupStudent: [{ StudentID: String, StudentName: String }]
+			groupID: Number, //專題編號
+			projectName: String, //專題名稱
+			imgSrc: String, //專題截圖
+			videoSrc: String, //專題影片
+			fileSrc: String, //檔案連結
+			fromLab: String, //所屬實驗室
+			groupStudent: [{ studentID: String, studentName: String }]
 		},
-		width: Number,
-		height: Number,
-		top: Number,
-		right: Number
+		init: {
+			width: Number,
+			height: Number,
+			top: Number,
+			right: Number
+		}
 	},
 	data() {
 		return {
-			// width: 150,
-			// height: 200,
-			scale: 0.5,
+			width: this.init.width,
+			height: this.init.height,
+			target: {
+				width: this.init.width,
+				height: this.init.height
+			},
+			// top: (document.body.offsetHeight - 100) / 2,
+			// right: (document.body.offsetWidth - 250) / 2,
+			// studentGroup: studentGroupJson.filter(
+			// 	data => data.groupID == 16
+			// )[0],
+			scale: 1,
 			image: {
 				width: 0,
 				height: 0
 			},
-			titleFontOffser: 0
+			shadow: {
+				deg: -50
+			},
+			titleFontOffser: 0,
+			expand: false
 		};
 	},
 	computed: {
@@ -40,8 +57,12 @@ export default {
 				position: "absolute",
 				width: `${this.width}px`,
 				height: `${this.height}px`,
-				top: `${this.top}px`,
-				right: `${this.right}px`
+				top: `${this.init.top}px`,
+				right: `${this.init.right}px`,
+
+				"-webkit-filter":
+					"drop-shadow(5px 0px 3px rgba(255, 255, 255, 0.2))",
+				filter: "drop-shadow(5px 5px 2px rgba(0, 0, 0, 1))"
 			};
 		},
 		groupImage() {
@@ -50,42 +71,43 @@ export default {
 				width: `${this.width}px`,
 				height: `${this.height}px`,
 
-				"clip-path": "polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%)",
-				"background-image": `url(${this.studentGroup.ImgSrc})`,
-				"background-size": `${(this.image.width / this.image.height) *
-					this.height}px ${this.height}px`,
-				"background-position": "center center"
-				// filter: `grayscale(${this.scale}) blur(${5 * this.scale}px)`
+				"clip-path": "polygon(0% 0%, 100% 10%, 100% 100%, 0 90%)",
+				"background-color": `rgb(0,0,0)`,
+				"background-image": `url(${this.studentGroup.imgSrc})`,
+				"background-size": `${this.init.width}px ${(this.image.height /
+					this.image.width) *
+					this.init.width}px`,
+				"background-position": "center center",
+				"background-repeat": "no-repeat"
+
+				// filter: `blur(${5 * this.scale}px)`
 			};
 		},
 		titleFont() {
 			return {
 				position: "absolute",
-				margin: `${10}px ${0}px`,
+				width: `${this.init.width}px`,
+				top: `${this.titleFontOffser}px`,
+				right: "0%",
 				color: "rgb(255,255,255)",
-				right: `${this.titleFontOffser}px`,
 				"font-size": "18px",
 				"letter-spacing": `${5}px`,
 				"text-align": "center",
-				"line-height": `${30}px`,
-				"-webkit-writing-mode": "vertical-rl",
-				"writing-mode": "vertical-rl",
 
-				"-moz-transform": "skewX(-10deg)",
-				"-webkit-transform": "skewX(-10deg)",
-				"-o-transform": "skewX(-10deg)",
-				"-ms-transform": "skewX(-10deg)",
-				transform: "skewX(-10deg)",
+				filter: `blur(${5 * (1 - this.scale)}px)`,
 
-				"white-space": "pre-wrap",
-
-				filter: "blur(-6px)"
+				"-webkit-touch-callout": "none",
+				"-webkit-user-select": "none",
+				"-khtml-user-select": "none",
+				"-moz-user-select": "none",
+				"-ms-user-select": "none",
+				"user-select": "none"
 			};
 		}
 	},
 	created() {
 		let img = new Image();
-		img.src = this.studentGroup.ImgSrc;
+		img.src = this.studentGroup.imgSrc;
 		img.onload = () => {
 			this.image.width = img.width;
 			this.image.height = img.height;
@@ -102,9 +124,13 @@ export default {
 				let elem = document.getElementById("titleFont");
 				if (elem) {
 					let rect = elem.getBoundingClientRect();
-					this.titleFontOffser = this.width - rect.width;
+					this.titleFontOffser = (this.init.height - rect.height) / 2;
 				}
 			}
+		},
+		click() {
+			console.log("tag");
+			expand = !expand;
 		}
 	}
 };

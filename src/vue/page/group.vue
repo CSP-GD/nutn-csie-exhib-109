@@ -6,18 +6,40 @@
 			@mouseout="titleButtonUp=false"
 			@click="changePage(3)"
 		>首頁</div>
+		<div :style="innerPage"></div>
+
 		<tag
-			:studentGroup="studentGroupJson.filter(data => data.GroupID == 20)[0]"
-			:width="150"
-			:height="200"
-			:top="0"
-			:right="0"
+			:studentGroup="studentGroupJson.filter(data => data.groupID == 15)[0]"
+			:init="{
+				width:250,
+				height:100,
+				top:((height-100)/2),
+				right:(this.width - this.titleButtonWidth-250)/2
+			}"
+		></tag>
+		<tag
+			:studentGroup="studentGroupJson.filter(data => data.groupID == 20)[0]"
+			:init="{
+				width:250,
+				height:100,
+				top:(height-100)/2+95,
+				right:(this.width - this.titleButtonWidth-250)/2
+			}"
+		></tag>
+		<tag
+			:studentGroup="studentGroupJson.filter(data => data.groupID == 20)[0]"
+			:init="{
+				width:250,
+				height:100,
+				top:(height-100)/2+95+95,
+				right:(this.width - this.titleButtonWidth-250)/2
+			}"
 		></tag>
 	</div>
 </template>
 
 <script defer>
-import { StudentGroupJson } from "../../js/studentgroup";
+import { studentGroupJson } from "../../js/studentgroup";
 import tag from "../components/tag.vue";
 
 export default {
@@ -35,7 +57,7 @@ export default {
 		return {
 			titleButtonWidth: 100,
 			titleButtonUp: false,
-			studentGroupJson: StudentGroupJson
+			studentGroupJson: studentGroupJson
 		};
 	},
 	computed: {
@@ -75,6 +97,15 @@ export default {
 				"-moz-user-select": "none",
 				"-ms-user-select": "none",
 				"user-select": "none"
+			};
+		},
+		innerPage() {
+			return {
+				position: "absolute",
+				top: "0px",
+				right: "0px",
+				width: `${this.width - this.titleButtonWidth}px`,
+				height: `${this.height}px`
 			};
 		}
 	},
