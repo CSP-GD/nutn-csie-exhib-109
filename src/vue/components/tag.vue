@@ -1,5 +1,6 @@
 <template>
 	<div :id="`tag-${studentGroup.groupID}`" :style="tagContainer" @click="click">
+		<div :id="`groupImageBackground-${studentGroup.groupID}`" :style="groupImageBackground"></div>
 		<div :id="`groupImage-${studentGroup.groupID}`" :style="groupImage"></div>
 		<div :id="`titleFont-${studentGroup.groupID}`" :style="titleFont">{{studentGroup.projectName}}</div>
 	</div>
@@ -64,7 +65,7 @@ export default {
 				width: `${this.width}px`,
 				height: `${this.height}px`,
 				top: `${this.init.top}px`,
-				right: `${this.init.right}px`,
+				right: `${this.init.right - this.width / 2}px`,
 
 				"-webkit-filter":
 					"drop-shadow(5px 0px 3px rgba(255, 255, 255, 0.2))",
@@ -91,7 +92,7 @@ export default {
 									this.width,
 									this.tagData.maxWidth
 								))}%)`,
-				"background-color": `rgb(0,0,0)`,
+				"background-color": `rgb(0,0,0,0)`,
 				"background-image": `url(${this.studentGroup.imgSrc})`,
 				"background-size": `${
 					this.image.width / this.image.height <
@@ -108,6 +109,35 @@ export default {
 				"background-repeat": "no-repeat"
 
 				// filter: `blur(${5 * this.scale}px)`
+			};
+		},
+		groupImageBackground() {
+			return {
+				position: "absolute",
+				width: `${this.width}px`,
+				height: `${this.height}px`,
+
+				"clip-path": `polygon(0% 0%, 100% ${10 *
+					(1 -
+						Math.min(this.width, this.tagData.maxWidth) /
+							Math.max(
+								this.width,
+								this.tagData.maxWidth
+							))}%, 100% 100%, 0 ${100 -
+					10 *
+						(1 -
+							Math.min(this.width, this.tagData.maxWidth) /
+								Math.max(
+									this.width,
+									this.tagData.maxWidth
+								))}%)`,
+				"background-color": `rgb(0,0,0,1)`,
+				"background-image": `url(${this.studentGroup.imgSrc})`,
+				"background-size": `${this.width}px ${this.height}px`,
+				"background-position": "center center",
+				"background-repeat": "no-repeat",
+
+				filter: `grayscale(50%) blur(${3}px)`
 			};
 		},
 		titleFont() {
@@ -180,9 +210,7 @@ export default {
 			}
 		},
 		click() {
-			console.log("tag");
 			this.expand = !this.expand;
-			console.log(this.expand);
 			if (this.expand) {
 				this.target.height = this.tagData.maxHeight;
 				this.target.width = this.tagData.maxWidth;

@@ -41,11 +41,11 @@ export default {
 			},
 			now: {
 				top: 0,
-				right: (document.body.offsetWidth - 250) / 2
+				right: document.body.offsetWidth / 2
 			},
 			target: {
 				top: 0,
-				right: (document.body.offsetWidth - 250) / 2
+				right: document.body.offsetWidth / 2
 			},
 			heigthTable: new Array(studentGroupJson.length).fill(100)
 		};
@@ -102,7 +102,6 @@ export default {
 				(event.wheelDeltaY / Math.abs(event.wheelDeltaY)) *
 				this.tagData.minHeight *
 				1.01;
-			console.dir(this.target.top);
 		},
 		writeHeigthTable(id, height) {
 			this.heigthTable[id] = height;
