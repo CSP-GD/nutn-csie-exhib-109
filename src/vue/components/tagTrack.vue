@@ -15,47 +15,67 @@
 </template>
 
 <script defer>
-import { studentGroupJson } from "../../js/studentgroup";
+// import { studentGroupJson } from "../../js/studentgroup";
 import tag from "../components/tag.vue";
 
 export default {
 	props: {
-		// tagData: {
-		// 	minWidth: Number,
-		// 	minHeight: Number,
-		// 	maxWidth: Number,
-		// 	maxHeight: Number
-		// }
+		studentGroupJson: {
+			[Number]: {
+				groupID: Number, //專題編號
+				projectName: String, //專題名稱
+				imgSrc: String, //專題截圖
+				videoSrc: String, //專題影片
+				fileSrc: String, //檔案連結
+				fromLab: String, //所屬實驗室
+				groupStudent: [{ studentID: String, studentName: String }]
+			}
+		},
+		tagData: {
+			minWidth: Number,
+			minHeight: Number,
+			maxWidth: Number,
+			maxHeight: Number
+		},
+		init: {
+			top: Number,
+			right: Number
+		}
 	},
 	components: {
 		tag: tag
 	},
 	data() {
+		// console.log(this.studentGroupJson);
 		return {
-			studentGroupJson: studentGroupJson,
-			tagData: {
-				minWidth: 250,
-				minHeight: 100,
-				maxWidth: 1200,
-				maxHeight: 900
-			},
+			// studentGroupJson: studentGroupJson,
+			// tagData: {
+			// 	minWidth: 250,
+			// 	minHeight: 100,
+			// 	maxWidth: 1200,
+			// 	maxHeight: 900
+			// },
+			// init: {
+			// 	top: 0,
+			// 	right: document.body.offsetWidth / 2
+			// },
 			now: {
 				top: 0,
-				right: document.body.offsetWidth / 2
+				right: 0
 			},
 			target: {
 				top: 0,
-				right: document.body.offsetWidth / 2
+				right: 0
 			},
-			heigthTable: new Array(studentGroupJson.length).fill(100)
+			heigthTable: new Array(this.studentGroupJson.length).fill(100)
 		};
 	},
 	computed: {
 		track() {
 			return {
 				position: "absolute",
-				top: `${this.now.top}px`,
-				right: `${this.now.right}px`
+				top: `${this.init.top + this.now.top}px`,
+				right: `${this.init.right + this.now.right}px`
 			};
 		}
 	},
@@ -100,8 +120,7 @@ export default {
 		wheel(event) {
 			this.target.top +=
 				(event.wheelDeltaY / Math.abs(event.wheelDeltaY)) *
-				this.tagData.minHeight *
-				1.01;
+				this.tagData.minHeight;
 		},
 		writeHeigthTable(id, height) {
 			this.heigthTable[id] = height;

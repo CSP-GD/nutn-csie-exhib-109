@@ -8,5 +8,5 @@ import tagTrack from "../vue/components/tagTrack.vue"
 
 
 // new Vue(test).$mount('#main')
-// new Vue(main).$mount('#main')
-new Vue(tagTrack).$mount('#main')
+new Vue(main).$mount('#main')
+// new Vue(tagTrack).$mount('#main')

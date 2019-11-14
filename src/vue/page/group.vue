@@ -8,39 +8,25 @@
 		>首頁</div>
 		<div :style="innerPage"></div>
 
-		<tag
-			:studentGroup="studentGroupJson.filter(data => data.groupID == 15)[0]"
+		<tagTrack
+			:studentGroupJson="studentGroupJson"
+			:tagData="{
+			 	minWidth: 250,
+				minHeight: 100,
+				maxWidth: (this.width - this.titleButtonWidth)*0.9,
+				maxHeight: this.height*0.9
+		 	}"
 			:init="{
-				width:250,
-				height:100,
-				top:((height-100)/2),
-				right:(this.width - this.titleButtonWidth-250)/2
+				top:0,
+				right:(this.width - this.titleButtonWidth)/2
 			}"
-		></tag>
-		<tag
-			:studentGroup="studentGroupJson.filter(data => data.groupID == 20)[0]"
-			:init="{
-				width:250,
-				height:100,
-				top:(height-100)/2+95,
-				right:(this.width - this.titleButtonWidth-250)/2
-			}"
-		></tag>
-		<tag
-			:studentGroup="studentGroupJson.filter(data => data.groupID == 17)[0]"
-			:init="{
-				width:250,
-				height:100,
-				top:(height-100)/2+95+95,
-				right:(this.width - this.titleButtonWidth-250)/2
-			}"
-		></tag>
+		></tagTrack>
 	</div>
 </template>
 
 <script defer>
 import { studentGroupJson } from "../../js/studentgroup";
-import tag from "../components/tag.vue";
+import tagTrack from "../components/tagTrack.vue";
 
 export default {
 	props: {
@@ -51,7 +37,7 @@ export default {
 		height: Number
 	},
 	components: {
-		tag: tag
+		tagTrack: tagTrack
 	},
 	data() {
 		return {
