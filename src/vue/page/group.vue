@@ -6,21 +6,21 @@
 			@mouseout="titleButtonUp=false"
 			@click="changePage(3)"
 		>首頁</div>
-		<div :style="innerPage"></div>
-
-		<tagTrack
-			:studentGroupJson="studentGroupJson"
-			:tagData="{
+		<div :style="innerPage">
+			<tagTrack
+				:studentGroupJson="studentGroupJson"
+				:tagData="{
 			 	minWidth: 250,
 				minHeight: 100,
 				maxWidth: (this.width - this.titleButtonWidth)*0.9,
 				maxHeight: this.height*0.9
 		 	}"
-			:init="{
+				:init="{
 				top:0,
 				right:(this.width - this.titleButtonWidth)/2
 			}"
-		></tagTrack>
+			></tagTrack>
+		</div>
 	</div>
 </template>
 
