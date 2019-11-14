@@ -5,11 +5,11 @@
 			v-bind:key="studentGroup.groupID"
 			:studentGroup="studentGroup"
 			:init="{
-				width:250,
-				height:100,
-				top:95*(studentGroup.groupID-1),
+				top:heigthTable.slice(studentGroup.groupID).reduce((last, current) =>last+current,0),//(tagData.minHeight*1.01)*(studentGroup.groupID-1),
 				right:0
 			}"
+			:tagData="tagData"
+			:writeHeigthTable="writeHeigthTable"
 		></tag>
 	</div>
 </template>
@@ -46,7 +46,8 @@ export default {
 			target: {
 				top: 0,
 				right: (document.body.offsetWidth - 250) / 2
-			}
+			},
+			heigthTable: new Array(studentGroupJson.length).fill(100)
 		};
 	},
 	computed: {
@@ -92,14 +93,19 @@ export default {
 				}
 				if (this.now.top != this.target.top) {
 					this.now.top =
-						this.target.top * 0.0333 + this.now.top * (1 - 0.0333);
+						this.target.top * 0.06 + this.now.top * (1 - 0.06);
 				}
 			}
 		},
 		wheel(event) {
 			this.target.top +=
-				(event.wheelDeltaY / Math.abs(event.wheelDeltaY)) * (95 / 2);
+				(event.wheelDeltaY / Math.abs(event.wheelDeltaY)) *
+				this.tagData.minHeight *
+				1.01;
 			console.dir(this.target.top);
+		},
+		writeHeigthTable(id, height) {
+			this.heigthTable[id] = height;
 		}
 	}
 };

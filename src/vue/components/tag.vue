@@ -20,19 +20,24 @@ export default {
 			groupStudent: [{ studentID: String, studentName: String }]
 		},
 		init: {
-			width: Number,
-			height: Number,
 			top: Number,
 			right: Number
-		}
+		},
+		tagData: {
+			minWidth: Number,
+			minHeight: Number,
+			maxWidth: Number,
+			maxHeight: Number
+		},
+		writeHeigthTable: Function
 	},
 	data() {
 		return {
-			width: this.init.width,
-			height: this.init.height,
+			width: this.tagData.minWidth,
+			height: this.tagData.minHeight,
 			target: {
-				width: this.init.width,
-				height: this.init.height
+				width: this.tagData.minWidth,
+				height: this.tagData.minHeight
 			},
 			// top: (document.body.offsetHeight - 100) / 2,
 			// right: (document.body.offsetWidth - 250) / 2,
@@ -54,6 +59,7 @@ export default {
 	computed: {
 		tagContainer() {
 			return {
+				"z-index": this.expand ? 1 : 0,
 				position: "absolute",
 				width: `${this.width}px`,
 				height: `${this.height}px`,
@@ -71,22 +77,43 @@ export default {
 				width: `${this.width}px`,
 				height: `${this.height}px`,
 
-				"clip-path": "polygon(0% 0%, 100% 10%, 100% 100%, 0 90%)",
+				"clip-path": `polygon(0% 0%, 100% ${10 *
+					(1 -
+						Math.min(this.width, this.tagData.maxWidth) /
+							Math.max(
+								this.width,
+								this.tagData.maxWidth
+							))}%, 100% 100%, 0 ${100 -
+					10 *
+						(1 -
+							Math.min(this.width, this.tagData.maxWidth) /
+								Math.max(
+									this.width,
+									this.tagData.maxWidth
+								))}%)`,
 				"background-color": `rgb(0,0,0)`,
 				"background-image": `url(${this.studentGroup.imgSrc})`,
-				"background-size": `${this.init.width}px ${(this.image.height /
-					this.image.width) *
-					this.init.width}px`,
+				"background-size": `${
+					this.image.width / this.image.height <
+					this.width / this.height
+						? (this.image.width / this.image.height) * this.height
+						: this.width
+				}px ${
+					this.image.width / this.image.height <
+					this.width / this.height
+						? this.height
+						: (this.image.height / this.image.width) * this.width
+				}px`,
 				"background-position": "center center",
-				"background-repeat": "no-repeat",
+				"background-repeat": "no-repeat"
 
-				filter: `blur(${5 * this.scale}px)`
+				// filter: `blur(${5 * this.scale}px)`
 			};
 		},
 		titleFont() {
 			return {
 				position: "absolute",
-				width: `${this.init.width}px`,
+				width: `${this.width}px`,
 				top: `${this.titleFontOffser}px`,
 				right: "0%",
 				color: "rgb(255,255,255)",
@@ -129,13 +156,40 @@ export default {
 				);
 				if (elem) {
 					let rect = elem.getBoundingClientRect();
-					this.titleFontOffser = (this.init.height - rect.height) / 2;
+					this.titleFontOffser =
+						(this.tagData.minHeight - rect.height) / 2;
 				}
+			}
+			{
+				if (this.width - this.target.width < 0) {
+					this.width = this.target.width * 0.1 + this.width * 0.9;
+					if (Math.abs(this.width - this.target.width) < 100) {
+						this.height =
+							this.target.height * 0.1 + this.height * 0.9;
+					}
+				} else {
+					this.height = this.target.height * 0.1 + this.height * 0.9;
+					if (Math.abs(this.height - this.target.height) < 100) {
+						this.width = this.target.width * 0.1 + this.width * 0.9;
+					}
+				}
+				this.writeHeigthTable(
+					this.studentGroup.groupID - 1,
+					this.height
+				);
 			}
 		},
 		click() {
 			console.log("tag");
 			this.expand = !this.expand;
+			console.log(this.expand);
+			if (this.expand) {
+				this.target.height = this.tagData.maxHeight;
+				this.target.width = this.tagData.maxWidth;
+			} else {
+				this.target.height = this.tagData.minHeight;
+				this.target.width = this.tagData.minWidth;
+			}
 		}
 	}
 };

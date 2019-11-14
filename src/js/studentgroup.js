@@ -53,8 +53,8 @@ export let studentGroupJson = [
     /* 第五組 */
     {
         groupID: 5, //專題編號
-        projectName: "", //專題名稱
-        imgSrc: "", //專題截圖
+        projectName: "以行動裝置實現表面粗糙度之量測", //專題名稱
+        imgSrc: require("../../img/studentgroup/05/385120.jpg"), //專題截圖
         videoSrc: "", //專題影片
         fileSrc: "", //檔案連結
         fromLab: "資料庫與資訊知識系統實驗室", //所屬實驗室
