@@ -132,7 +132,7 @@ export default {
 											event.touches[0].screenY -
 												this.touch.y
 										)) *
-										0.16
+										1
 								);
 							}
 							this.touch.x = event.touches[0].screenX;
