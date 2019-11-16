@@ -1,12 +1,12 @@
 <template>
-	<div id="innerPage-1" :style="innerPage">
+	<div :id="`innerPage-${id}`" :style="innerPage">
 		<div :style="track">
 			<tag
 				v-for="(studentGroup) in studentGroupJson"
 				v-bind:key="studentGroup.groupID"
 				:studentGroup="studentGroup"
 				:init="{
-					top:heigthTable.slice(0,studentGroup.groupID-1).reduce((last, current) =>last+current,0),
+					top:tagData.minHeight*(studentGroup.groupID-2)+(expandedGroupID<studentGroup.groupID&&expandedGroupID!=-1?expandedGroupHeight:tagData.minHeight),
 					right:init.width/2
 				}"
 				:tagData="{
@@ -17,7 +17,7 @@
 				}"
 				:expandedGroupID="expandedGroupID"
 				:writeExpandedGroupID="writeExpandedGroupID"
-				:writeHeigthTable="writeHeigthTable"
+				:writeExpandedGroupHeigth="writeExpandedGroupHeigth"
 			></tag>
 		</div>
 	</div>
@@ -29,6 +29,7 @@ import tag from "../components/tag.vue";
 
 export default {
 	props: {
+		id: Number,
 		studentGroupJson: {
 			[Number]: {
 				groupID: Number, //專題編號
@@ -78,8 +79,11 @@ export default {
 				top: 0,
 				right: 0
 			},
-			heigthTable: new Array(this.studentGroupJson.length).fill(100),
+			heigthTable: new Array(this.studentGroupJson.length).fill(
+				this.tagData.minHeight
+			),
 			expandedGroupID: -1,
+			expandedGroupHeight: this.tagData.minHeight,
 			touch: { x: null, y: null }
 		};
 	},
@@ -99,46 +103,55 @@ export default {
 				top: `${this.now.top}px`,
 				right: `${this.now.right}px`
 			};
+		},
+		a(i) {
+			return this.heigthTable
+				.slice(0, i - 1)
+				.reduce((last, current) => last + current, 0);
 		}
 	},
 	created() {
 		this.mainLoop();
 		let bindWheel = () => {
 			window.setTimeout(() => {
-				if (document.getElementById("innerPage-1")) {
+				if (document.getElementById(`innerPage-${this.id}`)) {
 					document
-						.getElementById("innerPage-1")
+						.getElementById(`innerPage-${this.id}`)
 						.addEventListener("DOMMouseScroll", event => {
 							this.slide(event.wheelDeltaY);
 						});
 					document.getElementById(
-						"innerPage-1"
+						`innerPage-${this.id}`
 					).onmousewheel = event => {
 						event = event || window.event;
 						this.slide(event.wheelDeltaY);
 					};
-					document.getElementById("innerPage-1").addEventListener(
-						"touchmove",
-						event => {
-							// event.preventDefault();
-							if (this.touch.y !== null) {
-								this.slide(
-									event.touches[0].screenY - this.touch.y
-								);
-							}
-							this.touch.x = event.touches[0].screenX;
-							this.touch.y = event.touches[0].screenY;
-						},
-						false
-					);
-					document.getElementById("innerPage-1").addEventListener(
-						"touchstart",
-						event => {
-							this.touch.x = event.touches[0].screenX;
-							this.touch.y = event.touches[0].screenY;
-						},
-						false
-					);
+					document
+						.getElementById(`innerPage-${this.id}`)
+						.addEventListener(
+							"touchmove",
+							event => {
+								// event.preventDefault();
+								if (this.touch.y !== null) {
+									this.slide(
+										event.touches[0].screenY - this.touch.y
+									);
+								}
+								this.touch.x = event.touches[0].screenX;
+								this.touch.y = event.touches[0].screenY;
+							},
+							false
+						);
+					document
+						.getElementById(`innerPage-${this.id}`)
+						.addEventListener(
+							"touchstart",
+							event => {
+								this.touch.x = event.touches[0].screenX;
+								this.touch.y = event.touches[0].screenY;
+							},
+							false
+						);
 				} else {
 					bindWheel();
 				}
@@ -154,8 +167,9 @@ export default {
 			requestAnimationFrame(this.mainLoop);
 			{
 				if (this.target.top > this.init.height / 2) {
-					this.target.top =
-						this.target.top * 0.8 + (this.init.height / 2) * 0.2;
+					this.target.top = Math.round(
+						this.target.top * 0.8 + (this.init.height / 2) * 0.2
+					);
 				} else if (
 					this.target.top <
 					-1 *
@@ -166,19 +180,21 @@ export default {
 								: this.tagData.maxHeight)) +
 						this.init.height / 2
 				) {
-					this.target.top =
+					this.target.top = Math.round(
 						this.target.top * 0.8 +
-						(-1 *
-							this.studentGroupJson.length *
-							this.tagData.minHeight +
-							this.init.height / 2) *
-							0.2;
+							(-1 *
+								this.studentGroupJson.length *
+								this.tagData.minHeight +
+								this.init.height / 2) *
+								0.2
+					);
 				}
 			}
 			{
 				if (this.now.top != this.target.top) {
-					this.now.top =
-						this.target.top * 0.06 + this.now.top * (1 - 0.06);
+					this.now.top = Math.round(
+						this.target.top * 0.06 + this.now.top * (1 - 0.06)
+					);
 				}
 			}
 		},
@@ -187,16 +203,19 @@ export default {
 			this.target.top += deltaY;
 		},
 		writeHeigthTable(id, height) {
-			this.heigthTable[id - 1] = height;
+			this.heigthTable[id - 1] = Math.round(height);
 		},
 		writeExpandedGroupID(id) {
-			// console.log(this.expandedGroupID);
 			this.expandedGroupID = id;
 			if (id != -1) {
-				this.target.top =
+				this.target.top = Math.round(
 					-1 * (id - 1) * this.tagData.minHeight +
-					(this.init.height - this.tagData.maxHeight) / 2;
+						(this.init.height - this.tagData.maxHeight) / 2
+				);
 			}
+		},
+		writeExpandedGroupHeigth(height) {
+			this.expandedGroupHeight = height;
 		}
 	}
 };

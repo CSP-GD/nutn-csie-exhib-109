@@ -7,6 +7,7 @@
 			@click="changePage(3)"
 		>首頁</div>
 		<tagTrack
+			:id="1"
 			:studentGroupJson="studentGroupJson"
 			:tagData="{
 					minWidth: 250,
