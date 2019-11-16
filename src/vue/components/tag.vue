@@ -30,6 +30,8 @@ export default {
 			maxWidth: Number,
 			maxHeight: Number
 		},
+		expandedGroupID: Number,
+		writeExpandedGroupID: Function,
 		writeHeigthTable: Function
 	},
 	data() {
@@ -53,14 +55,14 @@ export default {
 			shadow: {
 				deg: -50
 			},
-			titleFontOffser: 0,
-			expand: false
+			titleFontOffser: 0
 		};
 	},
 	computed: {
 		tagContainer() {
 			return {
-				"z-index": this.expand ? 1 : 0,
+				"z-index":
+					this.expandedGroupID == this.studentGroup.groupID ? 1 : 0,
 				position: "absolute",
 				width: `${this.width}px`,
 				height: `${this.height}px`,
@@ -191,6 +193,15 @@ export default {
 				}
 			}
 			{
+				if (this.expandedGroupID != this.studentGroup.groupID) {
+					this.target.height = this.tagData.minHeight;
+					this.target.width = this.tagData.minWidth;
+				} else {
+					this.target.height = this.tagData.maxHeight;
+					this.target.width = this.tagData.maxWidth;
+				}
+			}
+			{
 				if (this.width - this.target.width < 0) {
 					this.width = this.target.width * 0.1 + this.width * 0.9;
 					if (Math.abs(this.width - this.target.width) < 100) {
@@ -203,20 +214,17 @@ export default {
 						this.width = this.target.width * 0.1 + this.width * 0.9;
 					}
 				}
-				this.writeHeigthTable(
-					this.studentGroup.groupID - 1,
-					this.height
-				);
+				this.writeHeigthTable(this.studentGroup.groupID, this.height);
 			}
 		},
 		click() {
-			this.expand = !this.expand;
-			if (this.expand) {
-				this.target.height = this.tagData.maxHeight;
-				this.target.width = this.tagData.maxWidth;
+			if (
+				this.expandedGroupID != this.studentGroup.groupID ||
+				this.expandedGroupID == -1
+			) {
+				this.writeExpandedGroupID(this.studentGroup.groupID);
 			} else {
-				this.target.height = this.tagData.minHeight;
-				this.target.width = this.tagData.minWidth;
+				this.writeExpandedGroupID(-1);
 			}
 		}
 	}
