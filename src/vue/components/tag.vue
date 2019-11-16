@@ -214,7 +214,17 @@ export default {
 						this.width = this.target.width * 0.1 + this.width * 0.9;
 					}
 				}
-				this.writeHeigthTable(this.studentGroup.groupID, this.height);
+				if (
+					Math.round(this.height) !=
+						Math.round(this.tagData.minHeight) &&
+					Math.round(this.height) !=
+						Math.round(this.tagData.maxHeight)
+				) {
+					this.writeHeigthTable(
+						this.studentGroup.groupID,
+						this.height
+					);
+				}
 			}
 		},
 		click() {
