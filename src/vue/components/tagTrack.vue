@@ -124,7 +124,7 @@ export default {
 					document.getElementById("innerPage-1").addEventListener(
 						"touchmove",
 						event => {
-							event.preventDefault();
+							// event.preventDefault();
 							if (this.touch.y !== null) {
 								this.slide(
 									((event.touches[0].screenY - this.touch.y) /
