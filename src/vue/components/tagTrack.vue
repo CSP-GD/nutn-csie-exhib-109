@@ -109,17 +109,13 @@ export default {
 					document
 						.getElementById("innerPage-1")
 						.addEventListener("DOMMouseScroll", event => {
-							this.slide(
-								event.wheelDeltaY / Math.abs(event.wheelDeltaY)
-							);
+							this.slide(event.wheelDeltaY);
 						});
 					document.getElementById(
 						"innerPage-1"
 					).onmousewheel = event => {
 						event = event || window.event;
-						this.slide(
-							event.wheelDeltaY / Math.abs(event.wheelDeltaY)
-						);
+						this.slide(event.wheelDeltaY);
 					};
 					document.getElementById("innerPage-1").addEventListener(
 						"touchmove",
@@ -127,14 +123,18 @@ export default {
 							// event.preventDefault();
 							if (this.touch.y !== null) {
 								this.slide(
-									((event.touches[0].screenY - this.touch.y) /
-										Math.abs(
-											event.touches[0].screenY -
-												this.touch.y
-										)) *
-										1
+									(event.touches[0].screenY - this.touch.y) *
+										2
 								);
 							}
+							this.touch.x = event.touches[0].screenX;
+							this.touch.y = event.touches[0].screenY;
+						},
+						false
+					);
+					document.getElementById("innerPage-1").addEventListener(
+						"touchstart",
+						event => {
 							this.touch.x = event.touches[0].screenX;
 							this.touch.y = event.touches[0].screenY;
 						},
@@ -185,7 +185,7 @@ export default {
 		},
 		slide(deltaY) {
 			deltaY = Number.isNaN(deltaY) ? 0 : deltaY;
-			this.target.top += deltaY * this.tagData.minHeight;
+			this.target.top += deltaY;
 		},
 		writeHeigthTable(id, height) {
 			this.heigthTable[id - 1] = height;
