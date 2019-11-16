@@ -123,7 +123,8 @@ export default {
 							// event.preventDefault();
 							if (this.touch.y !== null) {
 								this.slide(
-									event.touches[0].screenY - this.touch.y
+									(event.touches[0].screenY - this.touch.y) *
+										0.2
 								);
 							}
 							this.touch.x = event.touches[0].screenX;
