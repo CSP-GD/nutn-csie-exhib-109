@@ -7,6 +7,7 @@ export let studentGroupJson = [
         videoSrc: "", //專題影片
         fileSrc: "", //檔案連結
         fromLab: "知識本體應用暨軟體工程實驗室", //所屬實驗室
+        summary: "", //專題摘要
         groupStudent: [
             { studentID: "S10459044", studentName: "洪誠安" }
         ]
@@ -19,6 +20,7 @@ export let studentGroupJson = [
         videoSrc: "", //專題影片
         fileSrc: "", //檔案連結
         fromLab: "智慧型機器人實驗室", //所屬實驗室
+        summary: "", //專題摘要
         groupStudent: [
             { studentID: "S10559001", studentName: "徐偉倫" },
             { studentID: "S10559044", studentName: "洪于婕" }
@@ -32,6 +34,7 @@ export let studentGroupJson = [
         videoSrc: "", //專題影片
         fileSrc: "", //檔案連結
         fromLab: "多媒體網路實驗室", //所屬實驗室
+        summary: "", //專題摘要
         groupStudent: [
             { studentID: "S10559002", studentName: "蘇政穎" },
             { studentID: "S10559004", studentName: "陳銘濡" }
@@ -45,6 +48,7 @@ export let studentGroupJson = [
         videoSrc: "", //專題影片
         fileSrc: "", //檔案連結
         fromLab: "資料系統實驗室", //所屬實驗室
+        summary: "", //專題摘要
         groupStudent: [
             { studentID: "S10559003", studentName: "林迺航" },
             { studentID: "S10559022", studentName: "廖毅軒" }
@@ -58,6 +62,7 @@ export let studentGroupJson = [
         videoSrc: "", //專題影片
         fileSrc: "", //檔案連結
         fromLab: "資料庫與資訊知識系統實驗室", //所屬實驗室
+        summary: "", //專題摘要
         groupStudent: [
             { studentID: "S10559005", studentName: "高嘉謙" },
             { studentID: "S10559006", studentName: "郭峻霖" }
@@ -71,6 +76,7 @@ export let studentGroupJson = [
         videoSrc: "", //專題影片
         fileSrc: "", //檔案連結
         fromLab: "多媒體網路實驗室", //所屬實驗室
+        summary: "", //專題摘要
         groupStudent: [
             { studentID: "S10559007", studentName: "丁吾心" },
             { studentID: "S10559026", studentName: "羅宇宸" }
@@ -84,6 +90,7 @@ export let studentGroupJson = [
         videoSrc: "", //專題影片
         fileSrc: "", //檔案連結
         fromLab: "資料系統實驗室", //所屬實驗室
+        summary: "", //專題摘要
         groupStudent: [
             { studentID: "S10559008", studentName: "游士玄" }
         ]
@@ -96,6 +103,7 @@ export let studentGroupJson = [
         videoSrc: "", //專題影片
         fileSrc: "", //檔案連結
         fromLab: "知識本體應用暨軟體工程實驗室", //所屬實驗室
+        summary: "", //專題摘要
         groupStudent: [
             { studentID: "S10559009", studentName: "李原鋌" },
             { studentID: "S10559024", studentName: "李誌軒" },
@@ -110,6 +118,7 @@ export let studentGroupJson = [
         videoSrc: "", //專題影片
         fileSrc: "", //檔案連結
         fromLab: "行動計算與網路實驗室", //所屬實驗室
+        summary: "", //專題摘要
         groupStudent: [
             { studentID: "S10559010", studentName: "郭憲儒" },
             { studentID: "S10559021", studentName: "吳柏賢" }
@@ -123,6 +132,7 @@ export let studentGroupJson = [
         videoSrc: "", //專題影片
         fileSrc: "", //檔案連結
         fromLab: "電腦輔助系統設計實驗室", //所屬實驗室
+        summary: "", //專題摘要
         groupStudent: [
             { studentID: "S10559012", studentName: "劉鎮維" },
             { studentID: "S10559045", studentName: "胡君愷" }
@@ -136,6 +146,7 @@ export let studentGroupJson = [
         videoSrc: "", //專題影片
         fileSrc: "", //檔案連結
         fromLab: "多媒體與醫學影像實驗室", //所屬實驗室
+        summary: "", //專題摘要
         groupStudent: [
             { studentID: "S10559013", studentName: "佘宜道" }
         ]
@@ -148,6 +159,7 @@ export let studentGroupJson = [
         videoSrc: "", //專題影片
         fileSrc: "", //檔案連結
         fromLab: "電腦輔助系統設計實驗室", //所屬實驗室
+        summary: "", //專題摘要
         groupStudent: [
             { studentID: "S10559014", studentName: "廖御閎" },
             { studentID: "S10559027", studentName: "陳巍中" }
@@ -161,6 +173,7 @@ export let studentGroupJson = [
         videoSrc: "", //專題影片
         fileSrc: "", //檔案連結
         fromLab: "行動計算與網路實驗室", //所屬實驗室
+        summary: "", //專題摘要
         groupStudent: [
             { studentID: "S10559015", studentName: "周欣玄" },
             { studentID: "S10559018", studentName: "葉瓊斯" }
@@ -174,6 +187,7 @@ export let studentGroupJson = [
         videoSrc: "", //專題影片
         fileSrc: "", //檔案連結
         fromLab: "知識本體應用暨軟體工程實驗室", //所屬實驗室
+        summary: "", //專題摘要
         groupStudent: [
             { studentID: "S10559016", studentName: "張維珊" },
             { studentID: "S10559036", studentName: "周晨瑋" }
@@ -187,6 +201,7 @@ export let studentGroupJson = [
         videoSrc: "", //專題影片
         fileSrc: "", //檔案連結
         fromLab: "多媒體與醫學影像實驗室", //所屬實驗室
+        summary: "", //專題摘要
         groupStudent: [
             { studentID: "S10559017", studentName: "趙云珮" }
         ]
@@ -199,6 +214,7 @@ export let studentGroupJson = [
         videoSrc: "", //專題影片
         fileSrc: "", //檔案連結
         fromLab: "多媒體與醫學影像實驗室", //所屬實驗室
+        summary: "", //專題摘要
         groupStudent: [
             { studentID: "S10559019", studentName: "林萱" },
             { studentID: "S10559031", studentName: "蔡亞倫" }
@@ -212,6 +228,7 @@ export let studentGroupJson = [
         videoSrc: "", //專題影片
         fileSrc: "", //檔案連結
         fromLab: "電腦輔助系統設計實驗室", //所屬實驗室
+        summary: "", //專題摘要
         groupStudent: [
             { studentID: "S10559020", studentName: "連永立" }
         ]
@@ -224,6 +241,7 @@ export let studentGroupJson = [
         videoSrc: "", //專題影片
         fileSrc: "", //檔案連結
         fromLab: "資料庫與資訊知識系統實驗室", //所屬實驗室
+        summary: "", //專題摘要
         groupStudent: [
             { studentID: "S10559023", studentName: "鄭聖玄" },
             { studentID: "S10559043", studentName: "金鑒修" }
@@ -237,6 +255,7 @@ export let studentGroupJson = [
         videoSrc: "", //專題影片
         fileSrc: "", //檔案連結
         fromLab: "多媒體網路實驗室", //所屬實驗室
+        summary: "", //專題摘要
         groupStudent: [
             { studentID: "S10559025", studentName: "黃祈緯" },
         ]
@@ -249,6 +268,7 @@ export let studentGroupJson = [
         videoSrc: "", //專題影片
         fileSrc: "", //檔案連結
         fromLab: "生物資訊實驗室", //所屬實驗室
+        summary: "", //專題摘要
         groupStudent: [
             { studentID: "S10559028", studentName: "黃仁鴻" },
         ]
@@ -261,6 +281,7 @@ export let studentGroupJson = [
         videoSrc: "", //專題影片
         fileSrc: "", //檔案連結
         fromLab: "電腦輔助系統設計實驗室", //所屬實驗室
+        summary: "", //專題摘要
         groupStudent: [
             { studentID: "S10559032", studentName: "吳孟霖" }
         ]
@@ -273,6 +294,7 @@ export let studentGroupJson = [
         videoSrc: "", //專題影片
         fileSrc: "", //檔案連結
         fromLab: "多媒體與醫學影像實驗室", //所屬實驗室
+        summary: "", //專題摘要
         groupStudent: [
             { studentID: "S10559034", studentName: "楊明諺" }
         ]
@@ -285,6 +307,7 @@ export let studentGroupJson = [
         videoSrc: "", //專題影片
         fileSrc: "", //檔案連結
         fromLab: "資料系統實驗室", //所屬實驗室
+        summary: "", //專題摘要
         groupStudent: [
             { studentID: "S10559035", studentName: "楊政碩" },
             { studentID: "S10559039", studentName: "隋昊璟" }
@@ -298,6 +321,7 @@ export let studentGroupJson = [
         videoSrc: "", //專題影片
         fileSrc: "", //檔案連結
         fromLab: "智慧型機器人實驗室", //所屬實驗室
+        summary: "", //專題摘要
         groupStudent: [
             { studentID: "S10559037", studentName: "張俞方" },
             { studentID: "S10559040", studentName: "施宣妤" }
@@ -311,6 +335,7 @@ export let studentGroupJson = [
         videoSrc: "", //專題影片
         fileSrc: "", //檔案連結
         fromLab: "行動計算與網路實驗室", //所屬實驗室
+        summary: "", //專題摘要
         groupStudent: [
             { studentID: "S10559041", studentName: "呂玉嫻" }
         ]
@@ -323,6 +348,7 @@ export let studentGroupJson = [
         videoSrc: "", //專題影片
         fileSrc: "", //檔案連結
         fromLab: "智慧型機器人實驗室", //所屬實驗室
+        summary: "", //專題摘要
         groupStudent: [
             { studentID: "S10559042", studentName: "于鶴瑤" }
         ]
@@ -335,6 +361,7 @@ export let studentGroupJson = [
         videoSrc: "", //專題影片
         fileSrc: "", //檔案連結
         fromLab: "多媒體與醫學影像實驗室", //所屬實驗室
+        summary: "", //專題摘要
         groupStudent: [
             { studentID: "S10559046", studentName: "顏婷玉" }
         ]

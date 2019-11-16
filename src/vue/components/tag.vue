@@ -1,8 +1,13 @@
 <template>
-	<div :id="`tag-${studentGroup.groupID}`" :style="tagContainer" @click="click">
+	<div :id="`tag-${studentGroup.groupID}`" :style="tagContainer">
+		<div :id="`groupInfo-${studentGroup.groupID}`" :style="groupInfo">11111111111111111111111</div>
 		<div :id="`groupImageBackground-${studentGroup.groupID}`" :style="groupImageBackground"></div>
-		<div :id="`groupImage-${studentGroup.groupID}`" :style="groupImage"></div>
-		<div :id="`titleFont-${studentGroup.groupID}`" :style="titleFont">{{studentGroup.projectName}}</div>
+		<div :id="`groupImage-${studentGroup.groupID}`" :style="groupImage" @click="click"></div>
+		<div
+			:id="`titleFont-${studentGroup.groupID}`"
+			:style="titleFont"
+			@click="click"
+		>{{studentGroup.projectName}}</div>
 	</div>
 </template>
 
@@ -69,8 +74,7 @@ export default {
 				top: `${this.init.top}px`,
 				right: `${this.init.right - this.width / 2}px`,
 
-				"-webkit-filter":
-					"drop-shadow(5px 0px 3px rgba(255, 255, 255, 0.2))",
+				"-webkit-filter": "drop-shadow(5px 5px 2px rgba(0, 0, 0, 1))",
 				filter: "drop-shadow(5px 5px 2px rgba(0, 0, 0, 1))"
 			};
 		},
@@ -78,7 +82,10 @@ export default {
 			return {
 				position: "absolute",
 				width: `${this.width}px`,
-				height: `${this.height}px`,
+				height: `${Math.max(
+					this.tagData.minHeight,
+					this.height / 3
+				)}px`,
 
 				"clip-path": `polygon(0% 0%, 100% ${10 *
 					(1 -
@@ -98,13 +105,16 @@ export default {
 				"background-image": `url(${this.studentGroup.imgSrc})`,
 				"background-size": `${
 					this.image.width / this.image.height <
-					this.width / this.height
-						? (this.image.width / this.image.height) * this.height
+					this.width /
+						Math.max(this.tagData.minHeight, this.height / 3)
+						? (this.image.width / this.image.height) *
+						  Math.max(this.tagData.minHeight, this.height / 3)
 						: this.width
 				}px ${
 					this.image.width / this.image.height <
-					this.width / this.height
-						? this.height
+					this.width /
+						Math.max(this.tagData.minHeight, this.height / 3)
+						? Math.max(this.tagData.minHeight, this.height / 3)
 						: (this.image.height / this.image.width) * this.width
 				}px`,
 				"background-position": "center center",
@@ -117,7 +127,10 @@ export default {
 			return {
 				position: "absolute",
 				width: `${this.width}px`,
-				height: `${this.height}px`,
+				height: `${Math.max(
+					this.tagData.minHeight,
+					this.height / 3
+				)}px`,
 
 				"clip-path": `polygon(0% 0%, 100% ${10 *
 					(1 -
@@ -135,11 +148,53 @@ export default {
 								))}%)`,
 				"background-color": `rgb(0,0,0,1)`,
 				"background-image": `url(${this.studentGroup.imgSrc})`,
-				"background-size": `${this.width}px ${this.height}px`,
+				"background-size": `${this.width}px ${Math.max(
+					this.tagData.minHeight,
+					this.height / 3
+				)}px`,
 				"background-position": "center center",
 				"background-repeat": "no-repeat",
 
 				filter: `grayscale(50%) blur(${3}px)`
+			};
+		},
+		groupInfo() {
+			return {
+				position: "absolute",
+				width: `${this.width}px`,
+				height: `${this.height}px`,
+
+				color: "rgb(0,0,0)",
+				"font-size": "18px",
+				"letter-spacing": `${5}px`,
+				"text-align": "center",
+
+				"clip-path": `polygon(0% 0%, 100% ${10 *
+					(1 -
+						Math.min(this.width, this.tagData.maxWidth) /
+							Math.max(
+								this.width,
+								this.tagData.maxWidth
+							))}%, 100% 100%, 0 ${100 -
+					10 *
+						(1 -
+							Math.min(this.width, this.tagData.maxWidth) /
+								Math.max(
+									this.width,
+									this.tagData.maxWidth
+								))}%)`,
+				"background-color": `rgb(255,255,255,${(this.height -
+					this.tagData.minHeight) /
+					(this.tagData.maxHeight - this.tagData.minHeight)})`,
+				"background-size": `${this.width}px ${this.height}px`,
+				"background-position": "center center",
+
+				filter: `blur(${100 *
+					(1 -
+						(this.height - this.tagData.minHeight) /
+							(this.tagData.maxHeight -
+								this.tagData
+									.minHeight))}px) drop-shadow(0px 0px 2px rgba(0, 0, 0, 1))`
 			};
 		},
 		titleFont() {
@@ -153,10 +208,11 @@ export default {
 				"letter-spacing": `${5}px`,
 				"text-align": "center",
 
-				filter: `blur(${5 *
-					(1 -
-						this
-							.scale)}px) drop-shadow(0px 0px 2px rgba(0, 0, 0, 1))`,
+				filter: `blur(${100 *
+					((this.height - this.tagData.minHeight) /
+						(this.tagData.maxHeight -
+							this.tagData
+								.minHeight))}px) drop-shadow(0px 0px 2px rgba(0, 0, 0, 1))`,
 
 				"-webkit-touch-callout": "none",
 				"-webkit-user-select": "none",

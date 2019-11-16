@@ -6,7 +6,7 @@
 				v-bind:key="studentGroup.groupID"
 				:studentGroup="studentGroup"
 				:init="{
-					top:tagData.minHeight*(studentGroup.groupID-2)+(expandedGroupID<studentGroup.groupID&&expandedGroupID!=-1?tagData.maxHeight:tagData.minHeight),//heigthTable.slice(0,studentGroup.groupID-1).reduce((last, current) =>last+current,0),
+					top:heigthTable.slice(0,studentGroup.groupID-1).reduce((last, current) =>last+current,0),
 					right:init.width/2
 				}"
 				:tagData="{
