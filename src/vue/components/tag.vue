@@ -1,11 +1,11 @@
 <template>
-	<div :id="`tag-${studentGroup.groupID}`" :style="tagContainer">
-		<div :id="`groupInfo-${studentGroup.groupID}`" :style="groupInfo">11111111111111111111111</div>
-		<div :id="`groupImageBackground-${studentGroup.groupID}`" :style="groupImageBackground"></div>
-		<div :id="`groupImage-${studentGroup.groupID}`" :style="groupImage" @click="click"></div>
+	<div :id="`tag-${studentGroup.groupID}`" :style="tagContainerList">
+		<div :id="`groupInfo-${studentGroup.groupID}`" :style="groupInfoList">11111111111111111111111</div>
+		<div :id="`groupImageBackground-${studentGroup.groupID}`" :style="groupImageBackgroundList"></div>
+		<div :id="`groupImage-${studentGroup.groupID}`" :style="groupImageList" @click="click"></div>
 		<div
 			:id="`titleFont-${studentGroup.groupID}`"
-			:style="titleFont"
+			:style="titleFontList"
 			@click="click"
 		>{{studentGroup.projectName}}</div>
 	</div>
@@ -40,22 +40,19 @@ export default {
 		writeExpandedGroupHeigth: Function
 	},
 	data() {
+		let now = {
+			width: this.tagData.minWidth,
+			height: this.tagData.minHeight
+		};
+		let target = {
+			width: this.tagData.minWidth,
+			height: this.tagData.minHeight
+		};
 		return {
 			width: this.tagData.minWidth,
 			height: this.tagData.minHeight,
-			now: {
-				width: this.tagData.minWidth,
-				height: this.tagData.minHeight
-			},
-			target: {
-				width: this.tagData.minWidth,
-				height: this.tagData.minHeight
-			},
-			// top: (document.body.offsetHeight - 100) / 2,
-			// right: (document.body.offsetWidth - 250) / 2,
-			// studentGroup: studentGroupJson.filter(
-			// 	data => data.groupID == 16
-			// )[0],
+			now: now,
+			target: target,
 			scale: 1,
 			image: {
 				width: 0,
@@ -64,158 +61,51 @@ export default {
 			shadow: {
 				deg: -50
 			},
-			titleFontOffser: 0
-		};
-	},
-	computed: {
-		tagContainer() {
-			return {
-				"z-index":
-					this.expandedGroupID == this.studentGroup.groupID ? 1 : 0,
+			titleFontOffser: 0,
+			tagContainerList: {
+				"will-change": "right",
 				position: "absolute",
-				width: `${this.now.width}px`,
-				height: `${this.now.height}px`,
-				top: `${this.init.top}px`,
-				right: `${this.init.right - this.now.width / 2}px`,
 
 				"-webkit-filter": "drop-shadow(5px 5px 2px rgba(0, 0, 0, 1))",
 				filter: "drop-shadow(5px 5px 2px rgba(0, 0, 0, 1))"
-			};
-		},
-		groupImage() {
-			return {
+			},
+			groupImageList: {
 				position: "absolute",
-				width: `${this.now.width}px`,
-				height: `${Math.max(
-					this.tagData.minHeight,
-					this.now.height / 3
-				)}px`,
 
-				"clip-path": `polygon(0% 0%, 100% ${10 *
-					(1 -
-						Math.min(this.now.width, this.tagData.maxWidth) /
-							Math.max(
-								this.now.width,
-								this.tagData.maxWidth
-							))}%, 100% 100%, 0 ${100 -
-					10 *
-						(1 -
-							Math.min(this.now.width, this.tagData.maxWidth) /
-								Math.max(
-									this.now.width,
-									this.tagData.maxWidth
-								))}%)`,
+				"clip-path": `polygon(0% 0%, 100% ${10}%, 100% 100%, 0 ${90}%)`,
+
 				"background-color": `rgb(0,0,0,0)`,
 				"background-image": `url(${this.studentGroup.imgSrc})`,
-				"background-size": `${
-					this.image.width / this.image.height <
-					this.now.width /
-						Math.max(this.tagData.minHeight, this.now.height / 3)
-						? (this.image.width / this.image.height) *
-						  Math.max(this.tagData.minHeight, this.now.height / 3)
-						: this.now.width
-				}px ${
-					this.image.width / this.image.height <
-					this.now.width /
-						Math.max(this.tagData.minHeight, this.now.height / 3)
-						? Math.max(this.tagData.minHeight, this.now.height / 3)
-						: (this.image.height / this.image.width) *
-						  this.now.width
-				}px`,
+
 				"background-position": "center center",
 				"background-repeat": "no-repeat"
-
-				// filter: `blur(${5 * this.scale}px)`
-			};
-		},
-		groupImageBackground() {
-			return {
+			},
+			groupImageBackgroundList: {
 				position: "absolute",
-				width: `${this.now.width}px`,
-				height: `${Math.max(
-					this.tagData.minHeight,
-					this.now.height / 3
-				)}px`,
 
-				"clip-path": `polygon(0% 0%, 100% ${10 *
-					(1 -
-						Math.min(this.now.width, this.tagData.maxWidth) /
-							Math.max(
-								this.now.width,
-								this.tagData.maxWidth
-							))}%, 100% 100%, 0 ${100 -
-					10 *
-						(1 -
-							Math.min(this.now.width, this.tagData.maxWidth) /
-								Math.max(
-									this.now.width,
-									this.tagData.maxWidth
-								))}%)`,
 				"background-color": `rgb(0,0,0,1)`,
 				"background-image": `url(${this.studentGroup.imgSrc})`,
-				"background-size": `${this.now.width}px ${Math.max(
-					this.tagData.minHeight,
-					this.now.height / 3
-				)}px`,
+
 				"background-position": "center center",
 				"background-repeat": "no-repeat",
 
 				filter: `grayscale(50%) blur(${3}px)`
-			};
-		},
-		groupInfo() {
-			return {
+			},
+			groupInfoList: {
 				position: "absolute",
-				width: `${this.now.width}px`,
-				height: `${this.now.height}px`,
 
 				color: "rgb(0,0,0)",
 				"font-size": "18px",
 				"letter-spacing": `${5}px`,
-				"text-align": "center",
-
-				"clip-path": `polygon(0% 0%, 100% ${10 *
-					(1 -
-						Math.min(this.now.width, this.tagData.maxWidth) /
-							Math.max(
-								this.now.width,
-								this.tagData.maxWidth
-							))}%, 100% 100%, 0 ${100 -
-					10 *
-						(1 -
-							Math.min(this.now.width, this.tagData.maxWidth) /
-								Math.max(
-									this.now.width,
-									this.tagData.maxWidth
-								))}%)`,
-				"background-color": `rgb(255,255,255,${(this.now.height -
-					this.tagData.minHeight) /
-					(this.tagData.maxHeight - this.tagData.minHeight)})`,
-
-				filter: `blur(${100 *
-					(1 -
-						(this.now.height - this.tagData.minHeight) /
-							(this.tagData.maxHeight -
-								this.tagData
-									.minHeight))}px) drop-shadow(0px 0px 2px rgba(0, 0, 0, 1))`
-			};
-		},
-		titleFont() {
-			return {
+				"text-align": "center"
+			},
+			titleFontList: {
 				position: "absolute",
-				width: `${this.now.width}px`,
-				top: `${this.titleFontOffser}px`,
 				right: "0%",
 				color: "rgb(255,255,255)",
 				"font-size": "18px",
 				"letter-spacing": `${5}px`,
 				"text-align": "center",
-
-				filter: `blur(${100 *
-					((this.now.height - this.tagData.minHeight) /
-						(this.tagData.maxHeight -
-							this.tagData
-								.minHeight))}px) drop-shadow(0px 0px 2px rgba(0, 0, 0, 1))`,
 
 				"-webkit-touch-callout": "none",
 				"-webkit-user-select": "none",
@@ -223,9 +113,304 @@ export default {
 				"-moz-user-select": "none",
 				"-ms-user-select": "none",
 				"user-select": "none"
-			};
+			}
+		};
+	},
+	watch: {
+		expandedGroupID: {
+			immediate: true,
+			handler(expandedGroupID, prevExpandedGroupID) {
+				// watch it
+				if (expandedGroupID != prevExpandedGroupID) {
+					this.tagContainerList["z-index"] =
+						this.expandedGroupID == this.studentGroup.groupID
+							? 1
+							: 0;
+				}
+			}
+		},
+		"init.top": {
+			immediate: true,
+			handler(initTop, prevInitTop) {
+				// watch it
+				if (initTop != prevInitTop) {
+					// tagContainerList
+					{
+						this.tagContainerList.top = `${this.init.top}px`;
+					}
+				}
+			}
+		},
+		"init.right": {
+			immediate: true,
+			handler(initRight, prevInitRight) {
+				// watch it
+				if (initRight != prevInitRight) {
+					// tagContainerList
+					{
+						this.tagContainerList.right = `${this.init.right -
+							this.now.width / 2}px`;
+					}
+				}
+			}
+		},
+		"now.width": {
+			immediate: true,
+			handler(nowWidth, prevNowWidth) {
+				if (Math.round(nowWidth) != Math.round(prevNowWidth)) {
+					// tagContainerList
+					{
+						this.tagContainerList.width = `${this.now.width}px`;
+						this.tagContainerList.right = `${this.init.right -
+							this.now.width / 2}px`;
+					}
+					// groupImageList
+					{
+						this.groupImageList.width = `${this.now.width}px`;
+						this.groupImageList[
+							"clip-path"
+						] = `polygon(0% 0%, 100% ${10 *
+							(1 -
+								Math.min(
+									this.now.width,
+									this.tagData.maxWidth
+								) /
+									Math.max(
+										this.now.width,
+										this.tagData.maxWidth
+									))}%, 100% 100%, 0 ${100 -
+							10 *
+								(1 -
+									Math.min(
+										this.now.width,
+										this.tagData.maxWidth
+									) /
+										Math.max(
+											this.now.width,
+											this.tagData.maxWidth
+										))}%)`;
+						this.groupImageList["background-size"] = `${
+							this.image.width / this.image.height <
+							this.now.width /
+								Math.max(
+									this.tagData.minHeight,
+									this.now.height / 3
+								)
+								? (this.image.width / this.image.height) *
+								  Math.max(
+										this.tagData.minHeight,
+										this.now.height / 3
+								  )
+								: this.now.width
+						}px ${
+							this.image.width / this.image.height <
+							this.now.width /
+								Math.max(
+									this.tagData.minHeight,
+									this.now.height / 3
+								)
+								? Math.max(
+										this.tagData.minHeight,
+										this.now.height / 3
+								  )
+								: (this.image.height / this.image.width) *
+								  this.now.width
+						}px`;
+					}
+					// groupImageBackgroundList
+					{
+						this.groupImageBackgroundList.width = `${this.now.width}px`;
+						this.groupImageBackgroundList[
+							"clip-path"
+						] = `polygon(0% 0%, 100% ${10 *
+							(1 -
+								Math.min(
+									this.now.width,
+									this.tagData.maxWidth
+								) /
+									Math.max(
+										this.now.width,
+										this.tagData.maxWidth
+									))}%, 100% 100%, 0 ${100 -
+							10 *
+								(1 -
+									Math.min(
+										this.now.width,
+										this.tagData.maxWidth
+									) /
+										Math.max(
+											this.now.width,
+											this.tagData.maxWidth
+										))}%)`;
+						this.groupImageBackgroundList["background-size"] = `${
+							this.now.width
+						}px ${Math.max(
+							this.tagData.minHeight,
+							this.now.height / 3
+						)}px`;
+					}
+					// groupInfoList
+					{
+						this.groupInfoList.width = `${this.now.width}px`;
+						this.groupInfoList[
+							"clip-path"
+						] = `polygon(0% 0%, 100% ${10 *
+							(1 -
+								Math.min(
+									this.now.width,
+									this.tagData.maxWidth
+								) /
+									Math.max(
+										this.now.width,
+										this.tagData.maxWidth
+									))}%, 100% 100%, 0 ${100 -
+							10 *
+								(1 -
+									Math.min(
+										this.now.width,
+										this.tagData.maxWidth
+									) /
+										Math.max(
+											this.now.width,
+											this.tagData.maxWidth
+										))}%)`;
+					}
+					// titleFontList
+					{
+						this.titleFontList.width = `${this.now.width}px`;
+					}
+				}
+			}
+		},
+		"now.height": {
+			immediate: true,
+			handler(nowHeight, prevNowHeight) {
+				if (Math.round(nowHeight) != Math.round(prevNowHeight)) {
+					// tagContainerList
+					{
+						this.tagContainerList.height = `${this.now.height}px`;
+					}
+					// groupImageList
+					{
+						this.groupImageList.height = `${Math.max(
+							this.tagData.minHeight,
+							this.now.height / 3
+						)}px`;
+						this.groupImageList["background-size"] = `${
+							this.image.width / this.image.height <
+							this.now.width /
+								Math.max(
+									this.tagData.minHeight,
+									this.now.height / 3
+								)
+								? (this.image.width / this.image.height) *
+								  Math.max(
+										this.tagData.minHeight,
+										this.now.height / 3
+								  )
+								: this.now.width
+						}px ${
+							this.image.width / this.image.height <
+							this.now.width /
+								Math.max(
+									this.tagData.minHeight,
+									this.now.height / 3
+								)
+								? Math.max(
+										this.tagData.minHeight,
+										this.now.height / 3
+								  )
+								: (this.image.height / this.image.width) *
+								  this.now.width
+						}px`;
+					}
+					// groupImageBackgroundList
+					{
+						this.groupImageBackgroundList.height = `${Math.max(
+							this.tagData.minHeight,
+							this.now.height / 3
+						)}px`;
+						this.groupImageBackgroundList["background-size"] = `${
+							this.now.width
+						}px ${Math.max(
+							this.tagData.minHeight,
+							this.now.height / 3
+						)}px`;
+					}
+					// groupInfoList
+					{
+						this.groupInfoList.height = `${this.now.height}px`;
+						(this.groupInfoList[
+							"background-color"
+						] = `rgb(255,255,255,${(this.now.height -
+							this.tagData.minHeight) /
+							(this.tagData.maxHeight -
+								this.tagData.minHeight)})`),
+							(this.groupInfoList.filter = `blur(${100 *
+								(1 -
+									(this.now.height - this.tagData.minHeight) /
+										(this.tagData.maxHeight -
+											this.tagData
+												.minHeight))}px) drop-shadow(0px 0px 2px rgba(0, 0, 0, 1))`);
+					}
+					// titleFontList
+					{
+						this.titleFontList.filter = `blur(${100 *
+							((this.now.height - this.tagData.minHeight) /
+								(this.tagData.maxHeight -
+									this.tagData
+										.minHeight))}px) drop-shadow(0px 0px 2px rgba(0, 0, 0, 1))`;
+					}
+				}
+			}
+		},
+		image: {
+			immediate: true,
+			deep: true,
+			handler() {
+				// groupImageList
+				{
+					this.groupImageList["background-size"] = `${
+						this.image.width / this.image.height <
+						this.now.width /
+							Math.max(
+								this.tagData.minHeight,
+								this.now.height / 3
+							)
+							? (this.image.width / this.image.height) *
+							  Math.max(
+									this.tagData.minHeight,
+									this.now.height / 3
+							  )
+							: this.now.width
+					}px ${
+						this.image.width / this.image.height <
+						this.now.width /
+							Math.max(
+								this.tagData.minHeight,
+								this.now.height / 3
+							)
+							? Math.max(
+									this.tagData.minHeight,
+									this.now.height / 3
+							  )
+							: (this.image.height / this.image.width) *
+							  this.now.width
+					}px`;
+				}
+			}
+		},
+		titleFontOffser: {
+			immediate: true,
+			handler() {
+				// titleFontList
+				{
+					this.titleFontList.top = `${this.titleFontOffser}px`;
+				}
+			}
 		}
 	},
+	computed: {},
 	created() {
 		let img = new Image();
 		img.src = this.studentGroup.imgSrc;
@@ -247,19 +432,20 @@ export default {
 				);
 				if (elem) {
 					let rect = elem.getBoundingClientRect();
-					this.titleFontOffser =
-						(this.tagData.minHeight - rect.height) / 2;
+					this.titleFontOffser = Math.round(
+						(this.tagData.minHeight - rect.height) / 2
+					);
 				}
 			}
 			{
-				if (this.now.width - this.target.width < 0) {
+				if (Math.round(this.now.width - this.target.width) < 0) {
 					this.now.width =
 						this.target.width * 0.1 + this.now.width * 0.9;
 					if (Math.abs(this.now.width - this.target.width) < 100) {
 						this.now.height =
 							this.target.height * 0.1 + this.now.height * 0.9;
 					}
-				} else {
+				} else if (Math.round(this.now.width - this.target.width) > 0) {
 					this.now.height =
 						this.target.height * 0.1 + this.now.height * 0.9;
 					if (Math.abs(this.now.height - this.target.height) < 100) {

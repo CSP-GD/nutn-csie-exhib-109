@@ -6,7 +6,7 @@
 				v-bind:key="studentGroup.groupID"
 				:studentGroup="studentGroup"
 				:init="{
-					top:tagData.minHeight*(studentGroup.groupID-2)+(expandedGroupID<studentGroup.groupID&&expandedGroupID!=-1?expandedGroupHeight:tagData.minHeight),
+					top:heigthTable[studentGroup.groupID-1],
 					right:init.width/2
 				}"
 				:tagData="{
@@ -57,6 +57,16 @@ export default {
 	components: {
 		tag: tag
 	},
+	watch: {
+		// tagData(newVal, oldVal) {
+		// 	// watch it
+		// 	console.log("Prop changed: ", newVal, " | was: ", oldVal);
+		// },
+		// init(newVal, oldVal) {
+		// 	// watch it
+		// 	console.log("Prop changed: ", newVal, " | was: ", oldVal);
+		// }
+	},
 	data() {
 		// console.log(this.studentGroupJson);
 		return {
@@ -79,13 +89,46 @@ export default {
 				top: 0,
 				right: 0
 			},
-			heigthTable: new Array(this.studentGroupJson.length).fill(
-				this.tagData.minHeight
-			),
+			heigthTable: new Array(this.studentGroupJson.length - 1)
+				.fill(this.tagData.minHeight)
+				.reduce(
+					(prev, curr, idx) => {
+						prev[idx + 1] = prev[idx] + curr;
+						return prev;
+					},
+					[0]
+				),
 			expandedGroupID: -1,
 			expandedGroupHeight: this.tagData.minHeight,
 			touch: { x: null, y: null }
 		};
+	},
+	watch: {
+		expandedGroupHeight: {
+			handler(expandedGroupHeight, prevExpandedGroupHeight) {
+				// watch it
+				if (expandedGroupHeight != prevExpandedGroupHeight) {
+					console.log(expandedGroupHeight);
+
+					this.heigthTable = new Array(
+						this.studentGroupJson.length - 1
+					)
+						.fill(this.tagData.minHeight)
+						.reduce(
+							(prev, curr, idx) => {
+								if (this.expandedGroupID - 1 == idx) {
+									prev[idx + 1] =
+										prev[idx] + this.expandedGroupHeight;
+								} else {
+									prev[idx + 1] = prev[idx] + curr;
+								}
+								return prev;
+							},
+							[0]
+						);
+				}
+			}
+		}
 	},
 	computed: {
 		innerPage() {
@@ -103,11 +146,6 @@ export default {
 				top: `${this.now.top}px`,
 				right: `${this.now.right}px`
 			};
-		},
-		a(i) {
-			return this.heigthTable
-				.slice(0, i - 1)
-				.reduce((last, current) => last + current, 0);
 		}
 	},
 	created() {
@@ -134,7 +172,9 @@ export default {
 								// event.preventDefault();
 								if (this.touch.y !== null) {
 									this.slide(
-										event.touches[0].screenY - this.touch.y
+										(event.touches[0].screenY -
+											this.touch.y) *
+											2
 									);
 								}
 								this.touch.x = event.touches[0].screenX;
@@ -202,9 +242,6 @@ export default {
 			deltaY = Number.isNaN(deltaY) ? 0 : deltaY;
 			this.target.top += deltaY;
 		},
-		writeHeigthTable(id, height) {
-			this.heigthTable[id - 1] = Math.round(height);
-		},
 		writeExpandedGroupID(id) {
 			this.expandedGroupID = id;
 			if (id != -1) {
@@ -215,7 +252,7 @@ export default {
 			}
 		},
 		writeExpandedGroupHeigth(height) {
-			this.expandedGroupHeight = height;
+			this.expandedGroupHeight = Math.round(height);
 		}
 	}
 };

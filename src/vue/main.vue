@@ -54,14 +54,6 @@ export default {
 	created() {
 		this.height = document.body.offsetHeight;
 		this.width = document.body.offsetWidth;
-		window.onresize = () => {
-			this.height = document.body.offsetHeight;
-			this.width = document.body.offsetWidth;
-		};
-		window.onmousemove = event => {
-			this.mouse.clientX = event.clientX;
-			this.mouse.clientY = event.clientY;
-		};
 		this.mainLoop();
 	},
 	update() {
@@ -70,10 +62,13 @@ export default {
 	methods: {
 		mainLoop() {
 			requestAnimationFrame(this.mainLoop);
+
+			this.height = document.body.offsetHeight;
+			this.width = document.body.offsetWidth;
 			{
 				if (this.nowPage > this.targetPage) {
 					this.nowPage = Math.max(
-						this.nowPage - 0.04,
+						this.nowPage - 0.0425,
 						this.targetPage
 					);
 				} else if (this.nowPage < this.targetPage) {

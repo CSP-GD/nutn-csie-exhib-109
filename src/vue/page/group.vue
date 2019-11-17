@@ -113,7 +113,9 @@ export default {
 					targetWidth = this.width * 0.05 + 100;
 				}
 				this.titleButtonWidth =
-					targetWidth * 0.06 + this.titleButtonWidth * 0.94;
+					Math.round(
+						(targetWidth * 0.06 + this.titleButtonWidth * 0.94) * 10
+					) / 10;
 			}
 		}
 	}
