@@ -57,16 +57,7 @@ export default {
 	components: {
 		tag: tag
 	},
-	watch: {
-		// tagData(newVal, oldVal) {
-		// 	// watch it
-		// 	console.log("Prop changed: ", newVal, " | was: ", oldVal);
-		// },
-		// init(newVal, oldVal) {
-		// 	// watch it
-		// 	console.log("Prop changed: ", newVal, " | was: ", oldVal);
-		// }
-	},
+	watch: {},
 	data() {
 		// console.log(this.studentGroupJson);
 		return {
@@ -108,8 +99,6 @@ export default {
 			handler(expandedGroupHeight, prevExpandedGroupHeight) {
 				// watch it
 				if (expandedGroupHeight != prevExpandedGroupHeight) {
-					console.log(expandedGroupHeight);
-
 					this.heigthTable = new Array(
 						this.studentGroupJson.length - 1
 					)
