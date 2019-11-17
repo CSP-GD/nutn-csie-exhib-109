@@ -6,7 +6,7 @@
 				v-bind:key="studentGroup.groupID"
 				:studentGroup="studentGroup"
 				:init="{
-					top:heigthTable[studentGroup.groupID-1],
+					top:topTable[studentGroup.groupID-1],
 					right:init.width/2
 				}"
 				:tagData="{
@@ -80,7 +80,7 @@ export default {
 				top: 0,
 				right: 0
 			},
-			heigthTable: new Array(this.studentGroupJson.length - 1)
+			topTable: new Array(this.studentGroupJson.length - 1)
 				.fill(this.tagData.minHeight)
 				.reduce(
 					(prev, curr, idx) => {
@@ -99,22 +99,18 @@ export default {
 			handler(expandedGroupHeight, prevExpandedGroupHeight) {
 				// watch it
 				if (expandedGroupHeight != prevExpandedGroupHeight) {
-					this.heigthTable = new Array(
-						this.studentGroupJson.length - 1
-					)
-						.fill(this.tagData.minHeight)
-						.reduce(
-							(prev, curr, idx) => {
-								if (this.expandedGroupID - 1 == idx) {
-									prev[idx + 1] =
-										prev[idx] + this.expandedGroupHeight;
-								} else {
-									prev[idx + 1] = prev[idx] + curr;
-								}
-								return prev;
-							},
-							[0]
-						);
+					console.log(1);
+					let topTable = [0];
+					for (let i = 1; i < this.studentGroupJson.length; i++) {
+						if (this.expandedGroupID == i) {
+							topTable[i] =
+								topTable[i - 1] + this.expandedGroupHeight;
+						} else {
+							topTable[i] =
+								topTable[i - 1] + this.tagData.minHeight;
+						}
+					}
+					this.topTable = topTable;
 				}
 			}
 		}

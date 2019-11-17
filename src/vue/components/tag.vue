@@ -1,8 +1,18 @@
 <template>
 	<div :id="`tag-${studentGroup.groupID}`" :style="tagContainer">
-		<div :id="`groupInfo-${studentGroup.groupID}`" :style="groupInfo">11111111111111111111111</div>
-		<div :id="`groupImageBackground-${studentGroup.groupID}`" :style="groupImageBackground"></div>
-		<div :id="`groupImage-${studentGroup.groupID}`" :style="groupImage" @click="click"></div>
+		<div
+			:id="`groupInfo-${studentGroup.groupID}`"
+			:style="{...groupInfo,...clipPath,...groupInfoFilter}"
+		>11111111111111111111111</div>
+		<div
+			:id="`groupImageBackground-${studentGroup.groupID}`"
+			:style="{...groupImageBackground,...clipPath}"
+		></div>
+		<div
+			:id="`groupImage-${studentGroup.groupID}`"
+			:style="{...groupImage,...clipPath,...groupImageSize}"
+			@click="click"
+		></div>
 		<div
 			:id="`titleFont-${studentGroup.groupID}`"
 			:style="titleFont"
@@ -123,15 +133,8 @@ export default {
 				filter: "drop-shadow(5px 5px 2px rgba(0, 0, 0, 1))"
 			};
 		},
-		groupImage() {
+		clipPath() {
 			return {
-				position: "absolute",
-				width: `${this.now.width}px`,
-				height: `${Math.max(
-					this.tagData_.minHeight,
-					this.now.height / 3
-				)}px`,
-
 				"clip-path": `polygon(0% 0%, 100% ${10 *
 					(1 -
 						Math.min(this.now.width, this.tagData_.maxWidth) /
@@ -145,9 +148,11 @@ export default {
 								Math.max(
 									this.now.width,
 									this.tagData_.maxWidth
-								))}%)`,
-				"background-color": `rgb(0,0,0,0)`,
-				"background-image": `url(${this.studentGroup.imgSrc})`,
+								))}%)`
+			};
+		},
+		groupImageSize() {
+			return {
 				"background-size": `${
 					this.image.width / this.image.height <
 					this.now.width /
@@ -162,7 +167,21 @@ export default {
 						? Math.max(this.tagData_.minHeight, this.now.height / 3)
 						: (this.image.height / this.image.width) *
 						  this.now.width
-				}px`,
+				}px`
+			};
+		},
+		groupImage() {
+			return {
+				position: "absolute",
+				width: "100%", //`${this.now.width}px`,
+				height: `${Math.max(
+					this.tagData_.minHeight,
+					this.now.height / 3
+				)}px`,
+
+				"background-color": `rgb(0,0,0,0)`,
+				"background-image": `url(${this.studentGroup.imgSrc})`,
+
 				"background-position": "center center",
 				"background-repeat": "no-repeat"
 
@@ -172,26 +191,12 @@ export default {
 		groupImageBackground() {
 			return {
 				position: "absolute",
-				width: `${this.now.width}px`,
+				width: "100%", //`${this.now.width}px`,
 				height: `${Math.max(
 					this.tagData_.minHeight,
 					this.now.height / 3
 				)}px`,
 
-				"clip-path": `polygon(0% 0%, 100% ${10 *
-					(1 -
-						Math.min(this.now.width, this.tagData_.maxWidth) /
-							Math.max(
-								this.now.width,
-								this.tagData_.maxWidth
-							))}%, 100% 100%, 0 ${100 -
-					10 *
-						(1 -
-							Math.min(this.now.width, this.tagData_.maxWidth) /
-								Math.max(
-									this.now.width,
-									this.tagData_.maxWidth
-								))}%)`,
 				"background-color": `rgb(0,0,0,1)`,
 				"background-image": `url(${this.studentGroup.imgSrc})`,
 				"background-size": `${this.now.width}px ${Math.max(
@@ -204,35 +209,8 @@ export default {
 				filter: `grayscale(50%) blur(${3}px)`
 			};
 		},
-		groupInfo() {
+		groupInfoFilter() {
 			return {
-				position: "absolute",
-				width: `${this.now.width}px`,
-				height: `${this.now.height}px`,
-
-				color: "rgb(0,0,0)",
-				"font-size": "18px",
-				"letter-spacing": `${5}px`,
-				"text-align": "center",
-
-				"clip-path": `polygon(0% 0%, 100% ${10 *
-					(1 -
-						Math.min(this.now.width, this.tagData_.maxWidth) /
-							Math.max(
-								this.now.width,
-								this.tagData_.maxWidth
-							))}%, 100% 100%, 0 ${100 -
-					10 *
-						(1 -
-							Math.min(this.now.width, this.tagData_.maxWidth) /
-								Math.max(
-									this.now.width,
-									this.tagData_.maxWidth
-								))}%)`,
-				"background-color": `rgb(255,255,255,${(this.now.height -
-					this.tagData_.minHeight) /
-					(this.tagData_.maxHeight - this.tagData_.minHeight)})`,
-
 				filter: `blur(${100 *
 					(1 -
 						(this.now.height - this.tagData_.minHeight) /
@@ -241,10 +219,26 @@ export default {
 									.minHeight))}px) drop-shadow(0px 0px 2px rgba(0, 0, 0, 1))`
 			};
 		},
+		groupInfo() {
+			return {
+				position: "absolute",
+				width: "100%", //`${this.now.width}px`,
+				height: "100%", //`${this.now.height}px`,
+
+				color: "rgb(0,0,0)",
+				"font-size": "18px",
+				"letter-spacing": `${5}px`,
+				"text-align": "center",
+
+				"background-color": `rgb(255,255,255,${(this.now.height -
+					this.tagData_.minHeight) /
+					(this.tagData_.maxHeight - this.tagData_.minHeight)})`
+			};
+		},
 		titleFont() {
 			return {
 				position: "absolute",
-				width: `${this.now.width}px`,
+				width: "100%", //`${this.now.width}px`,
 				top: `${this.titleFontOffser}px`,
 				right: "0%",
 				color: "rgb(255,255,255)",
@@ -309,17 +303,6 @@ export default {
 							this.target.width * 0.1 + this.now.width * 0.9;
 					}
 				}
-				// if (
-				// 	Math.round(this.now.height) !=
-				// 		Math.round(this.tagData_.minHeight) &&
-				// 	Math.round(this.now.height) !=
-				// 		Math.round(this.tagData_.maxHeight)
-				// ) {
-				// 	this.writeHeigthTable(
-				// 		this.studentGroup.groupID,
-				// 		Math.round(this.now.height)
-				// 	);
-				// }
 				if (this.expandedGroupID == this.studentGroup.groupID) {
 					if (
 						Math.round(this.now.height) !=
@@ -337,6 +320,9 @@ export default {
 					) {
 						this.writeExpandedGroupID(-1);
 					}
+				} else if (this.target.height != this.tagData_.minHeight) {
+					this.target.height = this.tagData_.minHeight;
+					this.target.width = this.tagData_.minWidth;
 				}
 			}
 		},
