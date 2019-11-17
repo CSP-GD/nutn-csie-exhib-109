@@ -3,7 +3,9 @@
 		<div
 			:id="`groupInfo-${studentGroup.groupID}`"
 			:style="{...groupInfo,...clipPath,...groupInfoFilter}"
-		>11111111111111111111111</div>
+		>
+			<div class="summary">{{studentGroup.projectName}}</div>
+		</div>
 		<div
 			:id="`groupImageBackground-${studentGroup.groupID}`"
 			:style="{...groupImageBackground,...clipPath}"
@@ -112,9 +114,15 @@ export default {
 				}
 				if (newTagData.maxWidth != oldTagData.maxWidth) {
 					this.tagData_.maxWidth = this.tagData.maxWidth;
+					if (this.expandedGroupID == this.studentGroup.groupID) {
+						this.target.width = this.tagData_.maxWidth;
+					}
 				}
 				if (newTagData.maxHeight != oldTagData.maxHeight) {
 					this.tagData_.maxHeight = this.tagData.maxHeight;
+					if (this.expandedGroupID == this.studentGroup.groupID) {
+						this.target.height = this.tagData_.maxHeight;
+					}
 				}
 			}
 		}
@@ -344,4 +352,11 @@ export default {
 </script>
 
 <style scoped>
+.summary {
+	position: absolute;
+	width: 100%;
+	height: 66%;
+	top: 34%;
+	text-align: center;
+}
 </style>
