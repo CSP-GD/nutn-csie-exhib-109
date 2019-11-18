@@ -365,7 +365,10 @@ export default {
 					) {
 						this.writeExpandedGroupID(-1);
 					}
-				} else if (this.target.height != this.tagData_.minHeight) {
+				} else if (
+					this.target.height != this.tagData_.minHeight ||
+					this.target.width != this.tagData_.minWidth
+				) {
 					this.target.height = this.tagData_.minHeight;
 					this.target.width = this.tagData_.minWidth;
 				}
