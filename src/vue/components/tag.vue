@@ -2,7 +2,9 @@
 	<div :id="`tag-${studentGroup.groupID}`" :style="tagContainer">
 		<div
 			:id="`groupInfo-${studentGroup.groupID}`"
-			:style="{...groupInfo,...clipPath,...groupInfoFilter}"
+			:style="{...groupInfo,...clipPath
+			//,...groupInfoFilter
+			}"
 		>
 			<div class="data">
 				{{studentGroup.projectName}}
@@ -252,16 +254,16 @@ export default {
 				filter: `grayscale(50%) blur(${3}px)`
 			};
 		},
-		groupInfoFilter() {
-			return {
-				filter: `blur(${100 *
-					(1 -
-						(this.now.height - this.tagData_.minHeight) /
-							(this.tagData_.maxHeight -
-								this.tagData_
-									.minHeight))}px) drop-shadow(0px 0px 2px rgba(0, 0, 0, 1))`
-			};
-		},
+		// groupInfoFilter() {
+		// 	return {
+		// 		filter: `blur(${100 *
+		// 			(1 -
+		// 				(this.now.height - this.tagData_.minHeight) /
+		// 					(this.tagData_.maxHeight -
+		// 						this.tagData_
+		// 							.minHeight))}px) drop-shadow(0px 0px 2px rgba(0, 0, 0, 1))`
+		// 	};
+		// },
 		groupInfo() {
 			return {
 				position: "absolute",
