@@ -14,22 +14,30 @@
 					<br />
 				</div>
 				<hr />
-				<div>
-					組別成員：
-					<span
-						v-for="(groupStudent) in studentGroup.groupStudents"
-						v-bind:key="groupStudent.studentID"
-					>
-						{{groupStudent.studentName}}
-						{{groupStudent.index}}
-						<span
-							v-show="groupStudent.studentID!=studentGroup.groupStudents[studentGroup.groupStudents.length-1].studentID"
-						>、</span>
-					</span>
-				</div>
-				<div>
-					專題海報：
-					<a :href="studentGroup.fileSrc">請點選</a>
+				<div class="other">
+					<table style="text-align: left;">
+						<tr>
+							<td>組別成員：</td>
+							<td>
+								<span
+									v-for="(groupStudent) in studentGroup.groupStudents"
+									v-bind:key="groupStudent.studentID"
+								>
+									{{groupStudent.studentName}}
+									{{groupStudent.index}}
+									<span
+										v-show="groupStudent.studentID!=studentGroup.groupStudents[studentGroup.groupStudents.length-1].studentID"
+									>、</span>
+								</span>
+							</td>
+						</tr>
+						<tr>
+							<td>專題海報：</td>
+							<td>
+								<a :href="studentGroup.fileSrc">請點選</a>
+							</td>
+						</tr>
+					</table>
 				</div>
 			</div>
 		</div>
@@ -389,5 +397,9 @@ export default {
 }
 .summary {
 	text-align: left;
+}
+.other {
+	position: absolute;
+	left: 30%;
 }
 </style>
