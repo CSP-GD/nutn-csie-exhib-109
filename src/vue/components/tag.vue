@@ -4,7 +4,34 @@
 			:id="`groupInfo-${studentGroup.groupID}`"
 			:style="{...groupInfo,...clipPath,...groupInfoFilter}"
 		>
-			<div class="summary">{{studentGroup.projectName}}</div>
+			<div class="data">
+				{{studentGroup.projectName}}
+				<hr />
+				<br />
+				<div class="summary" v-for="(summary) in studentGroup.summarys" v-bind:key="summary.index">
+					{{summary.text}}
+					<br />
+					<br />
+				</div>
+				<hr />
+				<div>
+					組別成員：
+					<span
+						v-for="(groupStudent) in studentGroup.groupStudents"
+						v-bind:key="groupStudent.studentID"
+					>
+						{{groupStudent.studentName}}
+						{{groupStudent.index}}
+						<span
+							v-show="groupStudent.studentID!=studentGroup.groupStudents[studentGroup.groupStudents.length-1].studentID"
+						>、</span>
+					</span>
+				</div>
+				<div>
+					專題海報：
+					<a :href="studentGroup.fileSrc">請點選</a>
+				</div>
+			</div>
 		</div>
 		<div
 			:id="`groupImageBackground-${studentGroup.groupID}`"
@@ -352,11 +379,15 @@ export default {
 </script>
 
 <style scoped>
-.summary {
+.data {
 	position: absolute;
-	width: 100%;
-	height: 66%;
-	top: 34%;
+	width: 80%;
+	right: 10%;
+	height: 65%;
+	top: 35%;
 	text-align: center;
+}
+.summary {
+	text-align: left;
 }
 </style>

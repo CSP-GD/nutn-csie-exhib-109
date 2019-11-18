@@ -4,6 +4,8 @@
   "description": "南大資工109級專題展網頁",
   "main": "index.js",
   "dependencies": {
+    "bootstrap": "^4.3.1",
+    "bootstrap-vue": "^2.1.0",
     "core-js": "^3.4.0",
     "parcel": "^1.12.4",
     "regenerator-runtime": "^0.13.3",

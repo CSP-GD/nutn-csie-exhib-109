@@ -1,12 +1,19 @@
 <template>
 	<div :style="titleContainer">
+		<img src="../../../img/nutn_1_.jpg" :style="titleImage" />
 		<div
 			:style="infoButton"
 			@mouseover="infoButtonUp=true,groupButtonUp=false"
 			@mouseout="infoButtonUp=false"
 			@click="changePage(1)"
 		>展覽資訊</div>
-		<img src="../../../img/nutn_1_.jpg" :style="titleImage" />
+		<div>
+		<div class="text">
+			<h2>國立臺南大學資訊工程學系</h2>
+			<h2>一零九級  畢業專題展覽</h2>
+		</div>
+
+
 		<div
 			:style="groupButton"
 			@mouseover="groupButtonUp=true,infoButtonUp=false"
@@ -56,10 +63,8 @@ export default {
 					-2}px`,
 				"text-align": "center",
 				color: "white",
-
 				height: `${this.height}px`,
 				"text-align": "center",
-
 				"-webkit-touch-callout": "none",
 				"-webkit-user-select": "none",
 				"-khtml-user-select": "none",
@@ -85,7 +90,6 @@ export default {
 				"line-height": `${this.infoButtonWidth}px`,
 				"-webkit-writing-mode": "vertical-lr",
 				"writing-mode": "vertical-lr",
-
 				"-webkit-touch-callout": "none",
 				"-webkit-user-select": "none",
 				"-khtml-user-select": "none",
@@ -111,7 +115,6 @@ export default {
 				"line-height": `${this.groupButtonWidth}px`,
 				"-webkit-writing-mode": "vertical-lr",
 				"writing-mode": "vertical-lr",
-
 				"-webkit-touch-callout": "none",
 				"-webkit-user-select": "none",
 				"-khtml-user-select": "none",
@@ -154,3 +157,22 @@ export default {
 	}
 };
 </script>
+
+<style scoped>
+	.text {
+		background-color: rgb(250,235,215,0.8);
+		padding: 10px;
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 15%;
+		width: auto;
+		writing-mode: vertical-rl;
+		text-shadow: 10px 10px 10px rgba(255,255,255,0.9);
+		/* filter:blur(3px) */
+	}
+	@media only screen and (max-width: 600px) {
+		.text {
+			margin-top: 30%;
+		}
+	}
+</style>

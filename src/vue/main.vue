@@ -112,4 +112,38 @@ body {
 	flex-direction: column;
 	overflow-x: hidden;
 }
+
+body,
+button,
+input,
+select,
+textarea,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+div {
+	font-family: custom-serif;
+	src: local(Microsoft JhengHei), local("DFKai-sb");
+	unicode-range: U+4E00-9FFF;
+}
+
+body,
+button,
+input,
+select,
+textarea,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+div {
+	font-family: custom-serif;
+	src: local(Source Code Pro), local(Arial);
+	unicode-range: U+00-024F;
+}
 </style>

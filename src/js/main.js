@@ -3,10 +3,12 @@ import "regenerator-runtime/runtime"
 import Vue from "vue"
 
 import main from "../vue/main.vue"
-import test from "../vue/test/test.vue"
-import tagTrack from "../vue/components/tagTrack.vue"
 
+import BootstrapVue from 'bootstrap-vue'
 
-// new Vue(test).$mount('#main')
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
+
+Vue.use(BootstrapVue)
+
 new Vue(main).$mount('#main')
-// new Vue(tagTrack).$mount('#main')
