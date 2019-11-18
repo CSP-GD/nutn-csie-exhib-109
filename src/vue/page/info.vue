@@ -1,6 +1,6 @@
 <template>
 	<div :style="infoContainer">
-		<div class="container">
+		<div :style="innerPage">
 			<div class="jumbotron">
 				<h1 class="display-10">展覽資訊</h1>
 				<hr class="my-4" />
@@ -76,6 +76,15 @@ export default {
 				"-ms-user-select": "none",
 				"user-select": "none"
 			};
+		},
+		innerPage() {
+			return {
+				position: "absolute",
+				top: `${this.height * 0.2}px`,
+				right: `${this.width * 0.25 + this.titleButtonWidth * 0.5}px`,
+				width: `${this.width * 0.5}px`,
+				height: `${this.height * 0.8}px`
+			};
 		}
 	},
 	created() {
@@ -103,10 +112,10 @@ export default {
 </script>
 
 <style scoped>
-@media only screen and (max-width: 600px) {
+/* @media only screen and (max-width: 600px) {
 	.container {
 		width: 70%;
 		margin-right: 30%;
 	}
-}
+} */
 </style>
