@@ -7,13 +7,10 @@
 			@mouseout="infoButtonUp=false"
 			@click="changePage(1)"
 		>展覽資訊</div>
-		<div>
 		<div class="text">
 			<h2>國立臺南大學資訊工程學系</h2>
-			<h2>一零九級  畢業專題展覽</h2>
+			<h2>一零九級 畢業專題展覽</h2>
 		</div>
-
-
 		<div
 			:style="groupButton"
 			@mouseover="groupButtonUp=true,infoButtonUp=false"
@@ -136,9 +133,9 @@ export default {
 			{
 				let targetWidth;
 				if (this.groupButtonUp || this.page != this.nowPage) {
-					targetWidth = this.width * 0.1 + 200;
+					targetWidth = this.width * 0.16 + 100;
 				} else {
-					targetWidth = this.width * 0.05 + 100;
+					targetWidth = this.width * 0.08 + 50;
 				}
 				this.groupButtonWidth =
 					targetWidth * 0.06 + this.groupButtonWidth * 0.94;
@@ -146,9 +143,9 @@ export default {
 			{
 				let targetWidth;
 				if (this.infoButtonUp || this.page != this.nowPage) {
-					targetWidth = this.width * 0.1 + 200;
+					targetWidth = this.width * 0.16 + 100;
 				} else {
-					targetWidth = this.width * 0.05 + 100;
+					targetWidth = this.width * 0.08 + 50;
 				}
 				this.infoButtonWidth =
 					targetWidth * 0.06 + this.infoButtonWidth * 0.94;
@@ -159,20 +156,20 @@ export default {
 </script>
 
 <style scoped>
+.text {
+	background-color: rgb(250, 235, 215, 0.8);
+	padding: 10px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 15%;
+	width: auto;
+	writing-mode: vertical-rl;
+	text-shadow: 10px 10px 10px rgba(255, 255, 255, 0.9);
+	/* filter:blur(3px) */
+}
+@media only screen and (max-width: 600px) {
 	.text {
-		background-color: rgb(250,235,215,0.8);
-		padding: 10px;
-		margin-left: auto;
-		margin-right: auto;
-		margin-top: 15%;
-		width: auto;
-		writing-mode: vertical-rl;
-		text-shadow: 10px 10px 10px rgba(255,255,255,0.9);
-		/* filter:blur(3px) */
+		margin-top: 30%;
 	}
-	@media only screen and (max-width: 600px) {
-		.text {
-			margin-top: 30%;
-		}
-	}
+}
 </style>

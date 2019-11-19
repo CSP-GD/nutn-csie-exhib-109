@@ -80,7 +80,7 @@ export default {
 		innerPage() {
 			return {
 				position: "absolute",
-				top: `${this.height * 0.2}px`,
+				top: `${0}px`,
 				right: `${this.width * 0.25 + this.titleButtonWidth * 0.5}px`,
 				width: `${this.width * 0.5}px`,
 				height: `${this.height * 0.8}px`
@@ -99,9 +99,9 @@ export default {
 			{
 				let targetWidth;
 				if (this.titleButtonUp || this.page != this.nowPage) {
-					targetWidth = document.body.offsetWidth * 0.1 + 200;
+					targetWidth = document.body.offsetWidth * 0.16 + 100;
 				} else {
-					targetWidth = document.body.offsetWidth * 0.05 + 100;
+					targetWidth = document.body.offsetWidth * 0.08 + 50;
 				}
 				this.titleButtonWidth =
 					targetWidth * 0.06 + this.titleButtonWidth * 0.94;

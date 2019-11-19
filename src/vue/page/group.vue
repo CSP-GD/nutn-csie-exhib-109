@@ -108,9 +108,9 @@ export default {
 			{
 				let targetWidth;
 				if (this.titleButtonUp || this.page != this.nowPage) {
-					targetWidth = this.width * 0.1 + 200;
+					targetWidth = this.width * 0.16 + 100;
 				} else {
-					targetWidth = this.width * 0.05 + 100;
+					targetWidth = this.width * 0.08 + 50;
 				}
 				this.titleButtonWidth =
 					Math.round(
