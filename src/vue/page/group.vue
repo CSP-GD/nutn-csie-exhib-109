@@ -10,8 +10,8 @@
 			:id="1"
 			:studentGroupJson="studentGroupJson"
 			:tagData="{
-					minWidth: 250,
-					minHeight: 100,
+					minWidth: 270,
+					minHeight: 120,
 					maxWidth: (this.width - this.titleButtonWidth)*0.9,
 					maxHeight: this.height*0.9
 				}"
@@ -19,7 +19,8 @@
 					top:0,
 					right:0,
 					width:(this.width - this.titleButtonWidth),
-					height: this.height
+					height: this.height,
+					spacing:5
 				}"
 		></tagTrack>
 	</div>

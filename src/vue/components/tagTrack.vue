@@ -51,7 +51,8 @@ export default {
 			top: Number,
 			right: Number,
 			width: Number,
-			height: Number
+			height: Number,
+			spacing: Number
 		}
 	},
 	components: {
@@ -84,7 +85,7 @@ export default {
 				.fill(this.tagData.minHeight)
 				.reduce(
 					(prev, curr, idx) => {
-						prev[idx + 1] = prev[idx] + curr;
+						prev[idx + 1] = prev[idx] + curr + this.init.spacing;
 						return prev;
 					},
 					[0]
@@ -104,10 +105,14 @@ export default {
 					for (let i = 1; i < this.studentGroupJson.length; i++) {
 						if (this.expandedGroupID == i) {
 							topTable[i] =
-								topTable[i - 1] + this.expandedGroupHeight;
+								topTable[i - 1] +
+								this.expandedGroupHeight +
+								this.init.spacing;
 						} else {
 							topTable[i] =
-								topTable[i - 1] + this.tagData.minHeight;
+								topTable[i - 1] +
+								this.tagData.minHeight +
+								this.init.spacing;
 						}
 					}
 					this.topTable = topTable;
