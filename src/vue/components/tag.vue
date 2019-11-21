@@ -1,10 +1,10 @@
 <template>
 	<div ref="tag" :style="tagContainer">
-		<div ref="groupInfo" :style="{...groupInfo,...clipPath
-			//,...groupInfoFilter
+		<div :style="{...groupInfoContainer,...clipPath
+			//,...groupInfoContainerFilter
 			}">
-			<div :style="groupData">
-				<div ref="data">
+			<div :style="groupInfo">
+				<div ref="info">
 					{{studentGroup.projectName}}
 					<hr />
 					<br />
@@ -14,8 +14,8 @@
 						<br />
 					</div>
 					<hr />
-					<div :style="other">
-						<div ref="other">
+					<div :style="groupData">
+						<div ref="groupData">
 							<table style="text-align: left;">
 								<tr>
 									<td>組別成員：</td>
@@ -104,6 +104,7 @@ export default {
 				deg: -50
 			},
 			titleFontOffser: 0,
+			groupDataOffser: 0,
 			init_: {
 				top: this.init.top,
 				right: this.init.right
@@ -113,7 +114,8 @@ export default {
 				minHeight: this.tagData.minHeight,
 				maxWidth: this.tagData.maxWidth,
 				maxHeight: this.tagData.maxHeight
-			}
+			},
+			groupInfoHeight: 0
 		};
 	},
 	watch: {
@@ -148,10 +150,18 @@ export default {
 				if (newTagData.maxHeight != oldTagData.maxHeight) {
 					this.tagData_.maxHeight = this.tagData.maxHeight;
 					if (this.expandedGroupID == this.studentGroup.groupID) {
+						this.target.height = this.tagData_.maxHeight;
+					}
+				}
+			}
+		},
+		groupInfoHeight: {
+			handler(newGroupInfoHeight, oldGroupInfoHeight) {
+				if (newGroupInfoHeight != oldGroupInfoHeight) {
+					if (this.target.height != this.tagData_.minHeight) {
 						this.target.height = Math.max(
 							this.tagData_.maxHeight,
-							this.tagData_.maxHeight * 0.35 +
-								this.$refs.data.getBoundingClientRect().height
+							this.tagData_.maxHeight / 3 + this.groupInfoHeight
 						);
 					}
 				}
@@ -272,7 +282,7 @@ export default {
 				filter: `grayscale(50%) blur(${3}px)`
 			};
 		},
-		// groupInfoFilter() {
+		// groupInfoContainerFilter() {
 		// 	return {
 		// 		filter: `blur(${100 *
 		// 			(1 -
@@ -282,7 +292,7 @@ export default {
 		// 							.minHeight))}px) drop-shadow(0px 0px 2px rgba(0, 0, 0, 1))`
 		// 	};
 		// },
-		groupInfo() {
+		groupInfoContainer() {
 			return {
 				position: "absolute",
 				width: "100%", //`${this.now.width}px`,
@@ -298,7 +308,7 @@ export default {
 					(this.tagData_.maxHeight - this.tagData_.minHeight)})`
 			};
 		},
-		groupData() {
+		groupInfo() {
 			if (this.studentGroup.groupID == 20) {
 			}
 			return {
@@ -321,15 +331,11 @@ export default {
 				"text-align": "center"
 			};
 		},
-		other() {
-			let rect = { width: 0 };
-			if (this.$refs.other) {
-				rect = this.$refs.other.getBoundingClientRect();
-			}
+		groupData() {
 			// if (this.studentGroup.groupID == 20) console.log(rect.width);
 			return {
 				position: "absolute",
-				right: `${(this.tagData_.maxWidth - rect.width) / 2}px`
+				left: `${this.groupDataOffser}px`
 			};
 		},
 		titleFont() {
@@ -387,21 +393,56 @@ export default {
 				);
 			}
 			{
-				if (Math.round(this.now.width - this.target.width) < 0) {
-					this.now.width =
-						this.target.width * 0.1 + this.now.width * 0.9;
+				let rect = this.$refs.groupData.getBoundingClientRect();
+				this.groupDataOffser = Math.round(
+					(this.now.width * 0.8 - rect.width) / 2
+				);
+			}
+			{
+				let infoRect = this.$refs.info.getBoundingClientRect();
+				let groupDataRect = this.$refs.groupData.getBoundingClientRect();
+				this.groupInfoHeight =
+					infoRect.height + groupDataRect.height + 100;
+			}
+			{
+				if (this.target.width != this.tagData_.minWidth) {
+					if (this.now.width != this.target.width) {
+						this.now.width =
+							this.target.width * 0.1 + this.now.width * 0.9;
+					}
 					if (Math.abs(this.now.width - this.target.width) < 100) {
 						this.now.height =
 							this.target.height * 0.1 + this.now.height * 0.9;
 					}
-				} else if (Math.round(this.now.width - this.target.width) > 0) {
-					this.now.height =
-						this.target.height * 0.1 + this.now.height * 0.9;
+				} else {
+					if (this.now.height != this.target.height) {
+						this.now.height =
+							this.target.height * 0.1 + this.now.height * 0.9;
+					}
 					if (Math.abs(this.now.height - this.target.height) < 100) {
 						this.now.width =
 							this.target.width * 0.1 + this.now.width * 0.9;
 					}
 				}
+				// if (
+				// 	Math.min(this.now.width, this.target.width) /
+				// 		Math.max(this.now.width, this.target.width) >
+				// 	1
+				// ) {
+				// 	this.now.width =
+				// 		this.target.width * 0.1 + this.now.width * 0.9;
+				// 	if (Math.abs(this.now.width - this.target.width) < 100) {
+				// 		this.now.height =
+				// 			this.target.height * 0.1 + this.now.height * 0.9;
+				// 	}
+				// } else {
+				// 	this.now.height =
+				// 		this.target.height * 0.1 + this.now.height * 0.9;
+				// 	if (Math.abs(this.now.height - this.target.height) < 100) {
+				// 		this.now.width =
+				// 			this.target.width * 0.1 + this.now.width * 0.9;
+				// 	}
+				// }
 				if (this.expandedGroupID == this.studentGroup.groupID) {
 					if (
 						Math.round(this.now.height) !=
@@ -425,6 +466,9 @@ export default {
 				) {
 					this.target.height = this.tagData_.minHeight;
 					this.target.width = this.tagData_.minWidth;
+					if (this.studentGroup.groupID == 20) {
+						console.log(this.target);
+					}
 				}
 			}
 		},
@@ -436,8 +480,7 @@ export default {
 				this.writeExpandedGroupID(this.studentGroup.groupID);
 				this.target.height = Math.max(
 					this.tagData_.maxHeight,
-					this.tagData_.maxHeight / 3 +
-						this.$refs.data.getBoundingClientRect().height
+					this.tagData_.maxHeight / 3 + this.groupInfoHeight
 				);
 				this.target.width = this.tagData_.maxWidth;
 			} else {
@@ -452,9 +495,5 @@ export default {
 <style scoped>
 .summary {
 	text-align: left;
-}
-.other {
-	position: absolute;
-	left: 30%;
 }
 </style>
