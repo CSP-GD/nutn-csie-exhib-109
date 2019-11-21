@@ -212,7 +212,7 @@ export let studentGroupJson = [
         projectName: "植基於深度學習之咖啡原豆瑕疵檢測系統", //專題名稱
         imgSrc: require("../../img/studentgroup/16/187878.jpg"), //專題截圖
         videoSrc: "", //專題影片
-        fileSrc: require("../../pdf/16/海報2.2.pdf"), //檔案連結
+        fileSrc: require("../../pdf/16/海報3.0.pdf"), //檔案連結
         fromLab: "多媒體與醫學影像實驗室", //所屬實驗室
         summarys: [
             {

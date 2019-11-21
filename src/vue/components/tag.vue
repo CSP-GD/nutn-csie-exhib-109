@@ -36,7 +36,7 @@
 						<tr>
 							<td>專題海報：</td>
 							<td>
-								<a :href="studentGroup.fileSrc">請點選</a>
+								<a :href="studentGroup.fileSrc" target="_blank">請點選</a>
 							</td>
 						</tr>
 					</table>
