@@ -15,8 +15,8 @@ export let studentGroupJson = [
     /* 第二組 */
     {
         groupID: 2, //專題編號
-        projectName: "", //專題名稱
-        imgSrc: "", //專題截圖
+        projectName: "Deep Learning for Polyp Detection in Colonoscopy Images", //專題名稱
+        imgSrc: require("../../studentgroup/02/img/image.jpg"), //專題截圖
         videoSrc: "", //專題影片
         fileSrc: "", //檔案連結
         fromLab: "智慧型機器人實驗室", //所屬實驗室
@@ -58,7 +58,7 @@ export let studentGroupJson = [
     {
         groupID: 5, //專題編號
         projectName: "以行動裝置實現表面粗糙度之量測", //專題名稱
-        imgSrc: require("../../img/studentgroup/05/385120.jpg"), //專題截圖
+        imgSrc: require("../../studentgroup/05/img/385120.jpg"), //專題截圖
         videoSrc: "", //專題影片
         fileSrc: "", //檔案連結
         fromLab: "資料庫與資訊知識系統實驗室", //所屬實驗室
@@ -86,7 +86,7 @@ export let studentGroupJson = [
     {
         groupID: 7, //專題編號
         projectName: "鋁結構受到動態拉伸載荷影響時估計鋁結構不同週期的裂縫長度", //專題名稱
-        imgSrc: require("../../img/studentgroup/07/1573182602502.jpg"), //專題截圖
+        imgSrc: require("../../studentgroup/07/img/1573182602502.jpg"), //專題截圖
         videoSrc: "", //專題影片
         fileSrc: "", //檔案連結
         fromLab: "資料系統實驗室", //所屬實驗室
@@ -142,7 +142,7 @@ export let studentGroupJson = [
     {
         groupID: 11, //專題編號
         projectName: "基於影像辨識的即時路邊停車格資訊網路", //專題名稱
-        imgSrc: require("../../img/studentgroup/11/S__63496199.jpg"), //專題截圖
+        imgSrc: require("../../studentgroup/11/img/S__63496199.jpg"), //專題截圖
         videoSrc: "", //專題影片
         fileSrc: "", //檔案連結
         fromLab: "多媒體與醫學影像實驗室", //所屬實驗室
@@ -197,7 +197,7 @@ export let studentGroupJson = [
     {
         groupID: 15, //專題編號
         projectName: "運用生成對抗網路發展適用於提升養殖池水下影像品質之研究", //專題名稱
-        imgSrc: require("../../img/studentgroup/15/圖片1.png"), //專題截圖
+        imgSrc: require("../../studentgroup/15/img/圖片1.png"), //專題截圖
         videoSrc: "", //專題影片
         fileSrc: "", //檔案連結
         fromLab: "多媒體與醫學影像實驗室", //所屬實驗室
@@ -210,9 +210,9 @@ export let studentGroupJson = [
     {
         groupID: 16, //專題編號
         projectName: "植基於深度學習之咖啡原豆瑕疵檢測系統", //專題名稱
-        imgSrc: require("../../img/studentgroup/16/187878.jpg"), //專題截圖
+        imgSrc: require("../../studentgroup/16/img/187878.jpg"), //專題截圖
         videoSrc: "", //專題影片
-        fileSrc: require("../../pdf/16/海報3.0.pdf"), //檔案連結
+        fileSrc: require("../../studentgroup/16/pdf/海報3.0.pdf"), //檔案連結
         fromLab: "多媒體與醫學影像實驗室", //所屬實驗室
         summarys: [
             {
@@ -231,7 +231,7 @@ export let studentGroupJson = [
     {
         groupID: 17, //專題編號
         projectName: "硬體模糊位元控制設計方法", //專題名稱
-        imgSrc: require("../../img/studentgroup/17/專題照片.png"), //專題截圖
+        imgSrc: require("../../studentgroup/17/img/專題照片.png"), //專題截圖
         videoSrc: "", //專題影片
         fileSrc: "", //檔案連結
         fromLab: "電腦輔助系統設計實驗室", //所屬實驗室
@@ -271,11 +271,18 @@ export let studentGroupJson = [
     {
         groupID: 20, //專題編號
         projectName: "基於強化學習之格鬥遊戲即時反應操作AI設計", //專題名稱
-        imgSrc: require("../../img/studentgroup/20/專題照.png"), //專題截圖
+        imgSrc: require("../../studentgroup/20/img/專題照.png"), //專題截圖
         videoSrc: "", //專題影片
-        fileSrc: "", //檔案連結
+        fileSrc: require("../../studentgroup/20/pdf/專題海報.pdf"), //檔案連結
         fromLab: "生物資訊實驗室", //所屬實驗室
-        summarys: ``, //專題摘要
+        summarys: [
+            {
+                index: 1, text: `一般格鬥遊戲上，常有入門門檻過高與玩家間常出現嚴重的技術斷層等等問題，新手玩家連初級AI都打不贏，而老玩家面對高階AI卻依舊取得壓倒性勝利，這樣巨大的斷層會帶給格鬥遊戲的初學者巨大的挫敗感。`
+            },
+            {
+                index: 2, text: `因此，本專題藉由強化學習方法訓練出能用於格鬥遊戲的AI，並利用調整獎勵來製作出不同風格、強度的模型，使得各種玩家都能充分享受格鬥遊戲帶來的樂趣。`
+            }
+        ], //專題摘要
         groupStudents: [
             { studentID: "S10559028", studentName: "黃仁鴻" },
         ]
@@ -296,7 +303,7 @@ export let studentGroupJson = [
     /* 第二十二組 */
     {
         groupID: 22, //專題編號
-        projectName: "", //專題名稱
+        projectName: "仿無人機視角之橘樹果實數量計數研究", //專題名稱
         imgSrc: "", //專題截圖
         videoSrc: "", //專題影片
         fileSrc: "", //檔案連結
@@ -324,11 +331,15 @@ export let studentGroupJson = [
     {
         groupID: 24, //專題編號
         projectName: "基於深度學習進行人體姿態估計", //專題名稱
-        imgSrc: require("../../img/studentgroup/24/photo_2019-11-19_19-50-32.jpg"), //專題截圖
+        imgSrc: require("../../studentgroup/24/img/photo_2019-11-19_19-50-32.jpg"), //專題截圖
         videoSrc: "", //專題影片
-        fileSrc: "", //檔案連結
+        fileSrc: require("../../studentgroup/24/pdf/海報最終版.pdf"), //檔案連結
         fromLab: "智慧型機器人實驗室", //所屬實驗室
-        summarys: ``, //專題摘要
+        summarys: [
+            {
+                index: 1, text: `如阿凡達、猩球掘起等賣座電影，其特效的製作過程常需使用動作捕捉裝置協助取得動作資訊。專題中我們希望透過攝影機獲取的二維影像，結合卷積神經網路學習的技術，轉換成肢體關節點在三維空間中的位置，進而捕捉人體的姿態及動作，並應用到 3D 動畫中。專題中實作的系統可以較低的成本與操作門檻，達到昂貴的動作捕捉裝置之相似效果，讓此類型的應用在日常中也能簡易的實現。`
+            }
+        ], //專題摘要
         groupStudents: [
             { studentID: "S10559037", studentName: "張俞方" },
             { studentID: "S10559040", studentName: "施宣妤" }
@@ -337,12 +348,19 @@ export let studentGroupJson = [
     /* 第二十五組 */
     {
         groupID: 25, //專題編號
-        projectName: "", //專題名稱
+        projectName: "Wi-Fi環境下人體行為識別系統", //專題名稱
         imgSrc: "", //專題截圖
         videoSrc: "", //專題影片
-        fileSrc: "", //檔案連結
+        fileSrc: require("../../studentgroup/25/pdf/專題展海報_109級畢業專題海報_NUTN_CSIE_PRJ_109.pdf"), //檔案連結
         fromLab: "行動計算與網路實驗室", //所屬實驗室
-        summarys: ``, //專題摘要
+        summarys: [
+            {
+                index: 1, text: `隨著科技的發展，人們對其所能帶來的便利給予了更多的期望，其中最受關注的一個議題便是我們能否使用機器取代人為的監控。那麼要如何同時滿足在精確識別室內人體行動的目標下又能相對地把成本控制在省時省力的範疇裡呢？`
+            },
+            {
+                index: 2, text: `本課題將借由 Wi-Fi 訊號的評到狀態資訊來進行甄別。`
+            }
+        ], //專題摘要
         groupStudents: [
             { studentID: "S10559041", studentName: "呂玉嫻" }
         ]
@@ -351,7 +369,7 @@ export let studentGroupJson = [
     {
         groupID: 26, //專題編號
         projectName: "智慧型行動載物機器人", //專題名稱
-        imgSrc: require("../../img/studentgroup/26/photo_2019-11-11_19-02-18.jpg"), //專題截圖
+        imgSrc: require("../../studentgroup/26/img/photo_2019-11-11_19-02-18.jpg"), //專題截圖
         videoSrc: "", //專題影片
         fileSrc: "", //檔案連結
         fromLab: "智慧型機器人實驗室", //所屬實驗室
@@ -363,8 +381,8 @@ export let studentGroupJson = [
     /* 第二十七組 */
     {
         groupID: 27, //專題編號
-        projectName: "", //專題名稱
-        imgSrc: "", //專題截圖
+        projectName: "利用深度學習偵測雞隻熱緊迫之研究", //專題名稱
+        imgSrc: require("../../studentgroup/27/img/照片1.png"), //專題截圖
         videoSrc: "", //專題影片
         fileSrc: "", //檔案連結
         fromLab: "多媒體與醫學影像實驗室", //所屬實驗室
