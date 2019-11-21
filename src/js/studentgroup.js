@@ -71,10 +71,10 @@ export let studentGroupJson = [
     /* 第六組 */
     {
         groupID: 6, //專題編號
-        projectName: "", //專題名稱
+        projectName: "應用ANN、KNN、CART決策樹以及貝氏分類於銀行客戶定存分析", //專題名稱
         imgSrc: "", //專題截圖
         videoSrc: "", //專題影片
-        fileSrc: "", //檔案連結
+        fileSrc: require("../../studentgroup/06/pdf/專題海報_109第六組_丁吾心_羅宇宸.pdf"), //檔案連結
         fromLab: "多媒體網路實驗室", //所屬實驗室
         summarys: ``, //專題摘要
         groupStudents: [
@@ -141,7 +141,7 @@ export let studentGroupJson = [
     /* 第十一組 */
     {
         groupID: 11, //專題編號
-        projectName: "基於影像辨識的即時路邊停車格資訊網路", //專題名稱
+        projectName: "基於群眾外包式的即時路邊停車格資訊系統", //專題名稱
         imgSrc: require("../../studentgroup/11/img/S__63496199.jpg"), //專題截圖
         videoSrc: "", //專題影片
         fileSrc: "", //檔案連結
@@ -168,10 +168,10 @@ export let studentGroupJson = [
     /* 第十三組 */
     {
         groupID: 13, //專題編號
-        projectName: "", //專題名稱
+        projectName: "今晚吃什麼APP－－基於群眾感測之餐廳推薦系統", //專題名稱
         imgSrc: "", //專題截圖
         videoSrc: "", //專題影片
-        fileSrc: "", //檔案連結
+        fileSrc: require("../../studentgroup/13/pdf/專題海報.pdf"), //檔案連結
         fromLab: "行動計算與網路實驗室", //所屬實驗室
         summarys: ``, //專題摘要
         groupStudents: [
@@ -304,7 +304,7 @@ export let studentGroupJson = [
     {
         groupID: 22, //專題編號
         projectName: "仿無人機視角之橘樹果實數量計數研究", //專題名稱
-        imgSrc: "", //專題截圖
+        imgSrc: require("../../studentgroup/22/img/1574346284791.jpg"), //專題截圖
         videoSrc: "", //專題影片
         fileSrc: "", //檔案連結
         fromLab: "多媒體與醫學影像實驗室", //所屬實驗室
@@ -384,9 +384,13 @@ export let studentGroupJson = [
         projectName: "利用深度學習偵測雞隻熱緊迫之研究", //專題名稱
         imgSrc: require("../../studentgroup/27/img/照片1.png"), //專題截圖
         videoSrc: "", //專題影片
-        fileSrc: "", //檔案連結
+        fileSrc: require("../../studentgroup/27/pdf/畢業專題展海報.pdf"), //檔案連結
         fromLab: "多媒體與醫學影像實驗室", //所屬實驗室
-        summarys: ``, //專題摘要
+        summarys: [
+            {
+                index: 1, text: `台灣家禽業於農業產值中佔近13%比例，扮演重要角色。由於台灣位於亞熱帶地區，雞隻面臨高濕度及高溫度的環境，時常發生熱緊迫引起的福利問題。有鑑於雞舍環境中影響因素時常有交互作用存在，希望透過深度學習中電腦視覺的應用，針對雞舍影像提供雞隻熱緊迫更直接的判斷。`
+            }
+        ], //專題摘要
         groupStudents: [
             { studentID: "S10559046", studentName: "顏婷玉" }
         ]
