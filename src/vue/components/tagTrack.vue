@@ -213,8 +213,11 @@ export default {
 					this.target.top = Math.round(
 						this.target.top * 0.8 +
 							(-1 *
-								this.studentGroupJson.length *
-								this.tagData.minHeight +
+								((this.studentGroupJson.length - 1) *
+									this.tagData.minHeight +
+									(this.expandedGroupID == -1
+										? this.tagData.minHeight
+										: this.expandedGroupHeight)) +
 								this.init.height / 2) *
 								0.2
 					);
