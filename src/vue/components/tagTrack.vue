@@ -1,5 +1,5 @@
 <template>
-	<div :id="`innerPage-${id}`" :style="innerPage">
+	<div ref="innerPage" :style="innerPage">
 		<div :style="track">
 			<tag
 				v-for="(studentGroup) in studentGroupJson"
@@ -29,7 +29,6 @@ import tag from "../components/tag.vue";
 
 export default {
 	props: {
-		id: Number,
 		studentGroupJson: {
 			[Number]: {
 				groupID: Number, //專題編號
@@ -138,56 +137,35 @@ export default {
 			};
 		}
 	},
-	created() {
+	mounted() {
 		this.mainLoop();
-		let bindWheel = () => {
-			window.setTimeout(() => {
-				if (document.getElementById(`innerPage-${this.id}`)) {
-					document
-						.getElementById(`innerPage-${this.id}`)
-						.addEventListener("DOMMouseScroll", event => {
-							this.slide(event.wheelDeltaY);
-						});
-					document.getElementById(
-						`innerPage-${this.id}`
-					).onmousewheel = event => {
-						event = event || window.event;
-						this.slide(event.wheelDeltaY);
-					};
-					document
-						.getElementById(`innerPage-${this.id}`)
-						.addEventListener(
-							"touchmove",
-							event => {
-								// event.preventDefault();
-								if (this.touch.y !== null) {
-									this.slide(
-										(event.touches[0].screenY -
-											this.touch.y) *
-											2
-									);
-								}
-								this.touch.x = event.touches[0].screenX;
-								this.touch.y = event.touches[0].screenY;
-							},
-							false
-						);
-					document
-						.getElementById(`innerPage-${this.id}`)
-						.addEventListener(
-							"touchstart",
-							event => {
-								this.touch.x = event.touches[0].screenX;
-								this.touch.y = event.touches[0].screenY;
-							},
-							false
-						);
-				} else {
-					bindWheel();
-				}
-			}, 100);
+		this.$refs.innerPage.addEventListener("DOMMouseScroll", event => {
+			this.slide(event.wheelDeltaY);
+		});
+		this.$refs.innerPage.onmousewheel = event => {
+			event = event || window.event;
+			this.slide(event.wheelDeltaY);
 		};
-		bindWheel();
+		this.$refs.innerPage.addEventListener(
+			"touchmove",
+			event => {
+				// event.preventDefault();
+				if (this.touch.y !== null) {
+					this.slide((event.touches[0].screenY - this.touch.y) * 2);
+				}
+				this.touch.x = event.touches[0].screenX;
+				this.touch.y = event.touches[0].screenY;
+			},
+			false
+		);
+		this.$refs.innerPage.addEventListener(
+			"touchstart",
+			event => {
+				this.touch.x = event.touches[0].screenX;
+				this.touch.y = event.touches[0].screenY;
+			},
+			false
+		);
 	},
 	update() {
 		console.log("update");
