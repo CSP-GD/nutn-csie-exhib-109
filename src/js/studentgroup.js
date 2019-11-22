@@ -158,12 +158,16 @@ export let studentGroupJson = [
     /* 第十二組 */
     {
         groupID: 12, //專題編號
-        projectName: "", //專題名稱
-        imgSrc: "", //專題截圖
+        projectName: "四軸飛行器空拍條碼系統", //專題名稱
+        imgSrc: require("../../studentgroup/12/img/IMG_0661.jpg"), //專題截圖
         videoSrc: "", //專題影片
-        fileSrc: "", //檔案連結
+        fileSrc: require("../../studentgroup/12/pdf/專題海報 改.pdf"), //檔案連結
         fromLab: "電腦輔助系統設計實驗室", //所屬實驗室
-        summarys: ``, //專題摘要
+        summarys: [
+            {
+                index: 1, text: `由於四軸飛行器的應用靈活，可以去到我們人平常比較困難到達或是到不了的地方，我們將使用控制四軸飛行器進行倉庫的貨物管理，在比較大型的倉庫中使用人力揀貨速度慢且執行時間會花得更久，若我們能夠使用人為操控四軸飛行器，在倉庫的貨物管理上會大大的節省時間以及提高揀貨效率;我們讓每種貨物有自己的條碼可以讓四軸飛行器的空拍系統進行掃描，掃描後會進入到倉庫的資料庫中，再進行揀貨的動作。`
+            }
+        ], //專題摘要
         groupStudents: [
             { studentID: "S10559014", studentName: "廖御閎" },
             { studentID: "S10559027", studentName: "陳巍中" }
@@ -177,7 +181,11 @@ export let studentGroupJson = [
         videoSrc: "", //專題影片
         fileSrc: require("../../studentgroup/13/pdf/專題海報.pdf"), //檔案連結
         fromLab: "行動計算與網路實驗室", //所屬實驗室
-        summarys: ``, //專題摘要
+        summarys: [
+            {
+                index: 1, text: `隨著網路通訊的成熟與普及，人們在日常生活中更加依賴行動裝置，連帶出現了各式新興的商業服務，許多企業便開始提供推播服務。推播服務能讓企業彈性運用且精準瞄準目標族群，不再侷限於傳統媒介，而對於使用者，更是能在這資訊爆炸的時代迅速地接收到需要的資訊。透過推播技術的即時性以及智慧型行動裝置的普及，如何利用現有技術造就生活的便利便是我們值得關注的議題。`
+            }
+        ], //專題摘要
         groupStudents: [
             { studentID: "S10559015", studentName: "周欣玄" },
             { studentID: "S10559018", studentName: "葉瓊斯" }
@@ -310,9 +318,13 @@ export let studentGroupJson = [
         projectName: "仿無人機視角之橘樹果實數量計數研究", //專題名稱
         imgSrc: require("../../studentgroup/22/img/1574346284791.jpg"), //專題截圖
         videoSrc: "", //專題影片
-        fileSrc: "", //檔案連結
+        fileSrc: require("../../studentgroup/22/pdf/仿無人機視角之橘樹果實數量計數研究海報.pdf"), //檔案連結
         fromLab: "多媒體與醫學影像實驗室", //所屬實驗室
-        summarys: ``, //專題摘要
+        summarys: [
+            {
+                index: 1, text: `台灣社會的人口老化與少子化，以及農村的人口外移已造成農村勞動力不足的問題，並影響到農業正常的發展。因此台灣農業正逐漸轉型中，將機器人應用到農業領域是一種趨勢，可以舒緩農業缺工的問題，且可以執行原本人類不易處理的工作。本研究仿無人機視角進行影像擷取，透過深度學習架構，偵測畫面中的主要橘子樹，並進一步對棵橘子樹計算樹上的橘子個數，透過此方式就能快速掌握果園內的橘子數量，提供給果農作銷售以及管理上的評估輔助。`
+            }
+        ], //專題摘要
         groupStudents: [
             { studentID: "S10559034", studentName: "楊明諺" }
         ]

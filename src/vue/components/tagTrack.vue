@@ -204,10 +204,13 @@ export default {
 					this.target.top <
 					-1 *
 						((this.studentGroupJson.length - 1) *
-							this.tagData.minHeight +
+							(this.tagData.minHeight + this.init.spacing) +
 							(this.expandedGroupID == -1
 								? this.tagData.minHeight
-								: this.expandedGroupHeight)) +
+								: Math.max(
+										this.expandedGroupHeight,
+										this.tagData.maxHeight
+								  ))) +
 						this.init.height / 2
 				) {
 					this.target.top = Math.round(
@@ -239,7 +242,9 @@ export default {
 			this.expandedGroupID = id;
 			if (id != -1) {
 				this.target.top = Math.round(
-					-1 * (id - 1) * this.tagData.minHeight +
+					-1 *
+						(id - 1) *
+						(this.tagData.minHeight + this.init.spacing) +
 						(this.init.height - this.tagData.maxHeight) / 2
 				);
 			}
