@@ -10,7 +10,8 @@ export let studentGroupJson = [
         summarys: ``, //專題摘要
         groupStudents: [
             { studentID: "S10459044", studentName: "洪誠安" }
-        ]
+        ],
+        time: { start: "13:07", end: "13:14" }
     },
     /* 第二組 */
     {
@@ -24,7 +25,8 @@ export let studentGroupJson = [
         groupStudents: [
             { studentID: "S10559001", studentName: "徐偉倫" },
             { studentID: "S10559044", studentName: "洪于婕" }
-        ]
+        ],
+        time: { start: "13:14", end: "13:21" }
     },
     /* 第三組 */
     {
@@ -38,7 +40,8 @@ export let studentGroupJson = [
         groupStudents: [
             { studentID: "S10559002", studentName: "蘇政穎" },
             { studentID: "S10559004", studentName: "陳銘濡" }
-        ]
+        ],
+        time: { start: "13:21", end: "13:28" }
     },
     /* 第四組 */
     {
@@ -52,7 +55,8 @@ export let studentGroupJson = [
         groupStudents: [
             { studentID: "S10559003", studentName: "林迺航" },
             { studentID: "S10559022", studentName: "廖毅軒" }
-        ]
+        ],
+        time: { start: "13:28", end: "13:35" }
     },
     /* 第五組 */
     {
@@ -66,7 +70,8 @@ export let studentGroupJson = [
         groupStudents: [
             { studentID: "S10559005", studentName: "高嘉謙" },
             { studentID: "S10559006", studentName: "郭峻霖" }
-        ]
+        ],
+        time: { start: "13:35", end: "13:42" }
     },
     /* 第六組 */
     {
@@ -84,7 +89,8 @@ export let studentGroupJson = [
         groupStudents: [
             { studentID: "S10559007", studentName: "丁吾心" },
             { studentID: "S10559026", studentName: "羅宇宸" }
-        ]
+        ],
+        time: { start: "13:42", end: "13:49" }
     },
     /* 第七組 */
     {
@@ -97,7 +103,8 @@ export let studentGroupJson = [
         summarys: ``, //專題摘要
         groupStudents: [
             { studentID: "S10559008", studentName: "游士玄" }
-        ]
+        ],
+        time: { start: "14:00", end: "14:07" }
     },
     /* 第八組 */
     {
@@ -112,7 +119,8 @@ export let studentGroupJson = [
             { studentID: "S10559009", studentName: "李原鋌" },
             { studentID: "S10559024", studentName: "李誌軒" },
             { studentID: "S10559030", studentName: "黃勝揮" }
-        ]
+        ],
+        time: { start: "14:07", end: "14:14" }
     },
     /* 第九組 */
     {
@@ -126,7 +134,8 @@ export let studentGroupJson = [
         groupStudents: [
             { studentID: "S10559010", studentName: "郭憲儒" },
             { studentID: "S10559021", studentName: "吳柏賢" }
-        ]
+        ],
+        time: { start: "14:14", end: "14:21" }
     },
     /* 第十組 */
     {
@@ -140,7 +149,8 @@ export let studentGroupJson = [
         groupStudents: [
             { studentID: "S10559012", studentName: "劉鎮維" },
             { studentID: "S10559045", studentName: "胡君愷" }
-        ]
+        ],
+        time: { start: "14:21", end: "14:28" }
     },
     /* 第十一組 */
     {
@@ -153,7 +163,8 @@ export let studentGroupJson = [
         summarys: ``, //專題摘要
         groupStudents: [
             { studentID: "S10559013", studentName: "佘宜道" }
-        ]
+        ],
+        time: { start: "14:28", end: "14:35" }
     },
     /* 第十二組 */
     {
@@ -171,7 +182,8 @@ export let studentGroupJson = [
         groupStudents: [
             { studentID: "S10559014", studentName: "廖御閎" },
             { studentID: "S10559027", studentName: "陳巍中" }
-        ]
+        ],
+        time: { start: "14:35", end: "14:42" }
     },
     /* 第十三組 */
     {
@@ -189,7 +201,8 @@ export let studentGroupJson = [
         groupStudents: [
             { studentID: "S10559015", studentName: "周欣玄" },
             { studentID: "S10559018", studentName: "葉瓊斯" }
-        ]
+        ],
+        time: { start: "14:42", end: "14:49" }
     },
     /* 第十四組 */
     {
@@ -203,7 +216,8 @@ export let studentGroupJson = [
         groupStudents: [
             { studentID: "S10559016", studentName: "張維珊" },
             { studentID: "S10559036", studentName: "周晨瑋" }
-        ]
+        ],
+        time: { start: "15:00", end: "15:07" }
     },
     /* 第十五組 */
     {
@@ -216,7 +230,8 @@ export let studentGroupJson = [
         summarys: ``, //專題摘要
         groupStudents: [
             { studentID: "S10559017", studentName: "趙云珮" }
-        ]
+        ],
+        time: { start: "15:07", end: "15:14" }
     },
     /* 第十六組 */
     {
@@ -237,7 +252,8 @@ export let studentGroupJson = [
         groupStudents: [
             { studentID: "S10559019", studentName: "林萱" },
             { studentID: "S10559031", studentName: "蔡亞倫" }
-        ]
+        ],
+        time: { start: "15:14", end: "15:21" }
     },
     /* 第十七組 */
     {
@@ -250,7 +266,8 @@ export let studentGroupJson = [
         summarys: ``, //專題摘要
         groupStudents: [
             { studentID: "S10559020", studentName: "連永立" }
-        ]
+        ],
+        time: { start: "15:21", end: "15:28" }
     },
     /* 第十八組 */
     {
@@ -264,7 +281,8 @@ export let studentGroupJson = [
         groupStudents: [
             { studentID: "S10559023", studentName: "鄭聖玄" },
             { studentID: "S10559043", studentName: "金鑒修" }
-        ]
+        ],
+        time: { start: "15:28", end: "15:35" }
     },
     /* 第十九組 */
     {
@@ -277,7 +295,8 @@ export let studentGroupJson = [
         summarys: ``, //專題摘要
         groupStudents: [
             { studentID: "S10559025", studentName: "黃祈緯" },
-        ]
+        ],
+        time: { start: "15:35", end: "15:42" }
     },
     /* 第二十組 */
     {
@@ -297,7 +316,8 @@ export let studentGroupJson = [
         ], //專題摘要
         groupStudents: [
             { studentID: "S10559028", studentName: "黃仁鴻" },
-        ]
+        ],
+        time: { start: "15:42", end: "15:49" }
     },
     /* 第二十一組 */
     {
@@ -310,7 +330,8 @@ export let studentGroupJson = [
         summarys: ``, //專題摘要
         groupStudents: [
             { studentID: "S10559032", studentName: "吳孟霖" }
-        ]
+        ],
+        time: { start: "16:00", end: "16:07" }
     },
     /* 第二十二組 */
     {
@@ -327,7 +348,8 @@ export let studentGroupJson = [
         ], //專題摘要
         groupStudents: [
             { studentID: "S10559034", studentName: "楊明諺" }
-        ]
+        ],
+        time: { start: "16:07", end: "16:14" }
     },
     /* 第二十三組 */
     {
@@ -341,7 +363,8 @@ export let studentGroupJson = [
         groupStudents: [
             { studentID: "S10559035", studentName: "楊政碩" },
             { studentID: "S10559039", studentName: "隋昊璟" }
-        ]
+        ],
+        time: { start: "16:14", end: "16:21" }
     },
     /* 第二十四組 */
     {
@@ -359,7 +382,8 @@ export let studentGroupJson = [
         groupStudents: [
             { studentID: "S10559037", studentName: "張俞方" },
             { studentID: "S10559040", studentName: "施宣妤" }
-        ]
+        ],
+        time: { start: "16:21", end: "16:28" }
     },
     /* 第二十五組 */
     {
@@ -379,7 +403,8 @@ export let studentGroupJson = [
         ], //專題摘要
         groupStudents: [
             { studentID: "S10559041", studentName: "呂玉嫻" }
-        ]
+        ],
+        time: { start: "16:28", end: "16:35" }
     },
     /* 第二十六組 */
     {
@@ -392,7 +417,8 @@ export let studentGroupJson = [
         summarys: ``, //專題摘要
         groupStudents: [
             { studentID: "S10559042", studentName: "于鶴瑤" }
-        ]
+        ],
+        time: { start: "16:35", end: "16:42" }
     },
     /* 第二十七組 */
     {
@@ -409,6 +435,7 @@ export let studentGroupJson = [
         ], //專題摘要
         groupStudents: [
             { studentID: "S10559046", studentName: "顏婷玉" }
-        ]
+        ],
+        time: { start: "16:42", end: "16:49" }
     },
 ];
