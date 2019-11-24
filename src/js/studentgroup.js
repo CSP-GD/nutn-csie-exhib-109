@@ -132,7 +132,7 @@ export let studentGroupJson = [
         projectName: "行人軌跡預測自動避障駕駛系統", //專題名稱
         imgSrc: require("../../studentgroup/09/img/pic_3.jpg"), //專題截圖
         videoSrc: "", //專題影片
-        fileSrc: "", //檔案連結
+        fileSrc: require("../../studentgroup/09/pdf/第九組郭憲儒-吳柏賢-海報.pdf"), //檔案連結
         fromLab: "行動計算與網路實驗室", //所屬實驗室
         summarys: [
             {
