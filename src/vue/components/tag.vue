@@ -1,13 +1,5 @@
 <template>
 	<div ref="tag" :style="tagContainer">
-		<div :style="timeInfoStart">
-			<hr class="time" />
-			{{studentGroup.time.start}}
-		</div>
-		<div :style="timeInfoEnd">
-			{{studentGroup.time.end}}
-			<hr class="time" />
-		</div>
 		<div :style="{...groupInfoContainer,...clipPath
 			//,...groupInfoContainerFilter
 			}">
@@ -42,6 +34,14 @@
 												v-show="groupStudent.studentID!=studentGroup.groupStudents[studentGroup.groupStudents.length-1].studentID"
 											>、</span>
 										</span>
+									</td>
+								</tr>
+								<tr>
+									<td>系內報告：</td>
+									<td>
+										2019/12/4/{{studentGroup.time.start}}
+										<hr class="time" />
+										2019/12/4/{{studentGroup.time.end}}
 									</td>
 								</tr>
 								<tr>
@@ -528,9 +528,9 @@ export default {
 	text-align: left;
 }
 hr.time {
-	border: 1px solid rgb(231, 231, 231);
+	border: 1px solid rgb(44, 44, 44);
 	height: 0.5px;
-	background: rgb(231, 231, 231);
+	background: rgb(44, 44, 44);
 	margin: 1px;
 }
 </style>

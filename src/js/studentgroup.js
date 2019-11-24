@@ -191,7 +191,7 @@ export let studentGroupJson = [
         projectName: "今晚吃什麼APP－－基於群眾感測之餐廳推薦系統", //專題名稱
         imgSrc: "", //專題截圖
         videoSrc: "", //專題影片
-        fileSrc: require("../../studentgroup/13/pdf/專題海報.pdf"), //檔案連結
+        fileSrc: require("../../studentgroup/13/pdf/專題海報.jpg"), //檔案連結
         fromLab: "行動計算與網路實驗室", //所屬實驗室
         summarys: [
             {
