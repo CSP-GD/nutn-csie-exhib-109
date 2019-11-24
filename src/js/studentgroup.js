@@ -31,12 +31,16 @@ export let studentGroupJson = [
     /* 第三組 */
     {
         groupID: 3, //專題編號
-        projectName: "", //專題名稱
-        imgSrc: "", //專題截圖
+        projectName: "應用資料探勘演算法於信用卡客戶違約資料的分析與預測", //專題名稱
+        imgSrc: require("../../studentgroup/03/img/專題照片.png"), //專題截圖
         videoSrc: "", //專題影片
-        fileSrc: "", //檔案連結
+        fileSrc: require("../../studentgroup/03/pdf/專題海報3.pdf"), //檔案連結
         fromLab: "多媒體網路實驗室", //所屬實驗室
-        summarys: ``, //專題摘要
+        summarys: [
+            {
+                index: 1, text: `我們將運用從UCI資料平台得到的信用卡客戶默認支付資料集，我們希望對它進行分析並找出擁有什麼樣特徵的客戶會違約；我們利用Python語言，並運用Cart決策樹演算法、KNN演算法、貝氏演算法、ANN演算法 針對不同性別、年齡、教育程度、過去數月付款情況……等等來對客戶是否違約來進行分析，經過各項研究進行參數調整分析並得到最佳結果的演算法，同時找出資料的規則，藉以供相關人士作參考，提高他們的便利性。`
+            }
+        ], //專題摘要
         groupStudents: [
             { studentID: "S10559002", studentName: "蘇政穎" },
             { studentID: "S10559004", studentName: "陳銘濡" }
