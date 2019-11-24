@@ -322,12 +322,16 @@ export let studentGroupJson = [
     /* 第二十一組 */
     {
         groupID: 21, //專題編號
-        projectName: "", //專題名稱
+        projectName: "停車場之移動裝置繳費系統", //專題名稱
         imgSrc: "", //專題截圖
         videoSrc: "", //專題影片
-        fileSrc: "", //檔案連結
+        fileSrc: require("../../studentgroup/21/pdf/第二十一組專題海報.pdf"), //檔案連結
         fromLab: "電腦輔助系統設計實驗室", //所屬實驗室
-        summarys: ``, //專題摘要
+        summarys: [
+            {
+                index: 1, text: `現今的停車場繳費模式大多已使用車牌辨識系統取代傳統的停車代幣，但仍是必須徒步至每個停車場的隨附自動繳費機才能繳費，不但費時費力還有需要排隊的問題，若是使用此系統以手機來完成繳費，便可省下許多時間及精力。`
+            }
+        ], //專題摘要
         groupStudents: [
             { studentID: "S10559032", studentName: "吳孟霖" }
         ],
@@ -389,7 +393,7 @@ export let studentGroupJson = [
     {
         groupID: 25, //專題編號
         projectName: "Wi-Fi環境下人體行為識別系統", //專題名稱
-        imgSrc: "", //專題截圖
+        imgSrc: require("../../studentgroup/25/img/photo_2019-11-24_12-59-52.jpg"), //專題截圖
         videoSrc: "", //專題影片
         fileSrc: require("../../studentgroup/25/pdf/專題展海報_109級畢業專題海報_NUTN_CSIE_PRJ_109.pdf"), //檔案連結
         fromLab: "行動計算與網路實驗室", //所屬實驗室
