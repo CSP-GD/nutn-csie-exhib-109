@@ -189,7 +189,7 @@ export let studentGroupJson = [
     {
         groupID: 13, //專題編號
         projectName: "今晚吃什麼APP－－基於群眾感測之餐廳推薦系統", //專題名稱
-        imgSrc: "", //專題截圖
+        imgSrc: require("../../studentgroup/13/img/專題照.png"), //專題截圖
         videoSrc: "", //專題影片
         fileSrc: require("../../studentgroup/13/pdf/專題海報.jpg"), //檔案連結
         fromLab: "行動計算與網路實驗室", //所屬實驗室
@@ -287,12 +287,16 @@ export let studentGroupJson = [
     /* 第十九組 */
     {
         groupID: 19, //專題編號
-        projectName: "", //專題名稱
-        imgSrc: "", //專題截圖
+        projectName: "應用資料探勘技術於青蛙叫聲資料分類", //專題名稱
+        imgSrc: require("../../studentgroup/19/img/專題照.png"), //專題截圖
         videoSrc: "", //專題影片
-        fileSrc: "", //檔案連結
+        fileSrc: require("../../studentgroup/19/pdf/專題海報_109第十九組_黃祈緯.pdf"), //檔案連結
         fromLab: "多媒體網路實驗室", //所屬實驗室
-        summarys: ``, //專題摘要
+        summarys: [
+            {
+                index: 1, text: `生態保育是台灣目前面臨的一個重要問題，考慮到這個原因，因此我們從UCI開放資料平台中的青蛙叫聲資料，利用Data Mining的方法，利用Python語言中的KNN、Naïve Bayes、決策樹及ANN演算法針對青蛙叫聲通過三角帶通濾波器產生的22個特徵，透過上述演算法分別進行分析，比較各個演算法的準確率及其所花費的時間，找出較適合的演算法以供有需要的人使用。`
+            }
+        ], //專題摘要
         groupStudents: [
             { studentID: "S10559025", studentName: "黃祈緯" },
         ],
@@ -323,7 +327,7 @@ export let studentGroupJson = [
     {
         groupID: 21, //專題編號
         projectName: "停車場之移動裝置繳費系統", //專題名稱
-        imgSrc: "", //專題截圖
+        imgSrc: require("../../studentgroup/21/img/專題照.png"), //專題截圖
         videoSrc: "", //專題影片
         fileSrc: require("../../studentgroup/21/pdf/第二十一組專題海報.pdf"), //檔案連結
         fromLab: "電腦輔助系統設計實驗室", //所屬實驗室
@@ -380,7 +384,7 @@ export let studentGroupJson = [
         fromLab: "智慧型機器人實驗室", //所屬實驗室
         summarys: [
             {
-                index: 1, text: `如阿凡達、猩球掘起等賣座電影，其特效的製作過程常需使用動作捕捉裝置協助取得動作資訊。專題中我們希望透過攝影機獲取的二維影像，結合卷積神經網路學習的技術，轉換成肢體關節點在三維空間中的位置，進而捕捉人體的姿態及動作，並應用到 3D 動畫中。專題中實作的系統可以較低的成本與操作門檻，達到昂貴的動作捕捉裝置之相似效果，讓此類型的應用在日常中也能簡易的實現。`
+                index: 1, text: `如阿凡達、猩球崛起等賣座電影，其特效的製作過程常需使用動作捕捉裝置協助取得動作資訊。專題中我們希望透過攝影機獲取的二維影像，結合卷積神經網路學習的技術，轉換成肢體關節點在三維空間中的位置，進而捕捉人體的姿態及動作，並應用到 3D 動畫中。專題中實作的系統可以較低的成本與操作門檻，達到昂貴的動作捕捉裝置之相似效果，讓此類型的應用在日常中也能簡易的實現。`
             }
         ], //專題摘要
         groupStudents: [
