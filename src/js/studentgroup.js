@@ -129,12 +129,16 @@ export let studentGroupJson = [
     /* 第九組 */
     {
         groupID: 9, //專題編號
-        projectName: "", //專題名稱
-        imgSrc: "", //專題截圖
+        projectName: "行人軌跡預測自動避障駕駛系統", //專題名稱
+        imgSrc: require("../../studentgroup/09/img/pic_3.jpg"), //專題截圖
         videoSrc: "", //專題影片
         fileSrc: "", //檔案連結
         fromLab: "行動計算與網路實驗室", //所屬實驗室
-        summarys: ``, //專題摘要
+        summarys: [
+            {
+                index: 1, text: `隨著科技的蓬勃發展，自動化汽車趨勢已不容小覷，隨之興起的自駕車概念，這些變化帶來的不只是單純的便利性，更重要的，是其背後所隱藏的許多道路安全議題。於是，我們將以Duckietown來加以模擬實際道路狀況，例如城市、街道，十字路口等。將鏡頭偵測到的道路情況送到Raspberry Pi並接著進一步的數據分析，預測道路上實際狀況，進而讓自駕車判斷出最安全路徑，達到路線分析與即時閃避障礙，藉此提升駕駛更安全的行車品質。`
+            }
+        ], //專題摘要
         groupStudents: [
             { studentID: "S10559010", studentName: "郭憲儒" },
             { studentID: "S10559021", studentName: "吳柏賢" }
@@ -193,7 +197,7 @@ export let studentGroupJson = [
     {
         groupID: 13, //專題編號
         projectName: "今晚吃什麼APP－－基於群眾感測之餐廳推薦系統", //專題名稱
-        imgSrc: require("../../studentgroup/13/img/專題照.png"), //專題截圖
+        imgSrc: require("../../studentgroup/13/img/pic.png"), //專題截圖
         videoSrc: "", //專題影片
         fileSrc: require("../../studentgroup/13/pdf/專題海報.jpg"), //檔案連結
         fromLab: "行動計算與網路實驗室", //所屬實驗室
