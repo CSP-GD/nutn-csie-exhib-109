@@ -81,7 +81,7 @@ export let studentGroupJson = [
     {
         groupID: 6, //專題編號
         projectName: "應用ANN、KNN、CART決策樹以及貝氏分類於銀行客戶定存分析", //專題名稱
-        imgSrc: "", //專題截圖
+        imgSrc: require("../../studentgroup/06/img/專題照.png"), //專題截圖
         videoSrc: "", //專題影片
         fileSrc: require("../../studentgroup/06/pdf/專題海報_109第六組_丁吾心_羅宇宸.pdf"), //檔案連結
         fromLab: "多媒體網路實驗室", //所屬實驗室
@@ -113,12 +113,16 @@ export let studentGroupJson = [
     /* 第八組 */
     {
         groupID: 8, //專題編號
-        projectName: "", //專題名稱
-        imgSrc: "", //專題截圖
+        projectName: "智慧教學機器人", //專題名稱
+        imgSrc: require("../../studentgroup/08/img/85884.jpg"), //專題截圖
         videoSrc: "", //專題影片
-        fileSrc: "", //檔案連結
+        fileSrc: require("../../studentgroup/08/pdf/海報(1).pdf"), //檔案連結
         fromLab: "知識本體應用暨軟體工程實驗室", //所屬實驗室
-        summarys: ``, //專題摘要
+        summarys: [
+            {
+                index: 1, text: `近年來，AI 人工智慧已經迅速的發展並廣泛的被應用，而其中興起了一種嶄新的教育方式，「人機共學」，透過人工智慧讓機器人輔助老師的教學，讓老師的角色從講課漸漸轉為引導學生，並且不再是讓同年級的學生用同一份試題，而是基於試題反應理論(Item Response Theory, IRT)所開發之適性評量系統，根據受試者作答反應即時 調整試題難易度，以達到有效評估學生學習狀況。`
+            }
+        ], //專題摘要
         groupStudents: [
             { studentID: "S10559009", studentName: "李原鋌" },
             { studentID: "S10559024", studentName: "李誌軒" },
@@ -215,12 +219,16 @@ export let studentGroupJson = [
     /* 第十四組 */
     {
         groupID: 14, //專題編號
-        projectName: "", //專題名稱
-        imgSrc: "", //專題截圖
+        projectName: "基於腦波資料之人類情緒推論系統", //專題名稱
+        imgSrc: require("../../studentgroup/14/img/messageImage_1574650417917.jpg"), //專題截圖
         videoSrc: "", //專題影片
-        fileSrc: "", //檔案連結
+        fileSrc: require("../../studentgroup/14/pdf/專題海報.pdf"), //檔案連結
         fromLab: "知識本體應用暨軟體工程實驗室", //所屬實驗室
-        summarys: ``, //專題摘要
+        summarys: [
+            {
+                index: 1, text: `人類的情緒總讓人捉摸不定，情緒反應了我們的心理狀態，如果處理不好，很可能會造成心理疾病或社會問題，有些憂鬱症患者是屬於「陽光型憂鬱症」，因此單從表情及動作行為難以判斷一個人的內心狀態。我們希望藉由分析無法控制的腦波資訊來找出腦波訊號和情緒間的關聯，希望能及早避免憾事發生，並將此技術應用在各領域。`
+            }
+        ], //專題摘要
         groupStudents: [
             { studentID: "S10559016", studentName: "張維珊" },
             { studentID: "S10559036", studentName: "周晨瑋" }
