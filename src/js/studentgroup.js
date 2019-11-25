@@ -152,12 +152,16 @@ export let studentGroupJson = [
     /* 第十組 */
     {
         groupID: 10, //專題編號
-        projectName: "", //專題名稱
-        imgSrc: "", //專題截圖
+        projectName: "具數位簽章之智慧型移動設備投票系統", //專題名稱
+        imgSrc: require("../../studentgroup/10/img/專題照.png"), //專題截圖
         videoSrc: "", //專題影片
-        fileSrc: "", //檔案連結
+        fileSrc: require("../../studentgroup/10/pdf/951.pdf"), //檔案連結
         fromLab: "電腦輔助系統設計實驗室", //所屬實驗室
-        summarys: ``, //專題摘要
+        summarys: [
+            {
+                index: 1, text: `本專題的主要目的是在實作一個投票系統。大部分的投票系統講求方便使用與快速設計，採取了匿名投票甚至不記名投票的方式來進行，但是這樣也造成了有心人士的灌票與重複投票。另一類的投票雖然在投票時會要求填上姓名與個人資料，但是仍然無法有效防範假冒他人資料或輸入虛假資料的情形。因此我們設計的投票系統將使用數位簽章的特性與技術，讓投票者的身份只能與他本人連結，並且投票的內容不會被他人惡意竄改，使投票結果更加的正確公正。`
+            }
+        ], //專題摘要
         groupStudents: [
             { studentID: "S10559012", studentName: "劉鎮維" },
             { studentID: "S10559045", studentName: "胡君愷" }
