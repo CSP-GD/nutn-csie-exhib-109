@@ -454,4 +454,21 @@ export let studentGroupJson = [
         ],
         time: { start: "16:42", end: "16:49" }
     },
+    {
+        groupID: 28, //專題編號
+        projectName: "教學機器人", //專題名稱
+        imgSrc: require("../../studentgroup/28/img/專題照.png"), //專題截圖
+        videoSrc: "", //專題影片
+        fileSrc: require("../../studentgroup/28/pdf/專題海報.pdf"), //檔案連結
+        fromLab: "知識本體應用暨軟體工程實驗室", //所屬實驗室
+        summarys: [
+            {
+                index: 1, text: `學習時有時會遇到一些觀念不懂又錯過立即發問的時機而使整個學習進度落後，若有人能在有疑問時提供協助，重複指導困惑之處，必能讓學生有更大動力進行學習。故本專題應用ASUS Zenbo機器人，作為國小數學輔助的課程指導。`
+            }
+        ], //專題摘要
+        groupStudents: [
+            { studentID: "S10459042", studentName: "田凱寧" }
+        ],
+        time: { start: "", end: "" }
+    },
 ];
