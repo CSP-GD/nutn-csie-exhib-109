@@ -35,12 +35,16 @@ export let studentGroupJson = [
     /* 第三組 */
     {
         groupID: 3, //專題編號
-        projectName: "", //專題名稱
-        imgSrc: "", //專題截圖
+        projectName: "應用資料探勘演算法於信用卡客戶違約資料的分析與預測", //專題名稱
+        imgSrc: require("../../studentgroup/03/img/專題照片.png"), //專題截圖
         videoSrc: "", //專題影片
-        fileSrc: "", //檔案連結
+        fileSrc: require("../../studentgroup/03/pdf/專題海報3.pdf"), //檔案連結
         fromLab: "多媒體網路實驗室", //所屬實驗室
-        summarys: ``, //專題摘要
+        summarys: [
+            {
+                index: 1, text: `我們將運用從UCI資料平台得到的信用卡客戶默認支付資料集，我們希望對它進行分析並找出擁有什麼樣特徵的客戶會違約；我們利用Python語言，並運用Cart決策樹演算法、KNN演算法、貝氏演算法、ANN演算法 針對不同性別、年齡、教育程度、過去數月付款情況……等等來對客戶是否違約來進行分析，經過各項研究進行參數調整分析並得到最佳結果的演算法，同時找出資料的規則，藉以供相關人士作參考，提高他們的便利性。`
+            }
+        ], //專題摘要
         groupStudents: [
             { studentID: "S10559002", studentName: "蘇政穎" },
             { studentID: "S10559004", studentName: "陳銘濡" }
@@ -81,7 +85,7 @@ export let studentGroupJson = [
     {
         groupID: 6, //專題編號
         projectName: "應用ANN、KNN、CART決策樹以及貝氏分類於銀行客戶定存分析", //專題名稱
-        imgSrc: "", //專題截圖
+        imgSrc: require("../../studentgroup/06/img/專題照.png"), //專題截圖
         videoSrc: "", //專題影片
         fileSrc: require("../../studentgroup/06/pdf/專題海報_109第六組_丁吾心_羅宇宸.pdf"), //檔案連結
         fromLab: "多媒體網路實驗室", //所屬實驗室
@@ -113,12 +117,16 @@ export let studentGroupJson = [
     /* 第八組 */
     {
         groupID: 8, //專題編號
-        projectName: "", //專題名稱
-        imgSrc: "", //專題截圖
+        projectName: "智慧教學機器人", //專題名稱
+        imgSrc: require("../../studentgroup/08/img/85884.jpg"), //專題截圖
         videoSrc: "", //專題影片
-        fileSrc: "", //檔案連結
+        fileSrc: require("../../studentgroup/08/pdf/海報(1).pdf"), //檔案連結
         fromLab: "知識本體應用暨軟體工程實驗室", //所屬實驗室
-        summarys: ``, //專題摘要
+        summarys: [
+            {
+                index: 1, text: `近年來，AI 人工智慧已經迅速的發展並廣泛的被應用，而其中興起了一種嶄新的教育方式，「人機共學」，透過人工智慧讓機器人輔助老師的教學，讓老師的角色從講課漸漸轉為引導學生，並且不再是讓同年級的學生用同一份試題，而是基於試題反應理論(Item Response Theory, IRT)所開發之適性評量系統，根據受試者作答反應即時 調整試題難易度，以達到有效評估學生學習狀況。`
+            }
+        ], //專題摘要
         groupStudents: [
             { studentID: "S10559009", studentName: "李原鋌" },
             { studentID: "S10559024", studentName: "李誌軒" },
@@ -129,12 +137,16 @@ export let studentGroupJson = [
     /* 第九組 */
     {
         groupID: 9, //專題編號
-        projectName: "", //專題名稱
-        imgSrc: "", //專題截圖
+        projectName: "行人軌跡預測自動避障駕駛系統", //專題名稱
+        imgSrc: require("../../studentgroup/09/img/pic_3.jpg"), //專題截圖
         videoSrc: "", //專題影片
-        fileSrc: "", //檔案連結
+        fileSrc: require("../../studentgroup/09/pdf/第九組郭憲儒-吳柏賢-海報.pdf"), //檔案連結
         fromLab: "行動計算與網路實驗室", //所屬實驗室
-        summarys: ``, //專題摘要
+        summarys: [
+            {
+                index: 1, text: `隨著科技的蓬勃發展，自動化汽車趨勢已不容小覷，隨之興起的自駕車概念，這些變化帶來的不只是單純的便利性，更重要的，是其背後所隱藏的許多道路安全議題。於是，我們將以Duckietown來加以模擬實際道路狀況，例如城市、街道，十字路口等。將鏡頭偵測到的道路情況送到Raspberry Pi並接著進一步的數據分析，預測道路上實際狀況，進而讓自駕車判斷出最安全路徑，達到路線分析與即時閃避障礙，藉此提升駕駛更安全的行車品質。`
+            }
+        ], //專題摘要
         groupStudents: [
             { studentID: "S10559010", studentName: "郭憲儒" },
             { studentID: "S10559021", studentName: "吳柏賢" }
@@ -144,12 +156,16 @@ export let studentGroupJson = [
     /* 第十組 */
     {
         groupID: 10, //專題編號
-        projectName: "", //專題名稱
-        imgSrc: "", //專題截圖
+        projectName: "具數位簽章之智慧型移動設備投票系統", //專題名稱
+        imgSrc: require("../../studentgroup/10/img/專題照.png"), //專題截圖
         videoSrc: "", //專題影片
-        fileSrc: "", //檔案連結
+        fileSrc: require("../../studentgroup/10/pdf/951.pdf"), //檔案連結
         fromLab: "電腦輔助系統設計實驗室", //所屬實驗室
-        summarys: ``, //專題摘要
+        summarys: [
+            {
+                index: 1, text: `本專題的主要目的是在實作一個投票系統。大部分的投票系統講求方便使用與快速設計，採取了匿名投票甚至不記名投票的方式來進行，但是這樣也造成了有心人士的灌票與重複投票。另一類的投票雖然在投票時會要求填上姓名與個人資料，但是仍然無法有效防範假冒他人資料或輸入虛假資料的情形。因此我們設計的投票系統將使用數位簽章的特性與技術，讓投票者的身份只能與他本人連結，並且投票的內容不會被他人惡意竄改，使投票結果更加的正確公正。`
+            }
+        ], //專題摘要
         groupStudents: [
             { studentID: "S10559012", studentName: "劉鎮維" },
             { studentID: "S10559045", studentName: "胡君愷" }
@@ -197,7 +213,7 @@ export let studentGroupJson = [
     {
         groupID: 13, //專題編號
         projectName: "今晚吃什麼APP－－基於群眾感測之餐廳推薦系統", //專題名稱
-        imgSrc: require("../../studentgroup/13/img/專題照.png"), //專題截圖
+        imgSrc: require("../../studentgroup/13/img/pic.png"), //專題截圖
         videoSrc: "", //專題影片
         fileSrc: require("../../studentgroup/13/pdf/專題海報.jpg"), //檔案連結
         fromLab: "行動計算與網路實驗室", //所屬實驗室
@@ -215,12 +231,16 @@ export let studentGroupJson = [
     /* 第十四組 */
     {
         groupID: 14, //專題編號
-        projectName: "", //專題名稱
-        imgSrc: "", //專題截圖
+        projectName: "基於腦波資料之人類情緒推論系統", //專題名稱
+        imgSrc: require("../../studentgroup/14/img/messageImage_1574650417917.jpg"), //專題截圖
         videoSrc: "", //專題影片
-        fileSrc: "", //檔案連結
+        fileSrc: require("../../studentgroup/14/pdf/專題海報.pdf"), //檔案連結
         fromLab: "知識本體應用暨軟體工程實驗室", //所屬實驗室
-        summarys: ``, //專題摘要
+        summarys: [
+            {
+                index: 1, text: `人類的情緒總讓人捉摸不定，情緒反應了我們的心理狀態，如果處理不好，很可能會造成心理疾病或社會問題，有些憂鬱症患者是屬於「陽光型憂鬱症」，因此單從表情及動作行為難以判斷一個人的內心狀態。我們希望藉由分析無法控制的腦波資訊來找出腦波訊號和情緒間的關聯，希望能及早避免憾事發生，並將此技術應用在各領域。`
+            }
+        ], //專題摘要
         groupStudents: [
             { studentID: "S10559016", studentName: "張維珊" },
             { studentID: "S10559036", studentName: "周晨瑋" }
