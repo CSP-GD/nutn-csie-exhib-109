@@ -2,12 +2,16 @@ export let studentGroupJson = [
     /* 第一組 */
     {
         groupID: 1, //專題編號
-        projectName: "", //專題名稱
-        imgSrc: "", //專題截圖
+        projectName: "智慧型產品管理系統", //專題名稱
+        imgSrc: require("../../studentgroup/01/img/商品管理系統GUI.png"), //專題截圖
         videoSrc: "", //專題影片
-        fileSrc: "", //檔案連結
+        fileSrc: require("../../studentgroup/01/pdf/第一組109畢業專題展海報.pdf"), //檔案連結
         fromLab: "知識本體應用暨軟體工程實驗室", //所屬實驗室
-        summarys: ``, //專題摘要
+        summarys: [
+            {
+                index: 1, text: `由於觀察到傳統商家管理商品的繁瑣，以及耗費許多人力成本，因此建立出一套商品管理系統，且主要有分兩個方向，第一，能用資料庫對商品做分類，第二，能將商品利用利潤以及銷售的好壞進行商機的分析，讓商家能夠對於商機好的商品做出分類，希望能提升整個商店的營運狀況。`
+            }
+        ], //專題摘要
         groupStudents: [
             { studentID: "S10459044", studentName: "洪誠安" }
         ],
@@ -158,9 +162,13 @@ export let studentGroupJson = [
         projectName: "基於群眾外包式的即時路邊停車格資訊系統", //專題名稱
         imgSrc: require("../../studentgroup/11/img/S__63496199.jpg"), //專題截圖
         videoSrc: "", //專題影片
-        fileSrc: "", //檔案連結
+        fileSrc: require("../../studentgroup/11/pdf/S10559013佘宜道.pdf"), //檔案連結
         fromLab: "多媒體與醫學影像實驗室", //所屬實驗室
-        summarys: ``, //專題摘要
+        summarys: [
+            {
+                index: 1, text: `台灣由於地狹人稠，加上許多地方沒有完整方便的公共運輸，所以許多人都選擇自行開車，造成停車位一位難求的狀況。雖然現在已經有智慧停車格的出現，能夠整合資訊將空位的訊息提供給應用程式的使用者，但這需要耗費基礎建設的成本。本研究利用行動裝置的攝影機當作感測器，即時辨識出路旁的停車空位，結合GPS座標，即時上傳至資料庫，隨時更新路邊停車格空位資訊。`
+            }
+        ], //專題摘要
         groupStudents: [
             { studentID: "S10559013", studentName: "佘宜道" }
         ],
