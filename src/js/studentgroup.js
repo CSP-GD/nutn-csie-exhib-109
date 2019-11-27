@@ -1,4 +1,21 @@
 export let studentGroupJson = [
+    {
+        groupID: 0, //專題編號
+        projectName: "教學機器人", //專題名稱
+        imgSrc: require("../../studentgroup/00/img/專題照.png"), //專題截圖
+        videoSrc: "", //專題影片
+        fileSrc: require("../../studentgroup/00/pdf/專題海報.pdf"), //檔案連結
+        fromLab: "知識本體應用暨軟體工程實驗室", //所屬實驗室
+        summarys: [
+            {
+                index: 1, text: `學習時有時會遇到一些觀念不懂又錯過立即發問的時機而使整個學習進度落後，若有人能在有疑問時提供協助，重複指導困惑之處，必能讓學生有更大動力進行學習。故本專題應用ASUS Zenbo機器人，作為國小數學輔助的課程指導。`
+            }
+        ], //專題摘要
+        groupStudents: [
+            { studentID: "S10459042", studentName: "田凱寧" }
+        ],
+        time: { start: "13:00", end: "13:07" }
+    },
     /* 第一組 */
     {
         groupID: 1, //專題編號
@@ -253,9 +270,13 @@ export let studentGroupJson = [
         projectName: "運用生成對抗網路發展適用於提升養殖池水下影像品質之研究", //專題名稱
         imgSrc: require("../../studentgroup/15/img/圖片1.png"), //專題截圖
         videoSrc: "", //專題影片
-        fileSrc: "", //檔案連結
+        fileSrc: require("../../studentgroup/15/pdf/運用生成對抗網路發展適用於提升養殖池水下影像品質之研究.pdf"), //檔案連結
         fromLab: "多媒體與醫學影像實驗室", //所屬實驗室
-        summarys: ``, //專題摘要
+        summarys: [
+            {
+                index: 1, text: `現今智慧養殖已成為台灣養殖漁業轉型的重要契機，其中的水下影像自動分析是智慧養殖的關鍵技術之一，而水底影像的品質則攸關後續影像自動分析的成敗，由於養殖池水體通常存在藻類與懸浮物而導致水體混濁，造成所拍攝的影像模糊不清影響分析判斷。針對此一問題，本研究提出結合對比有限適應性直方圖等化(CLAHE)及生成對抗網路(GAN)技術的水下影像品質提升方法，使影像自動分析系統能較容易正確分析當下的魚類活動狀況為水產養殖智慧化貢獻一份心力。`
+            }
+        ], //專題摘要
         groupStudents: [
             { studentID: "S10559017", studentName: "趙云珮" }
         ],
@@ -473,22 +494,5 @@ export let studentGroupJson = [
             { studentID: "S10559046", studentName: "顏婷玉" }
         ],
         time: { start: "16:42", end: "16:49" }
-    },
-    {
-        groupID: 28, //專題編號
-        projectName: "教學機器人", //專題名稱
-        imgSrc: require("../../studentgroup/28/img/專題照.png"), //專題截圖
-        videoSrc: "", //專題影片
-        fileSrc: require("../../studentgroup/28/pdf/專題海報.pdf"), //檔案連結
-        fromLab: "知識本體應用暨軟體工程實驗室", //所屬實驗室
-        summarys: [
-            {
-                index: 1, text: `學習時有時會遇到一些觀念不懂又錯過立即發問的時機而使整個學習進度落後，若有人能在有疑問時提供協助，重複指導困惑之處，必能讓學生有更大動力進行學習。故本專題應用ASUS Zenbo機器人，作為國小數學輔助的課程指導。`
-            }
-        ], //專題摘要
-        groupStudents: [
-            { studentID: "S10459042", studentName: "田凱寧" }
-        ],
-        time: { start: "", end: "" }
     },
 ];
