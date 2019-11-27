@@ -310,9 +310,13 @@ export let studentGroupJson = [
         projectName: "硬體模糊位元控制設計方法", //專題名稱
         imgSrc: require("../../studentgroup/17/img/專題照片.png"), //專題截圖
         videoSrc: "", //專題影片
-        fileSrc: "", //檔案連結
+        fileSrc: require("../../studentgroup/17/pdf/S10559020專題海報(修正的版本).pdf"), //檔案連結
         fromLab: "電腦輔助系統設計實驗室", //所屬實驗室
-        summarys: ``, //專題摘要
+        summarys: [
+            {
+                index: 1, text: `本專題以純數位位元計算的電路設計模糊控制的硬體電路，並在顯示使用純數位化的擴展應用。此外，也設計了一個程式生成軟體，使用者可透過此軟體生成System Verilog程式檔，以寫對應模組，並可做更細部的調整，以使用Quartus專案編譯成數位電路。`
+            }
+        ], //專題摘要
         groupStudents: [
             { studentID: "S10559020", studentName: "連永立" }
         ],
@@ -324,9 +328,16 @@ export let studentGroupJson = [
         projectName: "旅遊美食掃瞄器", //專題名稱
         imgSrc: "", //專題截圖
         videoSrc: "", //專題影片
-        fileSrc: "", //檔案連結
+        fileSrc: require("../../studentgroup/18/pdf/专题海报.pdf"), //檔案連結
         fromLab: "資料庫與資訊知識系統實驗室", //所屬實驗室
-        summarys: ``, //專題摘要
+        summarys: [
+            {
+                index: 1, text: `大家在出國旅行的時候，容易看到各種各樣引人注目但卻未聞其名的美食，但由於語言不通又不方便詢問，因此就無法點餐想要的食物，假如可以透過手機應用拍攝食物照片獲取食物資訊，就能幫助觀光客在第一時間瞭解陌生食物的種種資料，點餐時準確的傳達所想要的陌生食物。 `
+            },
+            {
+                index: 2, text: `本系統目標在無圖形處理器設備上運行時，可以即時地辨識食物，並且保有一定的準確率。由於食物種類繁多，在使用時，希望用戶可以簡單選擇食物的國家或地區後下載相對應的模型權重後再進行辨識，以基於機器學習的即時物件辨識技術結合用戶人為的主動預先分類來提高辨識的準確度。`
+            }
+        ], //專題摘要
         groupStudents: [
             { studentID: "S10559023", studentName: "鄭聖玄" },
             { studentID: "S10559043", studentName: "金鑒修" }
@@ -411,7 +422,7 @@ export let studentGroupJson = [
     /* 第二十三組 */
     {
         groupID: 23, //專題編號
-        projectName: "", //專題名稱
+        projectName: "透過深度學習進行社交軟體假新聞文字偵測辨識", //專題名稱
         imgSrc: "", //專題截圖
         videoSrc: "", //專題影片
         fileSrc: "", //檔案連結
