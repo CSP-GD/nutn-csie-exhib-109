@@ -89,9 +89,13 @@ export let studentGroupJson = [
         projectName: "以行動裝置實現表面粗糙度之量測", //專題名稱
         imgSrc: require("../../studentgroup/05/img/385120.jpg"), //專題截圖
         videoSrc: "", //專題影片
-        fileSrc: "", //檔案連結
+        fileSrc: require("../../studentgroup/05/pdf/海報(以行動裝置實現表面粗糙度之量測).pdf"), //檔案連結
         fromLab: "資料庫與資訊知識系統實驗室", //所屬實驗室
-        summarys: ``, //專題摘要
+        summarys: [
+            {
+                index: 1, text: `在機械及鋼鐵製程中，表面粗糙度的即時量測是很重要的環節，如製品的摩擦力和耐磨性、零件與零件的契合度、物品耐用度都與表面粗糙程度有密切關聯。我們透過光學的方式，在手機上加裝放大倍率之物鏡，作為取得待測物體表面影像的方法，經影像處理後，進入卷積神經網路擷取影像特徵並做回歸，以預測出表面粗糙度(Ra)。`
+            }
+        ], //專題摘要
         groupStudents: [
             { studentID: "S10559005", studentName: "高嘉謙" },
             { studentID: "S10559006", studentName: "郭峻霖" }
