@@ -124,7 +124,7 @@ export let studentGroupJson = [
     /* 第七組 */
     {
         groupID: 7, //專題編號
-        projectName: "鋁結構受到動態拉伸載荷影響時估計鋁結構不同週期的裂縫長度", //專題名稱
+        projectName: "運用機器學習估計鋁結構在不同週期的裂縫長度", //專題名稱
         imgSrc: require("../../studentgroup/07/img/1573182602502.jpg"), //專題截圖
         videoSrc: "", //專題影片
         fileSrc: "", //檔案連結
