@@ -47,7 +47,7 @@
 								<tr>
 									<td>專題海報：</td>
 									<td>
-										<a :href="studentGroup.fileSrc" target="_blank">請點選</a>
+										<a :href="studentGroup.posterSrc" target="_blank">請點選</a>
 									</td>
 								</tr>
 							</table>
@@ -72,7 +72,7 @@ export default {
 			projectName: String, //專題名稱
 			imgSrc: String, //專題截圖
 			videoSrc: String, //專題影片
-			fileSrc: String, //檔案連結
+			posterSrc: String, //檔案連結
 			fromLab: String, //所屬實驗室
 			groupStudent: [{ studentID: String, studentName: String }],
 			time: { start: String, end: String }

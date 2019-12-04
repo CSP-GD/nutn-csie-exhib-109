@@ -4,7 +4,8 @@ export let studentGroupJson = [
         projectName: "教學機器人", //專題名稱
         imgSrc: require("../../studentgroup/00/img/專題照.png"), //專題截圖
         videoSrc: "", //專題影片
-        fileSrc: require("../../studentgroup/00/pdf/專題海報.pdf"), //檔案連結
+        reportSrc: "",
+        posterSrc: require("../../studentgroup/00/pdf/專題海報.pdf"), //檔案連結
         fromLab: "知識本體應用暨軟體工程實驗室", //所屬實驗室
         summarys: [
             {
@@ -22,7 +23,8 @@ export let studentGroupJson = [
         projectName: "智慧型產品管理系統", //專題名稱
         imgSrc: require("../../studentgroup/01/img/商品管理系統GUI.png"), //專題截圖
         videoSrc: "", //專題影片
-        fileSrc: require("../../studentgroup/01/pdf/第一組109畢業專題展海報.pdf"), //檔案連結
+        reportSrc: "",
+        posterSrc: require("../../studentgroup/01/pdf/第一組109畢業專題展海報.pdf"), //檔案連結
         fromLab: "知識本體應用暨軟體工程實驗室", //所屬實驗室
         summarys: [
             {
@@ -40,7 +42,8 @@ export let studentGroupJson = [
         projectName: "Deep Learning for Polyp Detection in Colonoscopy Images", //專題名稱
         imgSrc: require("../../studentgroup/02/img/image.jpg"), //專題截圖
         videoSrc: "", //專題影片
-        fileSrc: "", //檔案連結
+        reportSrc: "",
+        posterSrc: "", //檔案連結
         fromLab: "智慧型機器人實驗室", //所屬實驗室
         summarys: ``, //專題摘要
         groupStudents: [
@@ -55,7 +58,8 @@ export let studentGroupJson = [
         projectName: "應用資料探勘演算法於信用卡客戶違約資料的分析與預測", //專題名稱
         imgSrc: require("../../studentgroup/03/img/專題照片.png"), //專題截圖
         videoSrc: "", //專題影片
-        fileSrc: require("../../studentgroup/03/pdf/專題海報3.pdf"), //檔案連結
+        reportSrc: "",
+        posterSrc: require("../../studentgroup/03/pdf/專題海報3.pdf"), //檔案連結
         fromLab: "多媒體網路實驗室", //所屬實驗室
         summarys: [
             {
@@ -74,7 +78,8 @@ export let studentGroupJson = [
         projectName: "基於openpose視力自動檢測", //專題名稱
         imgSrc: "", //專題截圖
         videoSrc: "", //專題影片
-        fileSrc: "", //檔案連結
+        reportSrc: "",
+        posterSrc: "", //檔案連結
         fromLab: "資料系統實驗室", //所屬實驗室
         summarys: ``, //專題摘要
         groupStudents: [
@@ -89,7 +94,8 @@ export let studentGroupJson = [
         projectName: "以行動裝置實現表面粗糙度之量測", //專題名稱
         imgSrc: require("../../studentgroup/05/img/385120.jpg"), //專題截圖
         videoSrc: "", //專題影片
-        fileSrc: require("../../studentgroup/05/pdf/海報(以行動裝置實現表面粗糙度之量測).pdf"), //檔案連結
+        reportSrc: "",
+        posterSrc: require("../../studentgroup/05/pdf/海報(以行動裝置實現表面粗糙度之量測).pdf"), //檔案連結
         fromLab: "資料庫與資訊知識系統實驗室", //所屬實驗室
         summarys: [
             {
@@ -108,7 +114,8 @@ export let studentGroupJson = [
         projectName: "應用ANN、KNN、CART決策樹以及貝氏分類於銀行客戶定存分析", //專題名稱
         imgSrc: require("../../studentgroup/06/img/專題照.png"), //專題截圖
         videoSrc: "", //專題影片
-        fileSrc: require("../../studentgroup/06/pdf/專題海報_109第六組_丁吾心_羅宇宸.pdf"), //檔案連結
+        reportSrc: "",
+        posterSrc: require("../../studentgroup/06/pdf/專題海報_109第六組_丁吾心_羅宇宸.pdf"), //檔案連結
         fromLab: "多媒體網路實驗室", //所屬實驗室
         summarys: [
             {
@@ -127,7 +134,8 @@ export let studentGroupJson = [
         projectName: "運用機器學習估計鋁結構在不同週期的裂縫長度", //專題名稱
         imgSrc: require("../../studentgroup/07/img/1573182602502.jpg"), //專題截圖
         videoSrc: "", //專題影片
-        fileSrc: "", //檔案連結
+        reportSrc: "",
+        posterSrc: "", //檔案連結
         fromLab: "資料系統實驗室", //所屬實驗室
         summarys: ``, //專題摘要
         groupStudents: [
@@ -141,7 +149,8 @@ export let studentGroupJson = [
         projectName: "智慧教學機器人", //專題名稱
         imgSrc: require("../../studentgroup/08/img/85884.jpg"), //專題截圖
         videoSrc: "", //專題影片
-        fileSrc: require("../../studentgroup/08/pdf/海報(1).pdf"), //檔案連結
+        reportSrc: "",
+        posterSrc: require("../../studentgroup/08/pdf/海報(1).pdf"), //檔案連結
         fromLab: "知識本體應用暨軟體工程實驗室", //所屬實驗室
         summarys: [
             {
@@ -161,7 +170,8 @@ export let studentGroupJson = [
         projectName: "行人軌跡預測自動避障駕駛系統", //專題名稱
         imgSrc: require("../../studentgroup/09/img/pic_3.jpg"), //專題截圖
         videoSrc: "", //專題影片
-        fileSrc: require("../../studentgroup/09/pdf/第九組郭憲儒-吳柏賢-海報.pdf"), //檔案連結
+        reportSrc: "",
+        posterSrc: require("../../studentgroup/09/pdf/第九組郭憲儒-吳柏賢-海報.pdf"), //檔案連結
         fromLab: "行動計算與網路實驗室", //所屬實驗室
         summarys: [
             {
@@ -180,7 +190,8 @@ export let studentGroupJson = [
         projectName: "具數位簽章之智慧型移動設備投票系統", //專題名稱
         imgSrc: require("../../studentgroup/10/img/專題照.png"), //專題截圖
         videoSrc: "", //專題影片
-        fileSrc: require("../../studentgroup/10/pdf/951.pdf"), //檔案連結
+        reportSrc: "",
+        posterSrc: require("../../studentgroup/10/pdf/951.pdf"), //檔案連結
         fromLab: "電腦輔助系統設計實驗室", //所屬實驗室
         summarys: [
             {
@@ -199,7 +210,8 @@ export let studentGroupJson = [
         projectName: "基於群眾外包式的即時路邊停車格資訊系統", //專題名稱
         imgSrc: require("../../studentgroup/11/img/S__63496199.jpg"), //專題截圖
         videoSrc: "", //專題影片
-        fileSrc: require("../../studentgroup/11/pdf/S10559013佘宜道.pdf"), //檔案連結
+        reportSrc: "",
+        posterSrc: require("../../studentgroup/11/pdf/S10559013佘宜道.pdf"), //檔案連結
         fromLab: "多媒體與醫學影像實驗室", //所屬實驗室
         summarys: [
             {
@@ -217,7 +229,8 @@ export let studentGroupJson = [
         projectName: "四軸飛行器空拍條碼系統", //專題名稱
         imgSrc: require("../../studentgroup/12/img/IMG_0661.jpg"), //專題截圖
         videoSrc: "", //專題影片
-        fileSrc: require("../../studentgroup/12/pdf/專題海報 改.pdf"), //檔案連結
+        reportSrc: "",
+        posterSrc: require("../../studentgroup/12/pdf/專題海報 改.pdf"), //檔案連結
         fromLab: "電腦輔助系統設計實驗室", //所屬實驗室
         summarys: [
             {
@@ -236,7 +249,8 @@ export let studentGroupJson = [
         projectName: "今晚吃什麼APP－－基於群眾感測之餐廳推薦系統", //專題名稱
         imgSrc: require("../../studentgroup/13/img/pic.png"), //專題截圖
         videoSrc: "", //專題影片
-        fileSrc: require("../../studentgroup/13/pdf/專題海報.jpg"), //檔案連結
+        reportSrc: "",
+        posterSrc: require("../../studentgroup/13/pdf/專題海報.jpg"), //檔案連結
         fromLab: "行動計算與網路實驗室", //所屬實驗室
         summarys: [
             {
@@ -255,7 +269,8 @@ export let studentGroupJson = [
         projectName: "基於腦波資料之人類情緒推論系統", //專題名稱
         imgSrc: require("../../studentgroup/14/img/messageImage_1574650417917.jpg"), //專題截圖
         videoSrc: "", //專題影片
-        fileSrc: require("../../studentgroup/14/pdf/專題海報.pdf"), //檔案連結
+        reportSrc: "",
+        posterSrc: require("../../studentgroup/14/pdf/專題海報.pdf"), //檔案連結
         fromLab: "知識本體應用暨軟體工程實驗室", //所屬實驗室
         summarys: [
             {
@@ -273,8 +288,9 @@ export let studentGroupJson = [
         groupID: 15, //專題編號
         projectName: "運用生成對抗網路發展適用於提升養殖池水下影像品質之研究", //專題名稱
         imgSrc: require("../../studentgroup/15/img/圖片1.png"), //專題截圖
-        videoSrc: "", //專題影片
-        fileSrc: require("../../studentgroup/15/pdf/運用生成對抗網路發展適用於提升養殖池水下影像品質之研究.pdf"), //檔案連結
+        videoSrc: "*", //專題影片
+        reportSrc: "*",
+        posterSrc: require("../../studentgroup/15/pdf/運用生成對抗網路發展適用於提升養殖池水下影像品質之研究.pdf"), //檔案連結
         fromLab: "多媒體與醫學影像實驗室", //所屬實驗室
         summarys: [
             {
@@ -292,7 +308,8 @@ export let studentGroupJson = [
         projectName: "植基於深度學習之咖啡原豆瑕疵檢測系統", //專題名稱
         imgSrc: require("../../studentgroup/16/img/187878.jpg"), //專題截圖
         videoSrc: "", //專題影片
-        fileSrc: require("../../studentgroup/16/pdf/海報3.0.pdf"), //檔案連結
+        reportSrc: "",
+        posterSrc: require("../../studentgroup/16/pdf/海報3.0.pdf"), //檔案連結
         fromLab: "多媒體與醫學影像實驗室", //所屬實驗室
         summarys: [
             {
@@ -314,7 +331,8 @@ export let studentGroupJson = [
         projectName: "硬體模糊位元控制設計方法", //專題名稱
         imgSrc: require("../../studentgroup/17/img/專題照片.png"), //專題截圖
         videoSrc: "", //專題影片
-        fileSrc: require("../../studentgroup/17/pdf/S10559020專題海報(修正的版本).pdf"), //檔案連結
+        reportSrc: "",
+        posterSrc: require("../../studentgroup/17/pdf/S10559020專題海報(修正的版本).pdf"), //檔案連結
         fromLab: "電腦輔助系統設計實驗室", //所屬實驗室
         summarys: [
             {
@@ -332,7 +350,8 @@ export let studentGroupJson = [
         projectName: "旅遊美食掃瞄器", //專題名稱
         imgSrc: "", //專題截圖
         videoSrc: "", //專題影片
-        fileSrc: require("../../studentgroup/18/pdf/专题海报.pdf"), //檔案連結
+        reportSrc: "",
+        posterSrc: require("../../studentgroup/18/pdf/专题海报.pdf"), //檔案連結
         fromLab: "資料庫與資訊知識系統實驗室", //所屬實驗室
         summarys: [
             {
@@ -354,7 +373,8 @@ export let studentGroupJson = [
         projectName: "應用資料探勘技術於青蛙叫聲資料分類", //專題名稱
         imgSrc: require("../../studentgroup/19/img/專題照.png"), //專題截圖
         videoSrc: "", //專題影片
-        fileSrc: require("../../studentgroup/19/pdf/專題海報_109第十九組_黃祈緯.pdf"), //檔案連結
+        reportSrc: "",
+        posterSrc: require("../../studentgroup/19/pdf/專題海報_109第十九組_黃祈緯.pdf"), //檔案連結
         fromLab: "多媒體網路實驗室", //所屬實驗室
         summarys: [
             {
@@ -372,7 +392,8 @@ export let studentGroupJson = [
         projectName: "基於強化學習之格鬥遊戲即時反應操作AI設計", //專題名稱
         imgSrc: require("../../studentgroup/20/img/專題照.png"), //專題截圖
         videoSrc: "", //專題影片
-        fileSrc: require("../../studentgroup/20/pdf/專題海報.pdf"), //檔案連結
+        reportSrc: "",
+        posterSrc: require("../../studentgroup/20/pdf/專題海報.pdf"), //檔案連結
         fromLab: "生物資訊實驗室", //所屬實驗室
         summarys: [
             {
@@ -393,7 +414,8 @@ export let studentGroupJson = [
         projectName: "停車場之移動裝置繳費系統", //專題名稱
         imgSrc: require("../../studentgroup/21/img/專題照.png"), //專題截圖
         videoSrc: "", //專題影片
-        fileSrc: require("../../studentgroup/21/pdf/第二十一組專題海報.pdf"), //檔案連結
+        reportSrc: "",
+        posterSrc: require("../../studentgroup/21/pdf/第二十一組專題海報.pdf"), //檔案連結
         fromLab: "電腦輔助系統設計實驗室", //所屬實驗室
         summarys: [
             {
@@ -411,7 +433,8 @@ export let studentGroupJson = [
         projectName: "仿無人機視角之橘樹果實數量計數研究", //專題名稱
         imgSrc: require("../../studentgroup/22/img/1574346284791.jpg"), //專題截圖
         videoSrc: "", //專題影片
-        fileSrc: require("../../studentgroup/22/pdf/仿無人機視角之橘樹果實數量計數研究海報.pdf"), //檔案連結
+        reportSrc: "",
+        posterSrc: require("../../studentgroup/22/pdf/仿無人機視角之橘樹果實數量計數研究海報.pdf"), //檔案連結
         fromLab: "多媒體與醫學影像實驗室", //所屬實驗室
         summarys: [
             {
@@ -429,7 +452,8 @@ export let studentGroupJson = [
         projectName: "透過深度學習進行社交軟體假新聞文字偵測辨識", //專題名稱
         imgSrc: "", //專題截圖
         videoSrc: "", //專題影片
-        fileSrc: "", //檔案連結
+        reportSrc: "",
+        posterSrc: "", //檔案連結
         fromLab: "資料系統實驗室", //所屬實驗室
         summarys: ``, //專題摘要
         groupStudents: [
@@ -444,7 +468,8 @@ export let studentGroupJson = [
         projectName: "基於深度學習進行人體姿態估計", //專題名稱
         imgSrc: require("../../studentgroup/24/img/photo_2019-11-19_19-50-32.jpg"), //專題截圖
         videoSrc: "", //專題影片
-        fileSrc: require("../../studentgroup/24/pdf/海報最終版.pdf"), //檔案連結
+        reportSrc: "",
+        posterSrc: require("../../studentgroup/24/pdf/海報最終版.pdf"), //檔案連結
         fromLab: "智慧型機器人實驗室", //所屬實驗室
         summarys: [
             {
@@ -463,7 +488,8 @@ export let studentGroupJson = [
         projectName: "Wi-Fi環境下人體行為識別系統", //專題名稱
         imgSrc: require("../../studentgroup/25/img/photo_2019-11-24_12-59-52.jpg"), //專題截圖
         videoSrc: "", //專題影片
-        fileSrc: require("../../studentgroup/25/pdf/專題展海報_109級畢業專題海報_NUTN_CSIE_PRJ_109.pdf"), //檔案連結
+        reportSrc: "",
+        posterSrc: require("../../studentgroup/25/pdf/專題展海報_109級畢業專題海報_NUTN_CSIE_PRJ_109.pdf"), //檔案連結
         fromLab: "行動計算與網路實驗室", //所屬實驗室
         summarys: [
             {
@@ -484,7 +510,8 @@ export let studentGroupJson = [
         projectName: "智慧型行動載物機器人", //專題名稱
         imgSrc: require("../../studentgroup/26/img/photo_2019-11-11_19-02-18.jpg"), //專題截圖
         videoSrc: "", //專題影片
-        fileSrc: "", //檔案連結
+        reportSrc: "",
+        posterSrc: "", //檔案連結
         fromLab: "智慧型機器人實驗室", //所屬實驗室
         summarys: ``, //專題摘要
         groupStudents: [
@@ -498,7 +525,8 @@ export let studentGroupJson = [
         projectName: "利用深度學習偵測雞隻熱緊迫之研究", //專題名稱
         imgSrc: require("../../studentgroup/27/img/照片1.png"), //專題截圖
         videoSrc: "", //專題影片
-        fileSrc: require("../../studentgroup/27/pdf/畢業專題展海報.pdf"), //檔案連結
+        reportSrc: "",
+        posterSrc: require("../../studentgroup/27/pdf/畢業專題展海報.pdf"), //檔案連結
         fromLab: "多媒體與醫學影像實驗室", //所屬實驗室
         summarys: [
             {
